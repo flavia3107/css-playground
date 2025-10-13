@@ -1,0 +1,53 @@
+export const STATES = {
+	phase_1: [
+		'Preview Box — main element whose styles are edited',
+		'Real-time updates (Angular bindings update the preview instantly)',
+		'Background Color Picker',
+		'Border Controls: width, color, style, radius',
+		'Box Shadow Controls: X/Y offset, blur, spread, color',
+		'Font: color, size',
+		'Export CSS Button (copy to clipboard)',
+		'Split layout — left panel controls, right panel preview',
+		'Light modern theme (soft background, clear borders, good spacing)',
+		'CSS code box showing generated CSS'
+	],
+	phase_2: [
+		'Add persistence, interactivity, and extra styling categories.',
+		'Save preset to localStorage',
+		'Load / delete saved presets',
+		'Rename presets',
+		'Random Style button — generates random color, border, shadow, etc.',
+		'Option to lock certain properties before randomizing',
+		'Gradient backgrounds (linear/radial)',
+		'Text shadow',
+		'Padding / margin sliders',
+		'Width & height controls',
+		'Preview Enhancements',
+		'Different element types (box, button, card, text)',
+		'Hover / active state toggle',
+		'Reset button',
+		'Code Display',
+		'Syntax-highlighted CSS viewer',
+		'Copy to Clipboard animation or toast'
+	],
+	phase_3: [
+		'Color harmony picker (complementary, analogous, triadic)',
+		'SCSS/LESS output toggle',
+		'Undo / Redo history',
+		'Import / export as JSON',
+		'Download CSS / HTML as a zip',
+		'Preview & Layout',
+		'Responsive preview (mobile/tablet/desktop toggle)',
+		'Resizable / draggable preview box',
+		'Option to switch to a full “card” preview with text and buttons',
+		'Sharing & Export',
+		'Shareable URL (encode styles into query string)',
+		'“Copy HTML + CSS” snippet',
+		'Screenshot download (canvas or html2canvas)',
+		'UI / UX Polish',
+		'Dark / light theme switch',
+		'Smooth transitions on style changes',
+		'Micro animations (hover effects, color transitions)',
+		'Tooltips with property explanations'
+	]
+}
