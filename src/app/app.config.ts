@@ -7,9 +7,8 @@ export const STATES = {
 		'Box Shadow Controls: X/Y offset, blur, spread, color',
 		'Font: color, size',
 		'Export CSS Button (copy to clipboard)',
-		'Split layout — left panel controls, right panel preview',
-		'Light modern theme (soft background, clear borders, good spacing)',
-		'CSS code box showing generated CSS'
+		'CSS code box showing generated CSS',
+		'Select item (input, button, div....)'
 	],
 	phase_2: [
 		'Add persistence, interactivity, and extra styling categories.',
