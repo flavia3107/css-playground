@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { CSS_CONFIG } from 'src/app/app.config';
 
 @Component({
   selector: 'app-css-configs',
@@ -10,5 +11,5 @@ import { MatExpansionModule } from '@angular/material/expansion';
 })
 export class CssConfigsComponent {
   readonly panelOpenState = signal(false);
-
+  readonly cssConfigs = CSS_CONFIG;
 }

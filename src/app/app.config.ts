@@ -50,3 +50,111 @@ export const STATES = {
 		'Tooltips with property explanations'
 	]
 }
+
+export const CSS_CONFIG = [
+	{
+		section: 'background',
+		summary: 'Customize background colors, gradients, and opacity.',
+		properties: [
+			{ name: 'backgroundColor', value: '#3498db' },
+			{ name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)' },
+			{ name: 'backgroundImage', value: '' },
+			{ name: 'backgroundSize', value: 'cover' },
+			{ name: 'backgroundRepeat', value: 'no-repeat' },
+			{ name: 'opacity', value: 1 }
+		]
+	},
+	{
+		section: 'border',
+		summary: 'Adjust border size, color, and style for the element.',
+		properties: [
+			{ name: 'borderWidth', value: '2px' },
+			{ name: 'borderStyle', value: 'solid' },
+			{ name: 'borderColor', value: '#2c3e50' },
+			{ name: 'borderTopLeftRadius', value: '8px' },
+			{ name: 'borderTopRightRadius', value: '8px' },
+			{ name: 'borderBottomLeftRadius', value: '8px' },
+			{ name: 'borderBottomRightRadius', value: '8px' }
+		]
+	},
+	{
+		section: 'boxShadow',
+		summary: 'Control shadow effects for depth and emphasis.',
+		properties: [
+			{ name: 'boxShadowX', value: '0px' },
+			{ name: 'boxShadowY', value: '4px' },
+			{ name: 'boxShadowBlur', value: '10px' },
+			{ name: 'boxShadowSpread', value: '0px' },
+			{ name: 'boxShadowColor', value: 'rgba(0, 0, 0, 0.3)' },
+			{ name: 'boxShadowInset', value: false }
+		]
+	},
+	{
+		section: 'text',
+		summary: 'Modify font style, size, weight, and color for text elements.',
+		properties: [
+			{ name: 'fontFamily', value: 'Arial, sans-serif' },
+			{ name: 'fontSize', value: '16px' },
+			{ name: 'fontWeight', value: '400' },
+			{ name: 'color', value: '#333333' },
+			{ name: 'letterSpacing', value: '0px' },
+			{ name: 'lineHeight', value: '1.5' },
+			{ name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)' },
+			{ name: 'textAlign', value: 'center' }
+		]
+	},
+	{
+		section: 'dimensions',
+		summary: 'Set element dimensions and internal/external spacing.',
+		properties: [
+			{ name: 'width', value: '300px' },
+			{ name: 'height', value: '200px' },
+			{ name: 'padding', value: '16px' },
+			{ name: 'margin', value: '8px' }
+		]
+	},
+	{
+		section: 'transform',
+		summary: 'Apply rotation, scaling, and skew transformations.',
+		properties: [
+			{ name: 'rotate', value: '0deg' },
+			{ name: 'scale', value: '1' },
+			{ name: 'skewX', value: '0deg' },
+			{ name: 'skewY', value: '0deg' },
+			{ name: 'translateX', value: '0px' },
+			{ name: 'translateY', value: '0px' }
+		]
+	},
+	{
+		section: 'filter',
+		summary: 'Add filter effects such as blur, brightness, or contrast.',
+		properties: [
+			{ name: 'blur', value: '0px' },
+			{ name: 'brightness', value: '100%' },
+			{ name: 'contrast', value: '100%' },
+			{ name: 'grayscale', value: '0%' },
+			{ name: 'saturate', value: '100%' },
+			{ name: 'sepia', value: '0%' }
+		]
+	},
+	{
+		section: 'transition',
+		summary: 'Control animation transitions for smooth style changes.',
+		properties: [
+			{ name: 'transitionProperty', value: 'all' },
+			{ name: 'transitionDuration', value: '0.3s' },
+			{ name: 'transitionTimingFunction', value: 'ease-in-out' },
+			{ name: 'transitionDelay', value: '0s' }
+		]
+	},
+	{
+		section: 'advanced',
+		summary: 'Miscellaneous CSS options for customization.',
+		properties: [
+			{ name: 'cursor', value: 'pointer' },
+			{ name: 'overflow', value: 'hidden' },
+			{ name: 'zIndex', value: '1' },
+			{ name: 'mixBlendMode', value: 'normal' }
+		]
+	}
+];
