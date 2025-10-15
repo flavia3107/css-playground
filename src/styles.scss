@@ -1,15 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
 body {
-	// background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 	background-color: #f7f6f7;
 	margin: 0;
-}
-
-.main-container {
-	width: 100%;
-	margin-top: 1rem;
-	height: calc(100vh - 5.5rem);
-	gap: 1rem;
 }
 
 .flex-row {
@@ -19,18 +10,6 @@ body {
 .flex-column {
 	display: flex;
 	flex-direction: column;
-}
-
-.card {
-	background: #fefefe;
-	height: 100%;
-	border-radius: 10px;
-	box-shadow: 0 0 5px 2px #f0f0f0;
-}
-
-.config-container,
-.code-container {
-	width: 25%;
 }
 
 .preview-container {
