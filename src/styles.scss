@@ -96,3 +96,12 @@ body {
 	font-weight: lighter;
 	font-size: 0.85rem;
 }
+
+mat-expansion-panel-header .mat-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+	box-shadow: none !important;
+}
