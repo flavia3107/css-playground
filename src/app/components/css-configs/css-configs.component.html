@@ -2,7 +2,9 @@
 	@for(config of cssConfigs; track config.section){
 	<mat-expansion-panel>
 		<mat-expansion-panel-header>
-			<mat-panel-title> {{config.section}} </mat-panel-title>
+			<mat-panel-title>
+				<mat-icon>{{config.icon}}</mat-icon> {{config.section}}
+			</mat-panel-title>
 			<mat-panel-description>
 				{{config.summary}}
 			</mat-panel-description>

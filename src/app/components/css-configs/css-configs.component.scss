@@ -1,7 +1,10 @@
 mat-expansion-panel-header {
 	height: fit-content;
 	padding: 1rem;
-	border: 1px solid #d3d3d3;
+}
+
+mat-expansion-panel {
 	margin: 0.45rem 0;
-	border-radius: 0px;
+	border: 1px solid #d3d3d3;
+	border-radius: 5px !important;
 }
