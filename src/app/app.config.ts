@@ -54,6 +54,7 @@ export const STATES = {
 export const CSS_CONFIG = [
 	{
 		section: 'background',
+		icon: 'texture',
 		summary: 'Customize background colors, gradients, and opacity.',
 		properties: [
 			{ name: 'backgroundColor', value: '#3498db' },
@@ -66,6 +67,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'border',
+		icon: 'rounded_corner',
 		summary: 'Adjust border size, color, and style for the element.',
 		properties: [
 			{ name: 'borderWidth', value: '2px' },
@@ -79,6 +81,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'boxShadow',
+		icon: 'tonality',
 		summary: 'Control shadow effects for depth and emphasis.',
 		properties: [
 			{ name: 'boxShadowX', value: '0px' },
@@ -91,6 +94,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'text',
+		icon: 'text_fields',
 		summary: 'Modify font style, size, weight, and color for text elements.',
 		properties: [
 			{ name: 'fontFamily', value: 'Arial, sans-serif' },
@@ -105,6 +109,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'dimensions',
+		icon: 'border_outer',
 		summary: 'Set element dimensions and internal/external spacing.',
 		properties: [
 			{ name: 'width', value: '300px' },
@@ -115,6 +120,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'transform',
+		icon: 'transform',
 		summary: 'Apply rotation, scaling, and skew transformations.',
 		properties: [
 			{ name: 'rotate', value: '0deg' },
@@ -127,6 +133,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'filter',
+		icon: 'photo_filter',
 		summary: 'Add filter effects such as blur, brightness, or contrast.',
 		properties: [
 			{ name: 'blur', value: '0px' },
@@ -139,6 +146,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'transition',
+		icon: 'animation',
 		summary: 'Control animation transitions for smooth style changes.',
 		properties: [
 			{ name: 'transitionProperty', value: 'all' },
@@ -149,6 +157,7 @@ export const CSS_CONFIG = [
 	},
 	{
 		section: 'advanced',
+		icon: 'display_settings',
 		summary: 'Miscellaneous CSS options for customization.',
 		properties: [
 			{ name: 'cursor', value: 'pointer' },
