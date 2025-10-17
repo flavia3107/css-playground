@@ -9,7 +9,33 @@
 				{{config.summary}}
 			</mat-panel-description>
 		</mat-expansion-panel-header>
-		<div class="panel-content">I'm visible because I am open</div>
+		<div class="panel-content">
+			@for(property of config.properties; track property){
+
+			@switch (property.type) {
+			@case ('color') {
+			<div>{{property.name}} - {{property.type}}</div>
+			}
+			@case ('range') {
+			<div>{{property.name}} - {{property.type}}</div>
+			}
+			@case ('text') {
+			<div>{{property.name}} - {{property.type}}</div>
+			}
+			@case ('select') {
+			<div>{{property.name}} - {{property.type}}</div>
+			}
+			@case ('toggle') {
+			<div>{{property.name}} - {{property.type}}</div>
+			}
+			@case ('slider') {
+			<div>{{property.name}} - {{property.type}}</div>
+			}
+			}
+
+			}
+
+		</div>
 	</mat-expansion-panel>
 	}
 </mat-accordion>
