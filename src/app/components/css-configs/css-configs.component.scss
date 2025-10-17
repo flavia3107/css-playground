@@ -8,3 +8,29 @@ mat-expansion-panel {
 	border: 1px solid #d3d3d3;
 	border-radius: 5px !important;
 }
+
+mat-panel-title {
+	display: flex;
+	gap: 0.5rem;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: #5e5e5e;
+	align-items: flex-end;
+}
+
+mat-panel-description {
+	font-size: 0.9rem;
+	color: #818181;
+}
+
+.panel-content {
+	background: #fff;
+	padding: 1rem;
+	border-radius: 5px;
+	border: 1px dashed #e8e8e8;
+	width: 100%;
+	box-sizing: border-box;
+	min-height: 5rem;
+}

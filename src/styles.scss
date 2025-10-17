@@ -84,3 +84,7 @@ mat-expansion-panel-header .mat-content {
 .mat-expansion-panel:not([class*="mat-elevation-z"]) {
 	box-shadow: none !important;
 }
+
+.mat-expansion-panel-body {
+	padding: 0.5rem 1.5rem;
+}
