@@ -51,7 +51,39 @@ export const STATES = {
 	]
 }
 
-export const CSS_CONFIG = [
+interface BaseProperty {
+	name: string;
+	value: string | number | boolean;
+	label?: string;
+	unit?: string;
+}
+
+interface SimpleProperty extends BaseProperty {
+	type: 'color' | 'text' | 'number' | 'range' | 'slider' | 'toggle';
+	min?: number;
+	max?: number;
+	step?: number;
+}
+
+interface SelectProperty extends BaseProperty {
+	type: 'select';
+	options: string[];
+}
+
+interface BooleanProperty extends BaseProperty {
+	type: 'boolean';
+}
+
+export type CSSProperty = SimpleProperty | SelectProperty | BooleanProperty;
+
+export interface CSSSection {
+	section: string;
+	icon: string;
+	summary: string;
+	properties: CSSProperty[];
+}
+
+export const CSS_CONFIG: CSSSection[] = [
 	{
 		section: 'background',
 		icon: 'texture',
@@ -112,10 +144,10 @@ export const CSS_CONFIG = [
 		icon: 'border_outer',
 		summary: 'Set element dimensions and internal/external spacing.',
 		properties: [
-			{ name: 'width', value: '300px', type: 'slider', unit: 'px', min: 50, max: 800, box: 'dimension' },
-			{ name: 'height', value: '200px', type: 'slider', unit: 'px', min: 50, max: 600, box: 'dimension' },
-			{ name: 'padding', value: '16px', type: 'box-editor', unit: 'px', box: 'padding' },
-			{ name: 'margin', value: '8px', type: 'box-editor', unit: 'px', box: 'margin' }
+			{ name: 'width', value: '300px', type: 'slider', unit: 'px', min: 50, max: 800 },
+			{ name: 'height', value: '200px', type: 'slider', unit: 'px', min: 50, max: 600 },
+			{ name: 'padding', value: '16px', type: 'text', unit: 'px' },
+			{ name: 'margin', value: '8px', type: 'text', unit: 'px' }
 		]
 	},
 	{
