@@ -14,7 +14,7 @@
 
 			@switch (property.type) {
 			@case ('color') {
-			<div>
+			<div class="flex-row space_between">
 				{{property.name}}
 				<input type="color" class="input-color" />
 			</div>
@@ -23,11 +23,11 @@
 			<div>{{property.name}} - {{property.type}}</div>
 			}
 			@case ('text') {
-			<div>{{property.name}} - <input type="text" />
+			<div class="flex-row space_between">{{property.name}} - <input type="text" />
 			</div>
 			}
 			@case ('select') {
-			<div>{{property.name}} -
+			<div class="flex-row space_between">{{property.name}} -
 				<select class="input-select">
 					@for (option of property?.options; track option) {
 					<option [value]="option">{{ option }}</option>
@@ -36,13 +36,13 @@
 			</div>
 			}
 			@case ('toggle') {
-			<div>{{property.name}} -
+			<div class="flex-row space_between">{{property.name}} -
 
 			</div>
 			}
 			@case ('number') {
-			<div>{{property.name}} -
-				<div class="number-control">
+			<div class="flex-row space_between">{{property.name}} -
+				<div class="number-control flex-row">
 					<button class="btn">–</button>
 					<input type="number" [min]="property.min" [max]="property.max" />
 					<button class="btn">+</button>
