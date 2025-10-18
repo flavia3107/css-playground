@@ -40,11 +40,19 @@
 
 			</div>
 			}
-			@case ('slider') {
-			<div>{{property.name}} - {{property.type}}</div>
+			@case ('number') {
+			<div>{{property.name}} -
+				<div class="number-control">
+					<button class="btn">–</button>
+					<input type="number" [min]="property.min" [max]="property.max" />
+					<button class="btn">+</button>
+					@if(property.unit){
+					<span class="unit">{{ property.unit }}</span>
+					}
+				</div>
+			</div>
 			}
 			}
-
 			}
 
 		</div>
