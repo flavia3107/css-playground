@@ -11,23 +11,28 @@
 		</mat-expansion-panel-header>
 		<div class="panel-content">
 			@for(property of config.properties; track property){
-
 			@switch (property.type) {
 			@case ('color') {
 			<div class="flex-row space_between">
-				{{property.name}}
+				{{property.name | camelToWords}}
 				<input type="color" class="input-color" />
 			</div>
 			}
 			@case ('range') {
-			<div>{{property.name}} - {{property.type}}</div>
+			<div>
+				{{property.name | camelToWords}}
+				{{property.type}}
+			</div>
 			}
 			@case ('text') {
-			<div class="flex-row space_between">{{property.name}} - <input type="text" />
+			<div class="flex-row space_between">
+				{{property.name | camelToWords}}
+				<input type="text" />
 			</div>
 			}
 			@case ('select') {
-			<div class="flex-row space_between">{{property.name}} -
+			<div class="flex-row space_between">
+				{{property.name | camelToWords}}
 				<select class="input-select">
 					@for (option of property?.options; track option) {
 					<option [value]="option">{{ option }}</option>
@@ -36,12 +41,13 @@
 			</div>
 			}
 			@case ('toggle') {
-			<div class="flex-row space_between">{{property.name}} -
-
+			<div class="flex-row space_between">
+				{{property.name | camelToWords}}
 			</div>
 			}
 			@case ('number') {
-			<div class="flex-row space_between">{{property.name}} -
+			<div class="flex-row space_between">
+				{{property.name | camelToWords}}
 				<div class="number-control flex-row">
 					<button class="btn">–</button>
 					<input type="number" [min]="property.min" [max]="property.max" />

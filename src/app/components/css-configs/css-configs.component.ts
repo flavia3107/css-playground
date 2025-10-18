@@ -3,12 +3,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CSS_CONFIG } from 'src/app/app.config';
+import { CamelToWordsPipe } from 'src/shared/custom-pipes/camel-to-words.pipe';
 
 @Component({
   selector: 'app-css-configs',
   templateUrl: './css-configs.component.html',
   styleUrls: ['./css-configs.component.scss'],
-  imports: [MatExpansionModule, MatIconModule],
+  imports: [MatExpansionModule, MatIconModule, CamelToWordsPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CssConfigsComponent {
