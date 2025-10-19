@@ -60,8 +60,16 @@ select {
 	text-align: center;
 	border: 1px dotted #c0c0c0;
 	background: #fff;
+
+	&:focus-visible {
+		outline: none;
+	}
 }
 
 input[type="number"] {
 	width: 3.5rem;
+}
+
+select {
+	text-align: start;
 }
