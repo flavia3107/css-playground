@@ -33,4 +33,12 @@ mat-panel-description {
 	width: 100%;
 	box-sizing: border-box;
 	min-height: 5rem;
+	gap: 1rem;
+}
+
+.input-container {
+	font-size: 0.9rem;
+	color: #5b5b5b;
+	background: #f8f8f8;
+	padding: 1.2rem 0.7rem;
 }
