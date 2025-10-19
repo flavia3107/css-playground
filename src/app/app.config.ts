@@ -60,8 +60,8 @@ interface BaseProperty {
 
 interface SimpleProperty extends BaseProperty {
 	type: 'color' | 'text' | 'number' | 'range' | 'toggle';
-	min?: number;
-	max?: number;
+	min?: number | null;
+	max?: number | null;
 	step?: number;
 }
 
@@ -130,11 +130,11 @@ export const CSS_CONFIG: CSSSection[] = [
 		summary: 'Modify font style, size, weight, and color for text elements.',
 		properties: [
 			{ name: 'fontFamily', value: 'Arial, sans-serif', type: 'select', options: ['Arial', 'Roboto', 'Georgia', 'Courier New', 'Times New Roman'] },
-			{ name: 'fontSize', value: '16px', type: 'number', unit: 'px', min: 8, max: 72 },
+			{ name: 'fontSize', value: '16px', type: 'number', unit: 'px', min: 0, max: 1200 },
 			{ name: 'fontWeight', value: '400', type: 'select', options: ['100', '200', '300', '400', '500', '600', '700', '800', '900'] },
 			{ name: 'color', value: '#333333', type: 'color' },
-			{ name: 'letterSpacing', value: '0px', type: 'number', unit: 'px', min: -5, max: 10 },
-			{ name: 'lineHeight', value: '1.5', type: 'number', min: 1, max: 3, step: 0.1 },
+			{ name: 'letterSpacing', value: '0px', type: 'number', unit: 'px', min: -5, max: 50 },
+			{ name: 'lineHeight', value: '1.5', type: 'number', min: -10, max: null, step: 0.1 },
 			{ name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'text' },
 			{ name: 'textAlign', value: 'center', type: 'select', options: ['left', 'center', 'right', 'justify'] }
 		]
@@ -144,8 +144,8 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'border_outer',
 		summary: 'Set element dimensions and internal/external spacing.',
 		properties: [
-			{ name: 'width', value: '300px', type: 'number', unit: 'px', min: 50, max: 800 },
-			{ name: 'height', value: '200px', type: 'number', unit: 'px', min: 50, max: 600 },
+			{ name: 'width', value: '300px', type: 'number', unit: 'px', min: 0, max: null },
+			{ name: 'height', value: '200px', type: 'number', unit: 'px', min: 50, max: null },
 			{ name: 'padding', value: '16px', type: 'text', unit: 'px' },
 			{ name: 'margin', value: '8px', type: 'text', unit: 'px' }
 		]
@@ -182,9 +182,9 @@ export const CSS_CONFIG: CSSSection[] = [
 		summary: 'Control animation transitions for smooth style changes.',
 		properties: [
 			{ name: 'transitionProperty', value: 'all', type: 'text' },
-			{ name: 'transitionDuration', value: '0.3s', type: 'text' },
+			{ name: 'transitionDuration', value: '0.3', type: 'number', unit: 's', min: 0, max: null },
 			{ name: 'transitionTimingFunction', value: 'ease-in-out', type: 'select', options: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'] },
-			{ name: 'transitionDelay', value: '0s', type: 'text' }
+			{ name: 'transitionDelay', value: '0', type: 'number', unit: 's', min: 0, max: null }
 		]
 	},
 	{

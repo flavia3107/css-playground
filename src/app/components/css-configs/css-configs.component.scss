@@ -42,3 +42,26 @@ mat-panel-description {
 	background: #f8f8f8;
 	padding: 1.2rem 0.7rem;
 }
+
+.btn {
+	background: transparent;
+	border: none;
+}
+
+.number-control {
+	gap: 0.5rem;
+	align-items: center;
+}
+
+input,
+select {
+	font-size: 1rem;
+	padding: 0.2rem 0.5rem;
+	text-align: center;
+	border: 1px dotted #c0c0c0;
+	background: #fff;
+}
+
+input[type="number"] {
+	width: 3.5rem;
+}
