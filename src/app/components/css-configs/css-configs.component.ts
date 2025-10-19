@@ -4,12 +4,13 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CSS_CONFIG } from 'src/app/app.config';
 import { CamelToWordsPipe } from 'src/shared/custom-pipes/camel-to-words.pipe';
+import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-fields.component';
 
 @Component({
   selector: 'app-css-configs',
   templateUrl: './css-configs.component.html',
   styleUrls: ['./css-configs.component.scss'],
-  imports: [MatExpansionModule, MatIconModule, CamelToWordsPipe],
+  imports: [MatExpansionModule, MatIconModule, CamelToWordsPipe, CustomInputFieldsComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CssConfigsComponent {

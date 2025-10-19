@@ -18,10 +18,10 @@
 				<input type="color" class="input-color" />
 			</div>
 			}
-			@case ('range') {
-			<div>
+			@case ('custom') {
+			<div class="flex-row space_between input-container">
 				{{property.name | camelToWords}}
-				{{property.type}}
+				<app-custom-input-fields />
 			</div>
 			}
 			@case ('text') {

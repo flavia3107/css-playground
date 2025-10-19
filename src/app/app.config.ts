@@ -59,7 +59,7 @@ interface BaseProperty {
 }
 
 interface SimpleProperty extends BaseProperty {
-	type: 'color' | 'text' | 'number' | 'range' | 'toggle';
+	type: 'color' | 'text' | 'number' | 'range' | 'toggle' | 'custom';
 	min?: number | null;
 	max?: number | null;
 	step?: number;
@@ -90,7 +90,7 @@ export const CSS_CONFIG: CSSSection[] = [
 		summary: 'Customize background colors, gradients, and opacity.',
 		properties: [
 			{ name: 'backgroundColor', value: '#3498db', type: 'color' },
-			{ name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'text' },
+			{ name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom' },
 			{ name: 'backgroundImage', value: '', type: 'text' },
 			{ name: 'backgroundSize', value: 'cover', type: 'select', options: ['auto', 'cover', 'contain'] },
 			{ name: 'backgroundRepeat', value: 'no-repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'] },
@@ -135,7 +135,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'color', value: '#333333', type: 'color' },
 			{ name: 'letterSpacing', value: '0px', type: 'number', unit: 'px', min: -5, max: 50 },
 			{ name: 'lineHeight', value: '1.5', type: 'number', min: -10, max: null, step: 0.1 },
-			{ name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'text' },
+			{ name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom' },
 			{ name: 'textAlign', value: 'center', type: 'select', options: ['left', 'center', 'right', 'justify'] }
 		]
 	},
@@ -146,8 +146,8 @@ export const CSS_CONFIG: CSSSection[] = [
 		properties: [
 			{ name: 'width', value: '300px', type: 'number', unit: 'px', min: 0, max: null },
 			{ name: 'height', value: '200px', type: 'number', unit: 'px', min: 50, max: null },
-			{ name: 'padding', value: '16px', type: 'text', unit: 'px' },
-			{ name: 'margin', value: '8px', type: 'text', unit: 'px' }
+			{ name: 'padding', value: '16px', type: 'custom', unit: 'px' },
+			{ name: 'margin', value: '8px', type: 'custom', unit: 'px' }
 		]
 	},
 	{
