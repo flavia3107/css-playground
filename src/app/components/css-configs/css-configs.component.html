@@ -19,9 +19,9 @@
 			</div>
 			}
 			@case ('custom') {
-			<div class="flex-row space_between input-container">
+			<div class="flex-column space_between input-container">
 				{{property.name | camelToWords}}
-				<app-custom-input-fields />
+				<app-custom-input-fields [properties]="property.props" />
 			</div>
 			}
 			@case ('text') {

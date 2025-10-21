@@ -3,11 +3,35 @@
 	<label class="main-label">{{ label() }}</label>
 	}
 
-	<div class="inputs-row">
-		@for (prop of properties(); track prop.name) {
-		<div class="input-item">
-			<span class="prop-label">{{ prop.label || prop.name }}</span>
+	<div class="inputs-row flex-row">
+		@for (property of properties(); track property.name) {
+		@switch (property.type) {
+		@case ('color') {
+		<input type="color" class="input-color" />
+		}
+		@case ('text') {
+		<input type="text" />
+		}
+		@case ('select') {
+		<select class="input-select">
+			@for (option of property?.options; track option) {
+			<option [value]="option">{{ option }}</option>
+			}
+		</select>
+		}
+		@case ('number') {
+		<div class="number-control flex-row">
+			<button class="btn">–</button>
+			<input type="number" [min]="property.min" [max]="property.max" />
+			<button class="btn">+</button>
+			@if(property.unit){
+			<span class="unit">{{ property.unit }}</span>
+			}
+		</div>
+		}
+		}
 
+		<!-- <div class="input-item">
 			<div class="input-group">
 				<input [type]="prop.type || 'number'" [(ngModel)]="prop.value" [min]="prop.min" [max]="prop.max"
 					[step]="prop.step || 1" (ngModelChange)="update()" />
@@ -15,7 +39,7 @@
 				<span class="unit">{{ prop.unit }}</span>
 				}
 			</div>
-		</div>
+		</div> -->
 		}
 	</div>
 </div>

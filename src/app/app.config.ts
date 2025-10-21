@@ -56,6 +56,7 @@ interface BaseProperty {
 	value: string | number | boolean;
 	label?: string;
 	unit?: string;
+	props?: any
 }
 
 interface SimpleProperty extends BaseProperty {
@@ -90,7 +91,14 @@ export const CSS_CONFIG: CSSSection[] = [
 		summary: 'Customize background colors, gradients, and opacity.',
 		properties: [
 			{ name: 'backgroundColor', value: '#3498db', type: 'color' },
-			{ name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom' },
+			{
+				name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', props: [
+					{ name: 'type', value: 'linear', type: 'select', options: ['linear', 'radial'] },
+					{ name: 'angle', value: '90', type: 'number', unit: 'deg', min: 0, max: 360, step: 1 },
+					{ name: 'color_1', type: 'color', value: '#3498db' },
+					{ name: 'color_1', type: 'color', value: '#3498db' }
+				]
+			},
 			{ name: 'backgroundImage', value: '', type: 'text' },
 			{ name: 'backgroundSize', value: 'cover', type: 'select', options: ['auto', 'cover', 'contain'] },
 			{ name: 'backgroundRepeat', value: 'no-repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'] },
