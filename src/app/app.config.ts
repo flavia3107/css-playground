@@ -59,7 +59,7 @@ interface BaseProperty {
 }
 
 interface SimpleProperty extends BaseProperty {
-	type: 'color' | 'text' | 'number' | 'range' | 'toggle' | 'custom';
+	type: 'color' | 'text' | 'number' | 'toggle' | 'custom';
 	min?: number | null;
 	max?: number | null;
 	step?: number;
