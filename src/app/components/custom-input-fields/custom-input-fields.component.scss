@@ -1,0 +1,20 @@
+input,
+select {
+	font-size: 1rem;
+	padding: 0.2rem;
+	text-align: center;
+	border: 1px dotted #c0c0c0;
+	background: #fff;
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+input[type="number"] {
+	width: 3rem;
+}
+
+select {
+	text-align: start;
+}

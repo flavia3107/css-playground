@@ -21,25 +21,13 @@
 		}
 		@case ('number') {
 		<div class="number-control flex-row">
-			<button class="btn">–</button>
 			<input type="number" [min]="property.min" [max]="property.max" />
-			<button class="btn">+</button>
 			@if(property.unit){
 			<span class="unit">{{ property.unit }}</span>
 			}
 		</div>
 		}
 		}
-
-		<!-- <div class="input-item">
-			<div class="input-group">
-				<input [type]="prop.type || 'number'" [(ngModel)]="prop.value" [min]="prop.min" [max]="prop.max"
-					[step]="prop.step || 1" (ngModelChange)="update()" />
-				@if (prop.unit) {
-				<span class="unit">{{ prop.unit }}</span>
-				}
-			</div>
-		</div> -->
 		}
 	</div>
 </div>
