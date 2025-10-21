@@ -143,7 +143,14 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'color', value: '#333333', type: 'color' },
 			{ name: 'letterSpacing', value: '0px', type: 'number', unit: 'px', min: -5, max: 50 },
 			{ name: 'lineHeight', value: '1.5', type: 'number', min: -10, max: null, step: 0.1 },
-			{ name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom' },
+			{
+				name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom', props: [
+					{ name: 'offsetX', label: 'X', value: '0', type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
+					{ name: 'offsetY', label: 'Y', value: '1', type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
+					{ name: 'blur', label: 'Blur', value: '3', type: 'number', unit: 'px', min: 0, max: 100, step: 1 },
+					{ name: 'color', label: 'Color', value: 'rgba(0,0,0,0.3)', type: 'color' }
+				]
+			},
 			{ name: 'textAlign', value: 'center', type: 'select', options: ['left', 'center', 'right', 'justify'] }
 		]
 	},
@@ -154,8 +161,24 @@ export const CSS_CONFIG: CSSSection[] = [
 		properties: [
 			{ name: 'width', value: '300px', type: 'number', unit: 'px', min: 0, max: null },
 			{ name: 'height', value: '200px', type: 'number', unit: 'px', min: 50, max: null },
-			{ name: 'padding', value: '16px', type: 'custom', unit: 'px' },
-			{ name: 'margin', value: '8px', type: 'custom', unit: 'px' }
+			{
+				name: 'padding', value: '16px', type: 'custom', unit: 'px', props: [
+
+					{ name: 'paddingTop', label: 'Top', value: '8', type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'paddingRight', label: 'Right', value: '12', type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'paddingBottom', label: 'Bottom', value: '8', type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'paddingLeft', label: 'Left', value: '12', type: 'number', unit: 'px', min: 0, max: 200, step: 1 }
+
+				]
+			},
+			{
+				name: 'margin', value: '8px', type: 'custom', unit: 'px', props: [
+					{ name: 'marginTop', label: 'Top', value: '8', type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
+					{ name: 'marginRight', label: 'Right', value: '12', type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
+					{ name: 'marginBottom', label: 'Bottom', value: '8', type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
+					{ name: 'marginLeft', label: 'Left', value: '12', type: 'number', unit: 'px', min: -200, max: 200, step: 1 }
+				]
+			}
 		]
 	},
 	{
