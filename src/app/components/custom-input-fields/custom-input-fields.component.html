@@ -2,9 +2,9 @@
 	@if (label()) {
 	<label class="main-label">{{ label() }}</label>
 	}
-
-	<div class="inputs-row flex-row">
-		@for (property of properties(); track property.name) {
+	@for (property of properties(); track property.name) {
+	<div class="inputs-row flex-row space_between">
+		{{property.name}}
 		@switch (property.type) {
 		@case ('color') {
 		<input type="color" class="input-color" />
@@ -20,7 +20,7 @@
 		</select>
 		}
 		@case ('number') {
-		<div class="number-control flex-row">
+		<div class="number-control flex-row middle">
 			<input type="number" [min]="property.min" [max]="property.max" />
 			@if(property.unit){
 			<span class="unit">{{ property.unit }}</span>
@@ -28,6 +28,6 @@
 		</div>
 		}
 		}
-		}
 	</div>
+	}
 </div>
