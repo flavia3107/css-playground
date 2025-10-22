@@ -25,8 +25,11 @@
 		</select>
 		}
 		@case ('number') {
-		<input type="number" [min]="property.min" [max]="property.max" />
-		}
+		<div class="number-control flex-row ">
+			<button class="btn">–</button>
+			<input type="number" [min]="property.min" [max]="property.max" />
+			<button class="btn">+</button>
+		</div> }
 		}
 	</div>
 	}

@@ -12,7 +12,7 @@ select {
 }
 
 input[type="number"] {
-	width: 3rem;
+	width: 4.1rem;
 }
 
 select {
@@ -25,4 +25,14 @@ select {
 
 p {
 	margin: 0;
+}
+
+.btn {
+	background: transparent;
+	border: none;
+}
+
+.number-control {
+	gap: 0.5rem;
+	align-items: center;
 }
