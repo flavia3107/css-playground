@@ -11,42 +11,76 @@
 		</mat-expansion-panel-header>
 		<div class="panel-content flex-column">
 			@for(property of config.properties; track property){
-			<div class="flex-row space_between input-container">
-				<p>
-					{{property.name | camelToWords}}
+			@switch (property.type) {
+			@case ('color') {
+			<div class="flex-row space_between input-container middle">
+				<p> {{property.name | camelToWords}}
 					@if(property.unit){
-					<span class="unit">({{ property.unit }})</span>
+					<span class="unit">{{ property.unit }}</span>
 					}
 				</p>
-				@switch (property.type) {
-				@case ('color') {
 				<input type="color" class="input-color" />
-				}
-				@case ('custom') {
+			</div>
+			}
+			@case ('custom') {
+			<div class="flex-column space_between input-container">
+				<p> {{property.name | camelToWords}}
+					@if(property.unit){
+					<span class="unit">{{ property.unit }}</span>
+					}
+				</p>
 				<app-custom-input-fields [properties]="property.props" />
-				}
-				@case ('text') {
-				<input type="text" />
-				}
-				@case ('select') {
+			</div>
+			}
+			@case ('text') {
+			<div class="flex-row space_between input-container middle">
+				<p> {{property.name | camelToWords}}
+					@if(property.unit){
+					<span class="unit">{{ property.unit }}</span>
+					}
+				</p> <input type="text" />
+			</div>
+			}
+			@case ('select') {
+			<div class="flex-row space_between input-container middle">
+				<p> {{property.name | camelToWords}}
+					@if(property.unit){
+					<span class="unit">{{ property.unit }}</span>
+					}
+				</p>
 				<select class="input-select">
 					@for (option of property?.options; track option) {
 					<option [value]="option">{{ option }}</option>
 					}
 				</select>
-				}
-				@case ('toggle') {
-				}
-				@case ('number') {
-				<div class="number-control flex-row">
+			</div>
+			}
+			@case ('toggle') {
+			<div class="flex-row space_between input-container middle">
+				<p> {{property.name | camelToWords}}
+					@if(property.unit){
+					<span class="unit">{{ property.unit }}</span>
+					}
+				</p>
+			</div>
+			}
+			@case ('number') {
+			<div class="flex-row space_between input-container middle">
+				<p> {{property.name | camelToWords}}
+					@if(property.unit){
+					<span class="unit">{{ property.unit }}</span>
+					}
+				</p>
+				<div class="number-control flex-row ">
 					<button class="btn">–</button>
 					<input type="number" [min]="property.min" [max]="property.max" />
 					<button class="btn">+</button>
 				</div>
-				}
-				}
 			</div>
 			}
+			}
+			}
+
 		</div>
 	</mat-expansion-panel>
 	}
