@@ -77,3 +77,8 @@ select {
 p {
 	margin: 0;
 }
+
+.nested {
+	flex-direction: column;
+	align-items: stretch;
+}

@@ -4,12 +4,7 @@
 	}
 	@for (property of properties(); track property.name) {
 	<div class="inputs-row flex-row space_between">
-		<p>
-			{{property.name}}
-			@if(property.unit){
-			<span class="unit">({{ property.unit }})</span>
-			}
-		</p>
+		<p> {{property.label}} </p>
 		@switch (property.type) {
 		@case ('color') {
 		<input type="color" class="input-color" />

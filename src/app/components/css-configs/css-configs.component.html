@@ -11,7 +11,7 @@
 		</mat-expansion-panel-header>
 		<div class="panel-content flex-column">
 			@for(property of config.properties; track property){
-			<div class="input-container flex-row space_between" [class.flex-column]="property.type === 'custom'">
+			<div class="input-container flex-row space_between middle" [class.nested]="property.type === 'custom'">
 				<p> {{property.label}} </p>
 				@switch (property.type) {
 				@case ('color') {

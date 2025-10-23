@@ -92,9 +92,9 @@ export const CSS_CONFIG: CSSSection[] = [
 		properties: [
 			{ name: 'backgroundColor', value: '#3498db', type: 'color', 'label': 'Color' },
 			{
-				name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', props: [
-					{ name: 'type', value: 'linear', type: 'select', options: ['linear', 'radial'], label: 'Gradient Type' },
-					{ name: 'angle', value: '90', type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Gradient Angle' },
+				name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', props: [
+					{ name: 'type', value: 'linear', type: 'select', options: ['linear', 'radial'], label: 'Type' },
+					{ name: 'angle', value: '90', type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle' },
 					{ name: 'color_1', type: 'color', value: '#3498db', label: 'First Color' },
 					{ name: 'color_1', type: 'color', value: '#3498db', label: 'Second Color' }
 				]
@@ -144,7 +144,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'letterSpacing', value: '0px', type: 'number', unit: 'px', min: -5, max: 50, label: 'Letter Spacing' },
 			{ name: 'lineHeight', value: '1.5', type: 'number', min: -10, max: null, step: 0.1, label: 'Line Height' },
 			{
-				name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom', props: [
+				name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom', label: 'Text Shadow', props: [
 					{ name: 'offsetX', label: 'X', value: '0', type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
 					{ name: 'offsetY', label: 'Y', value: '1', type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
 					{ name: 'blur', label: 'Blur', value: '3', type: 'number', unit: 'px', min: 0, max: 100, step: 1 },

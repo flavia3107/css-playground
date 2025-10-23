@@ -16,6 +16,11 @@ body {
 	align-items: center;
 }
 
+input[type="color"] {
+	width: 4.5rem;
+	height: 2.5rem;
+}
+
 .preview-container {
 	width: 50%;
 }
