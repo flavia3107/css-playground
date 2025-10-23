@@ -12,11 +12,7 @@
 		<div class="panel-content flex-column">
 			@for(property of config.properties; track property){
 			<div class="input-container flex-row space_between" [class.flex-column]="property.type === 'custom'">
-				<p> {{property.name | camelToWords}}
-					@if(property.unit && property.type !=='custom'){
-					<span class="unit">{{ property.unit }}</span>
-					}
-				</p>
+				<p> {{property.label}} </p>
 				@switch (property.type) {
 				@case ('color') {
 				<input type="color" class="input-color" />
