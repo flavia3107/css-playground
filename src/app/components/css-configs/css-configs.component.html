@@ -15,16 +15,16 @@
 				<p> {{property.label}} </p>
 				@switch (property.type) {
 				@case ('color') {
-				<input type="color" class="input-color" />
+				<input type="color" class="input-color" [(ngModel)]="property.value" />
 				}
 				@case ('custom') {
 				<app-custom-input-fields [properties]="property.props" />
 				}
 				@case ('text') {
-				<input type="text" />
+				<input type="text" [(ngModel)]="property.value" />
 				}
 				@case ('select') {
-				<select class="input-select">
+				<select class="input-select" [(ngModel)]="property.value">
 					@for (option of property?.options; track option) {
 					<option [value]="option">{{ option }}</option>
 					}
