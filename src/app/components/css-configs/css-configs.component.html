@@ -35,9 +35,9 @@
 				}
 				@case ('number') {
 				<div class="number-control flex-row ">
-					<button class="btn">–</button>
-					<input type="number" [min]="property.min" [max]="property.max" />
-					<button class="btn">+</button>
+					<button class="btn" (click)="decrease()">–</button>
+					<input type="number" [(ngModel)]="property.value" />
+					<button class="btn" (click)="increase()">+</button>
 				</div>
 				}
 				}
