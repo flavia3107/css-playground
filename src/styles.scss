@@ -16,6 +16,10 @@ body {
 	align-items: center;
 }
 
+button:hover {
+	cursor: pointer;
+}
+
 input[type="color"] {
 	width: 4.5rem;
 	height: 2.5rem;
