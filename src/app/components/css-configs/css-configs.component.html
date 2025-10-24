@@ -10,7 +10,7 @@
 			</mat-panel-description>
 		</mat-expansion-panel-header>
 		<div class="panel-content flex-column">
-			@for(property of config.properties; track property){
+			@for(property of config.properties; track property.name){
 			<div class="input-container flex-row space_between middle" [class.nested]="property.type === 'custom'">
 				<p> {{property.label}} </p>
 				@switch (property.type) {
@@ -35,9 +35,9 @@
 				}
 				@case ('number') {
 				<div class="number-control flex-row ">
-					<button class="btn" (click)="decrease()">–</button>
+					<button class="btn" (click)="decrease(property)">–</button>
 					<input type="number" [(ngModel)]="property.value" />
-					<button class="btn" (click)="increase()">+</button>
+					<button class="btn" (click)="increase(property)">+</button>
 				</div>
 				}
 				}

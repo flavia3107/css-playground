@@ -51,7 +51,7 @@ export const STATES = {
 	]
 }
 
-interface BaseProperty {
+export interface BaseProperty {
 	name: string;
 	value: string | number | boolean;
 	label?: string;
@@ -59,19 +59,19 @@ interface BaseProperty {
 	props?: any
 }
 
-interface SimpleProperty extends BaseProperty {
+export interface SimpleProperty extends BaseProperty {
 	type: 'color' | 'text' | 'number' | 'toggle' | 'custom';
 	min?: number | null;
 	max?: number | null;
 	step?: number;
 }
 
-interface SelectProperty extends BaseProperty {
+export interface SelectProperty extends BaseProperty {
 	type: 'select';
 	options: string[];
 }
 
-interface BooleanProperty extends BaseProperty {
+export interface BooleanProperty extends BaseProperty {
 	type: 'boolean';
 }
 

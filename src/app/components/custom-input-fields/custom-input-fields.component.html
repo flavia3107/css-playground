@@ -21,9 +21,9 @@
 		}
 		@case ('number') {
 		<div class="number-control flex-row ">
-			<button class="btn">–</button>
+			<button class="btn" (click)="decrease(property)">–</button>
 			<input type="number" [(ngModel)]="property.value" />
-			<button class="btn">+</button>
+			<button class="btn" (click)="increase(property)">+</button>
 		</div> }
 		}
 	</div>

@@ -1,5 +1,6 @@
-import { Component, input, OnInit, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SimpleProperty } from 'src/app/app.config';
 
 @Component({
   selector: 'app-custom-input-fields',
@@ -12,6 +13,13 @@ export class CustomInputFieldsComponent {
   label = input<string>();
   valueChange = output<any[]>();
 
-  update() {
+  public increase(property: SimpleProperty) {
+    if (typeof property.value === 'number')
+      property.value++;
+  }
+
+  public decrease(property: SimpleProperty) {
+    if (typeof property.value === 'number')
+      property.value--;
   }
 }
