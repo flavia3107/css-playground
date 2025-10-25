@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { inject } from '@angular/core/primitives/di';
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { CSS_CONFIG, SimpleProperty } from 'src/app/app.config';
+import { CssConfigService } from '../../services/cssconfig.service';
 import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-fields.component';
 
 @Component({
@@ -13,6 +15,7 @@ import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CssConfigsComponent {
+  // private _cssConfigService = inject(CssConfigService);
   readonly panelOpenState = signal(false);
   readonly cssConfigs = CSS_CONFIG;
 
@@ -24,5 +27,10 @@ export class CssConfigsComponent {
   public decrease(property: SimpleProperty) {
     if (typeof property.value === 'number')
       property.value--;
+  }
+
+  public updateProperty(property: string, value: string | number | boolean) {
+    console.log('PROP', property, value)
+    // this._cssConfigService.reset();
   }
 }
