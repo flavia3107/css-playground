@@ -15,22 +15,25 @@ import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CssConfigsComponent {
-  // private _cssConfigService = inject(CssConfigService);
   readonly panelOpenState = signal(false);
   readonly cssConfigs = CSS_CONFIG;
+
+  constructor(private _cssConfigService: CssConfigService) { }
 
   public increase(property: SimpleProperty) {
     if (typeof property.value === 'number')
       property.value++;
+    this.updateProperty(property.name, property.value)
   }
 
   public decrease(property: SimpleProperty) {
     if (typeof property.value === 'number')
       property.value--;
+    this.updateProperty(property.name, property.value)
   }
 
   public updateProperty(property: string, value: string | number | boolean) {
     console.log('PROP', property, value)
-    // this._cssConfigService.reset();
+    this._cssConfigService.reset();
   }
 }

@@ -9,11 +9,11 @@ export class CssConfigService {
   //   return `.preview-box {\n  ${cssLines.join('\n  ')}\n}`;
   // });
 
-  constructor() {
-    effect(() => {
-      localStorage.setItem('css-config', JSON.stringify(this.config()));
-    });
-  }
+  // constructor() {
+  //   effect(() => {
+  //     localStorage.setItem('css-config', JSON.stringify(this.config()));
+  //   });
+  // }
 
   updateProperty(property: string, value: any) {
     this.config.update((current) => ({ ...current, [property]: value }));

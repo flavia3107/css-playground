@@ -7,13 +7,15 @@
 		<p> {{property.label}} </p>
 		@switch (property.type) {
 		@case ('color') {
-		<input type="color" [(ngModel)]="property.value" class="input-color" />
+		<input type="color" [(ngModel)]="property.value" class="input-color"
+			(ngModelChange)="updateProperty(property.name, $event)" />
 		}
 		@case ('text') {
-		<input type="text" [(ngModel)]="property.value" />
+		<input type="text" [(ngModel)]="property.value" (ngModelChange)="updateProperty(property.name, $event)" />
 		}
 		@case ('select') {
-		<select class="input-select" [(ngModel)]="property.value">
+		<select class="input-select" [(ngModel)]="property.value"
+			(ngModelChange)="updateProperty(property.name, $event)">
 			@for (option of property?.options; track option) {
 			<option [value]="option">{{ option }}</option>
 			}
@@ -22,7 +24,7 @@
 		@case ('number') {
 		<div class="number-control flex-row ">
 			<button class="btn" (click)="decrease(property)">–</button>
-			<input type="number" [(ngModel)]="property.value" />
+			<input type="number" [(ngModel)]="property.value" (ngModelChange)="updateProperty(property.name, $event)" />
 			<button class="btn" (click)="increase(property)">+</button>
 		</div> }
 		}
