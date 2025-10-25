@@ -17,6 +17,7 @@ export class CssConfigService {
 
   updateProperty(property: string, value: any) {
     this.config.update((current) => ({ ...current, [property]: value }));
+    console.log('HERE', this.config())
   }
 
   reset() {

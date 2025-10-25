@@ -30,7 +30,6 @@ export class CustomInputFieldsComponent {
   }
 
   public updateProperty(property: string, value: string | number | boolean) {
-    console.log('PROP', property, value)
-    this._cssConfigService.reset();
+    this._cssConfigService.updateProperty(property, value);
   }
 }
