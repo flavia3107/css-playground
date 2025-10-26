@@ -229,3 +229,62 @@ export const CSS_CONFIG: CSSSection[] = [
 	}
 ];
 
+export const ELEMENTS = [
+	{
+		text: [
+			{ id: 'p', type: 'Paragraph', category: 'Text', defaultStyles: { 'color': '#555', 'font-size': '14px', 'line-height': '1.5' } },
+			{ id: 'h1', type: 'Header 1', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '32px', 'font-weight': 'bold' } },
+			{ id: 'h2', type: 'Header 2', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '28px', 'font-weight': 'bold' } },
+			{ id: 'h3', type: 'Header 3', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '24px', 'font-weight': 'bold' } },
+			{ id: 'span', type: 'Span', category: 'Text', defaultStyles: { 'color': '#000', 'font-size': '14px' } },
+			{ id: 'blockquote', type: 'Blockquote', category: 'Text', defaultStyles: { 'color': '#666', 'font-size': '16px', 'padding-left': '20px', 'border-left': '4px solid #ccc' } },
+
+		],
+		form: [
+			{ id: 'button', type: 'Button', category: 'Form', defaultStyles: { 'background-color': '#007bff', 'color': '#fff', 'border-radius': '4px', 'padding': '10px 20px', 'font-size': '16px', 'border': 'none', 'cursor': 'pointer' } },
+			{ id: 'input', type: 'Input', category: 'Form', defaultStyles: { 'width': '200px', 'padding': '8px 12px', 'border': '1px solid #ccc', 'border-radius': '4px', 'font-size': '16px' } },
+			{ id: 'textarea', type: 'Textarea', category: 'Form', defaultStyles: { 'width': '300px', 'height': '100px', 'padding': '10px', 'border': '1px solid #ccc', 'border-radius': '4px', 'font-size': '16px', 'resize': 'vertical' } },
+			{ id: 'select', type: 'Select', category: 'Form', defaultStyles: { 'width': '220px', 'padding': '8px', 'border': '1px solid #ccc', 'border-radius': '4px', 'font-size': '16px' } },
+			{ id: 'label', type: 'Label', category: 'Form', defaultStyles: { 'font-size': '14px', 'color': '#333' } },
+		],
+		layout: [
+			{ id: 'div', type: 'Div', category: 'Layout', defaultStyles: { 'width': '150px', 'height': '150px', 'background-color': '#e0e0e0', 'border': '1px solid #ccc', 'border-radius': '4px' } },
+			{ id: 'section', type: 'Section', category: 'Layout', defaultStyles: { 'padding': '20px', 'background-color': '#f4f4f4' } },
+			{ id: 'article', type: 'Article', category: 'Layout', defaultStyles: { 'padding': '20px', 'background-color': '#fff', 'border': '1px solid #ccc', 'border-radius': '4px' } },
+			{ id: 'header', type: 'Header', category: 'Layout', defaultStyles: { 'padding': '20px', 'background-color': '#222', 'color': '#fff' } },
+			{ id: 'footer', type: 'Footer', category: 'Layout', defaultStyles: { 'padding': '20px', 'background-color': '#333', 'color': '#fff' } },
+			{ id: 'nav', type: 'Nav', category: 'Layout', defaultStyles: { 'padding': '10px', 'background-color': '#007bff', 'color': '#fff' } },
+		],
+		media: [
+			{ id: 'img', type: 'Image', category: 'Media', defaultStyles: { 'width': '150px', 'height': '150px', 'border-radius': '8px', 'object-fit': 'cover' } },
+			{ id: 'video', type: 'Video', category: 'Media', defaultStyles: { 'width': '300px', 'height': '200px' } },
+			{ id: 'audio', type: 'Audio', category: 'Media', defaultStyles: { 'width': '300px' } },
+
+		],
+		list: [
+			{ id: 'ul', type: 'Unordered List', category: 'List', defaultStyles: { 'padding-left': '20px', 'color': '#333' } },
+			{ id: 'ol', type: 'Ordered List', category: 'List', defaultStyles: { 'padding-left': '20px', 'color': '#333' } },
+			{ id: 'li', type: 'List Item', category: 'List', defaultStyles: { 'margin-bottom': '5px' } },
+
+		],
+		table: [
+			{ id: 'table', type: 'Table', category: 'Table', defaultStyles: { 'border-collapse': 'collapse', 'width': '100%' } },
+			{ id: 'thead', type: 'Table Head', category: 'Table', defaultStyles: { 'background-color': '#f4f4f4' } },
+			{ id: 'tbody', type: 'Table Body', category: 'Table', defaultStyles: {} },
+			{ id: 'tr', type: 'Table Row', category: 'Table', defaultStyles: {} },
+			{ id: 'td', type: 'Table Cell', category: 'Table', defaultStyles: { 'border': '1px solid #ccc', 'padding': '8px' } },
+			{ id: 'th', type: 'Table Header', category: 'Table', defaultStyles: { 'border': '1px solid #ccc', 'padding': '8px', 'background-color': '#f4f4f4' } },
+		],
+		inline: [
+			{ id: 'a', type: 'Anchor', category: 'Inline', defaultStyles: { 'color': '#007bff', 'text-decoration': 'underline' } },
+			{ id: 'strong', type: 'Strong', category: 'Inline', defaultStyles: { 'font-weight': 'bold' } },
+			{ id: 'em', type: 'Emphasis', category: 'Inline', defaultStyles: { 'font-style': 'italic' } },
+			{ id: 'code', type: 'Code', category: 'Inline', defaultStyles: { 'font-family': 'monospace', 'background-color': '#f4f4f4', 'padding': '2px 4px', 'border-radius': '4px' } },
+
+		],
+		interactive: [
+			{ id: 'details', type: 'Details', category: 'Interactive', defaultStyles: { 'padding': '10px', 'border': '1px solid #ccc', 'border-radius': '4px' } },
+			{ id: 'summary', type: 'Summary', category: 'Interactive', defaultStyles: { 'font-weight': 'bold', 'cursor': 'pointer' } }
+		]
+	}
+];
