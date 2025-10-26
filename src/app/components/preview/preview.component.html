@@ -1,8 +1,10 @@
-@for (element of elements | keyvalue : null; track element.key) {
-<button matButton [matMenuTriggerFor]="menu">{{element.key}}</button>
-<mat-menu #menu="matMenu">
-	@for(option of element.value; track option.type){
-	<button mat-menu-item>{{option.type}}</button>
+<div class="flex-row end elements-list">
+	@for (element of elements | keyvalue : null; track element.key) {
+	<span [matMenuTriggerFor]="menu">{{element.key}}</span>
+	<mat-menu #menu="matMenu">
+		@for(option of element.value; track option.type){
+		<button mat-menu-item>{{option.type}}</button>
+		}
+	</mat-menu>
 	}
-</mat-menu>
-}
+</div>

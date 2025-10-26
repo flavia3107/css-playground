@@ -1,0 +1,14 @@
+span {
+	text-transform: capitalize;
+	border: 1px dotted #dddddd;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 0.25rem 0.5rem;
+	background: #f2f2f2;
+	cursor: pointer;
+}
+
+.elements-list {
+	gap: 0.5rem;
+	padding: 0.7rem;
+}
