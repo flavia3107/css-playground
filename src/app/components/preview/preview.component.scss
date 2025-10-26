@@ -12,3 +12,8 @@ span {
 	gap: 0.5rem;
 	padding: 0.7rem;
 }
+
+.preview-box {
+	height: calc(100% - 4rem);
+	overflow: auto;
+}

@@ -17,15 +17,22 @@ export class PreviewComponent {
 
   insertElement(element: any) {
     console.log('Element', element)
-    // const container = this.previewContainer.nativeElement;
-    // const el = this._renderer.createElement(element.id);
-    // const text = this._renderer.createText(element.label || element.type);
-    // this._renderer.appendChild(el, text);
+    const container = this.previewContainer.nativeElement;
 
-    // for (const [key, value] of Object.entries(element.defaultStyles)) {
-    //   this._renderer.setStyle(el, key, value as string);
-    // }
+    if (container.children.length > 0) {
+      console.log('Clearing old preview...');
+      this._renderer.removeChild(container, container.firstChild);
+    }
 
-    // this._renderer.appendChild(container, el);
+
+    const el = this._renderer.createElement(element.id);
+    const text = this._renderer.createText(element.label || element.type);
+    this._renderer.appendChild(el, text);
+
+    for (const [key, value] of Object.entries(element.defaultStyles)) {
+      this._renderer.setStyle(el, key, value as string);
+    }
+
+    this._renderer.appendChild(container, el);
   }
 }
