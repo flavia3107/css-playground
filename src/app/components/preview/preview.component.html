@@ -1,1 +1,8 @@
-<p>preview works!</p>
+@for (element of elements | keyvalue : null; track element.key) {
+<button matButton [matMenuTriggerFor]="menu">{{element.key}}</button>
+<mat-menu #menu="matMenu">
+	@for(option of element.value; track option.type){
+	<button mat-menu-item>{{option.type}}</button>
+	}
+</mat-menu>
+}
