@@ -3,8 +3,9 @@
 	<span [matMenuTriggerFor]="menu">{{element.key}}</span>
 	<mat-menu #menu="matMenu">
 		@for(option of element.value; track option.type){
-		<button mat-menu-item>{{option.type}}</button>
+		<button mat-menu-item (click)="insertElement(option)">{{option.type}}</button>
 		}
 	</mat-menu>
 	}
 </div>
+<div #previewContainer class="preview-box"></div>

@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SimpleProperty } from 'src/app/app.config';
 import { CssConfigService } from 'src/app/services/cssconfig.service';
@@ -10,11 +10,10 @@ import { CssConfigService } from 'src/app/services/cssconfig.service';
   imports: [FormsModule]
 })
 export class CustomInputFieldsComponent {
+  private _cssConfigService = inject(CssConfigService);
   properties = input<any[]>();
   label = input<string>();
   valueChange = output<any[]>();
-
-  constructor(private _cssConfigService: CssConfigService) { }
 
   public increase(property: SimpleProperty) {
     if (typeof property.value === 'number')
