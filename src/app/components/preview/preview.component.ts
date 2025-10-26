@@ -3,6 +3,7 @@ import { Component, ElementRef, inject, Renderer2, ViewChild } from '@angular/co
 import { ELEMENTS } from 'src/app/app.config';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { CssConfigService } from 'src/app/services/cssconfig.service';
 
 @Component({
   selector: 'app-preview',
@@ -12,11 +13,11 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class PreviewComponent {
   private _renderer = inject(Renderer2);
+  private _cssConfigService = inject(CssConfigService);
   readonly elements = ELEMENTS;
   @ViewChild('previewContainer', { static: true }) previewContainer!: ElementRef<HTMLDivElement>;
 
   insertElement(element: any) {
-    console.log('Element', element)
     const container = this.previewContainer.nativeElement;
 
     if (container.children.length > 0) {
@@ -31,6 +32,7 @@ export class PreviewComponent {
 
     for (const [key, value] of Object.entries(element.defaultStyles)) {
       this._renderer.setStyle(el, key, value as string);
+      this._cssConfigService.updateProperty(key, value);
     }
 
     this._renderer.appendChild(container, el);

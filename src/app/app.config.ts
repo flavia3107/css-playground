@@ -90,18 +90,18 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'texture',
 		summary: 'Customize background colors, gradients, and opacity.',
 		properties: [
-			{ name: 'backgroundColor', value: '#3498db', type: 'color', 'label': 'Color' },
+			{ name: 'background-color', value: '#3498db', type: 'color', 'label': 'Color' },
 			{
-				name: 'backgroundGradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', props: [
+				name: 'background-gradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', props: [
 					{ name: 'type', value: 'linear', type: 'select', options: ['linear', 'radial'], label: 'Type' },
 					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle' },
 					{ name: 'color_1', type: 'color', value: '#3498db', label: 'First Color' },
 					{ name: 'color_1', type: 'color', value: '#3498db', label: 'Second Color' }
 				]
 			},
-			{ name: 'backgroundImage', value: '', type: 'text', label: 'Image' },
-			{ name: 'backgroundSize', value: 'cover', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size' },
-			{ name: 'backgroundRepeat', value: 'no-repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat' },
+			{ name: 'background-image', value: '', type: 'text', label: 'Image' },
+			{ name: 'background-size', value: 'cover', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size' },
+			{ name: 'background-repeat', value: 'no-repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat' },
 			{ name: 'opacity', value: 1, type: 'number', unit: '', min: 0, max: 1, step: 0.1, label: 'Opacity' }
 		]
 	},
@@ -110,13 +110,13 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'rounded_corner',
 		summary: 'Adjust border size, color, and style for the element.',
 		properties: [
-			{ name: 'borderWidth', value: 1, type: 'number', unit: 'px', min: 0, max: 20, label: 'Width' },
-			{ name: 'borderStyle', value: 'solid', type: 'select', options: ['none', 'solid', 'dashed', 'dotted', 'double'], label: 'Style' },
-			{ name: 'borderColor', value: '#2c3e50', type: 'color', label: 'Color' },
-			{ name: 'borderTopLeftRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Left' },
-			{ name: 'borderTopRightRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Right' },
-			{ name: 'borderBottomLeftRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Left' },
-			{ name: 'borderBottomRightRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Right' }
+			{ name: 'border-width', value: 1, type: 'number', unit: 'px', min: 0, max: 20, label: 'Width' },
+			{ name: 'border-style', value: 'solid', type: 'select', options: ['none', 'solid', 'dashed', 'dotted', 'double'], label: 'Style' },
+			{ name: 'border-color', value: '#2c3e50', type: 'color', label: 'Color' },
+			{ name: 'border-top-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Left' },
+			{ name: 'border-top-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Right' },
+			{ name: 'border-bottom-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Left' },
+			{ name: 'border-bottom-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Right' }
 		]
 	},
 	{
@@ -124,12 +124,12 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'tonality',
 		summary: 'Control shadow effects for depth and emphasis.',
 		properties: [
-			{ name: 'boxShadowX', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'X' },
-			{ name: 'boxShadowY', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Y' },
-			{ name: 'boxShadowBlur', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur' },
-			{ name: 'boxShadowSpread', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
-			{ name: 'boxShadowColor', value: 'rgba(0, 0, 0, 0.3)', type: 'color', label: 'Color' },
-			{ name: 'boxShadowInset', value: false, type: 'toggle', label: 'Inset' }
+			{ name: 'box-shadow-x', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'X' },
+			{ name: 'box-shadow-y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Y' },
+			{ name: 'box-shadow-blur', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur' },
+			{ name: 'box-shadow-spread', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
+			{ name: 'box-shadow-color', value: 'rgba(0, 0, 0, 0.3)', type: 'color', label: 'Color' },
+			{ name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset' }
 		]
 	},
 	{
@@ -137,16 +137,16 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'text_fields',
 		summary: 'Modify font style, size, weight, and color for text elements.',
 		properties: [
-			{ name: 'fontFamily', value: 'Arial, sans-serif', type: 'select', options: ['Arial', 'Roboto', 'Georgia', 'Courier New', 'Times New Roman'], label: 'Font Family' },
-			{ name: 'fontSize', value: 16, type: 'number', unit: 'px', min: 0, max: 1200, label: 'Size' },
-			{ name: 'fontWeight', value: 400, type: 'select', options: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], label: 'Weight' },
+			{ name: 'font-family', value: 'Arial, sans-serif', type: 'select', options: ['Arial', 'Roboto', 'Georgia', 'Courier New', 'Times New Roman'], label: 'Font Family' },
+			{ name: 'font-size', value: 16, type: 'number', unit: 'px', min: 0, max: 1200, label: 'Size' },
+			{ name: 'font-weight', value: 400, type: 'select', options: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], label: 'Weight' },
 			{ name: 'color', value: '#333333', type: 'color', label: 'Color' },
-			{ name: 'letterSpacing', value: 0, type: 'number', unit: 'px', min: -5, max: 50, label: 'Letter Spacing' },
-			{ name: 'lineHeight', value: 1.5, type: 'number', min: -10, max: null, step: 0.1, label: 'Line Height' },
+			{ name: 'letter-spacing', value: 0, type: 'number', unit: 'px', min: -5, max: 50, label: 'Letter Spacing' },
+			{ name: 'line-height', value: 1.5, type: 'number', min: -10, max: null, step: 0.1, label: 'Line Height' },
 			{
-				name: 'textShadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom', label: 'Text Shadow', props: [
-					{ name: 'offsetX', label: 'X', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
-					{ name: 'offsetY', label: 'Y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
+				name: 'text-shadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom', label: 'Text Shadow', props: [
+					{ name: 'offset-x', label: 'X', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
+					{ name: 'offset-y', label: 'Y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
 					{ name: 'blur', label: 'Blur', value: 0, type: 'number', unit: 'px', min: 0, max: 100, step: 1 },
 					{ name: 'color', label: 'Color', value: 'rgba(0,0,0,0.3)', type: 'color' }
 				]
@@ -163,18 +163,18 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'height', value: 0, type: 'number', unit: 'px', min: 50, max: null, label: 'Height' },
 			{
 				name: 'padding', value: 0, type: 'custom', label: 'Padding', unit: 'px', props: [
-					{ name: 'paddingTop', label: 'Top', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
-					{ name: 'paddingRight', label: 'Right', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
-					{ name: 'paddingBottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
-					{ name: 'paddingLeft', label: 'Left', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 }
+					{ name: 'padding-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'padding-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'padding-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'padding-left', label: 'Left', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 }
 				]
 			},
 			{
 				name: 'margin', value: 0, type: 'custom', unit: 'px', label: 'Margin', props: [
-					{ name: 'marginTop', label: 'Top', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
-					{ name: 'marginRight', label: 'Right', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
-					{ name: 'marginBottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
-					{ name: 'marginLeft', label: 'Left', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 }
+					{ name: 'margin-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
+					{ name: 'margin-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
+					{ name: 'margin-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
+					{ name: 'margin-left', label: 'Left', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 }
 				]
 			}
 		]
@@ -186,10 +186,10 @@ export const CSS_CONFIG: CSSSection[] = [
 		properties: [
 			{ name: 'rotate', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, label: 'Rotate' },
 			{ name: 'scale', value: 0, type: 'number', min: 0.1, max: 3, step: 0.1, label: 'Scale' },
-			{ name: 'skewX', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew X' },
-			{ name: 'skewY', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew Y' },
-			{ name: 'translateX', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate X' },
-			{ name: 'translateY', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate Y' }
+			{ name: 'skew-x', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew X' },
+			{ name: 'skew-y', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew Y' },
+			{ name: 'translate-x', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate X' },
+			{ name: 'translate-y', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate Y' }
 		]
 	},
 	{
@@ -210,10 +210,10 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'animation',
 		summary: 'Control animation transitions for smooth style changes.',
 		properties: [
-			{ name: 'transitionProperty', value: 'all', type: 'text', label: 'Property' },
-			{ name: 'transitionDuration', value: 0.0, type: 'number', unit: 's', min: 0, max: null, label: 'Duration' },
-			{ name: 'transitionTimingFunction', value: 'ease-in-out', type: 'select', options: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'], label: 'Timing Function' },
-			{ name: 'transitionDelay', value: 0, type: 'number', unit: 's', min: 0, max: null, label: 'Delay' }
+			{ name: 'transition-property', value: 'all', type: 'text', label: 'Property' },
+			{ name: 'transition-duration', value: 0.0, type: 'number', unit: 's', min: 0, max: null, label: 'Duration' },
+			{ name: 'transition-timing-function', value: 'ease-in-out', type: 'select', options: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'], label: 'Timing Function' },
+			{ name: 'transition-delay', value: 0, type: 'number', unit: 's', min: 0, max: null, label: 'Delay' }
 		]
 	},
 	{
@@ -224,19 +224,19 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'cursor', value: 'pointer', type: 'select', options: ['default', 'pointer', 'text', 'move', 'wait', 'help', 'not-allowed'], label: 'Cursor' },
 			{ name: 'overflow', value: 'hidden', type: 'select', options: ['visible', 'hidden', 'scroll', 'auto'], label: 'Overflow' },
 			{ name: 'zIndex', value: 1, type: 'number', label: 'Z-Index' },
-			{ name: 'mixBlendMode', value: 'normal', type: 'select', options: ['normal', 'multiply', 'screen', 'overlay', 'darken', 'lighten'], label: 'Mix Blend Mode' }
+			{ name: 'mix-blend-mode', value: 'normal', type: 'select', options: ['normal', 'multiply', 'screen', 'overlay', 'darken', 'lighten'], label: 'Mix Blend Mode' }
 		]
 	}
 ];
 
 export const ELEMENTS = {
 	text: [
-		{ id: 'p', type: 'Paragraph', category: 'Text', defaultStyles: { 'color': '#555', 'font-size': '14px', 'line-height': '1.5' } },
-		{ id: 'h1', type: 'Header 1', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '32px', 'font-weight': 'bold' } },
-		{ id: 'h2', type: 'Header 2', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '28px', 'font-weight': 'bold' } },
-		{ id: 'h3', type: 'Header 3', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '24px', 'font-weight': 'bold' } },
-		{ id: 'span', type: 'Span', category: 'Text', defaultStyles: { 'color': '#000', 'font-size': '14px' } },
-		{ id: 'blockquote', type: 'Blockquote', category: 'Text', defaultStyles: { 'color': '#666', 'font-size': '16px', 'padding-left': '20px', 'border-left': '4px solid #ccc' } },
+		{ id: 'p', type: 'Paragraph', category: 'Text', defaultStyles: { 'color': '#555', 'font-size': '14', 'line-height': '1.5' } },
+		{ id: 'h1', type: 'Header 1', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '32', 'font-weight': 'bold' } },
+		{ id: 'h2', type: 'Header 2', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '28', 'font-weight': 'bold' } },
+		{ id: 'h3', type: 'Header 3', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '24', 'font-weight': 'bold' } },
+		{ id: 'span', type: 'Span', category: 'Text', defaultStyles: { 'color': '#000', 'font-size': '14' } },
+		{ id: 'blockquote', type: 'Blockquote', category: 'Text', defaultStyles: { 'color': '#666', 'font-size': '16', 'padding-left': '20', 'border-left': '4px solid #ccc' } },
 
 	],
 	form: [

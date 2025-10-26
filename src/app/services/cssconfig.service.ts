@@ -3,19 +3,20 @@ import { Injectable, signal, computed, effect } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
   readonly config = signal<Record<string, any>>({});
-  // readonly cssCode = computed(() => {
-  //   const entries = Object.entries(this.config());
-  //   const cssLines = entries.map(([key, value]) => `${key}: ${value};`);
-  //   return `.preview-box {\n  ${cssLines.join('\n  ')}\n}`;
-  // });
+  readonly cssCode = computed(() => {
+    const entries = Object.entries(this.config());
+    const cssLines = entries.map(([key, value]) => `${key}: ${value};`);
+    return `.preview-box {\n  ${cssLines.join('\n  ')}\n}`;
+  });
 
-  // constructor() {
-  //   effect(() => {
-  //     localStorage.setItem('css-config', JSON.stringify(this.config()));
-  //   });
-  // }
+  constructor() {
+    effect(() => {
+      localStorage.setItem('css-config', JSON.stringify(this.config()));
+    });
+  }
 
   updateProperty(property: string, value: any) {
+    console.log('TEST', this.cssCode())
     this.config.update((current) => ({ ...current, [property]: value }));
     console.log('HERE', this.config())
   }

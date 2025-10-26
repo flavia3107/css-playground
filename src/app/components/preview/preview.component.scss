@@ -16,4 +16,5 @@ span {
 .preview-box {
 	height: calc(100% - 4rem);
 	overflow: auto;
+	box-sizing: border-box;
 }

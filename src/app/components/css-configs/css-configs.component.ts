@@ -15,19 +15,18 @@ import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-
 })
 export class CssConfigsComponent {
   private _cssConfigService = inject(CssConfigService);
-  readonly panelOpenState = signal(false);
   readonly cssConfigs = CSS_CONFIG;
 
   public increase(property: SimpleProperty) {
     if (typeof property.value === 'number')
       property.value++;
-    this.updateProperty(property.name, property.value)
+    this.updateProperty(property.name, `${property.value}${property.unit}`)
   }
 
   public decrease(property: SimpleProperty) {
     if (typeof property.value === 'number')
       property.value--;
-    this.updateProperty(property.name, property.value)
+    this.updateProperty(property.name, `${property.value}${property.unit}`)
   }
 
   public updateProperty(property: string, value: string | number | boolean) {
