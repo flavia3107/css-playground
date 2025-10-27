@@ -8,7 +8,6 @@ export const STATES = {
 		'Font: color, size',
 		'Export CSS Button (copy to clipboard)',
 		'CSS code box showing generated CSS',
-		'Select item (input, button, div....)'
 	],
 	phase_2: [
 		'Add persistence, interactivity, and extra styling categories.',

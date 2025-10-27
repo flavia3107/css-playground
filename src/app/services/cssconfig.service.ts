@@ -1,7 +1,9 @@
 import { Injectable, signal, computed, effect } from '@angular/core';
+import { CSSSection, CSS_CONFIG } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
+  public cssConfig = signal(CSS_CONFIG)
   readonly config = signal<Record<string, any>>({});
   readonly cssCode = computed(() => {
     const entries = Object.entries(this.config());
@@ -15,10 +17,15 @@ export class CssConfigService {
     });
   }
 
-  updateProperty(property: string, value: any) {
-    console.log('TEST', this.cssCode())
+  updateProperty(property: string, value: any, section?: string) {
+    let newConfig = this.cssConfig();
+    if (section) {
+      const indx: number = newConfig.findIndex(config => config.section === section);
+      console.log('here', newConfig[indx])
+      // newConfig[indx][property].value = value;
+
+    }
     this.config.update((current) => ({ ...current, [property]: value }));
-    console.log('HERE', this.config())
   }
 
   reset() {

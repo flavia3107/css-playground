@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { FormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
-import { CSS_CONFIG, SimpleProperty } from 'src/app/app.config';
+import { SimpleProperty } from 'src/app/app.config';
 import { CssConfigService } from '../../services/cssconfig.service';
 import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-fields.component';
 
@@ -15,21 +15,21 @@ import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-
 })
 export class CssConfigsComponent {
   private _cssConfigService = inject(CssConfigService);
-  readonly cssConfigs = CSS_CONFIG;
+  readonly cssConfigs = this._cssConfigService.cssConfig();
 
-  public increase(property: SimpleProperty) {
+  public increase(property: SimpleProperty, section: string) {
     if (typeof property.value === 'number')
       property.value++;
-    this.updateProperty(property.name, `${property.value}${property.unit}`)
+    this.updateProperty(property.name, `${property.value}${property.unit}`, section)
   }
 
-  public decrease(property: SimpleProperty) {
+  public decrease(property: SimpleProperty, section: string) {
     if (typeof property.value === 'number')
       property.value--;
-    this.updateProperty(property.name, `${property.value}${property.unit}`)
+    this.updateProperty(property.name, `${property.value}${property.unit}`, section)
   }
 
-  public updateProperty(property: string, value: string | number | boolean) {
-    this._cssConfigService.updateProperty(property, value);
+  public updateProperty(property: string, value: string | number | boolean, section: string) {
+    this._cssConfigService.updateProperty(property, value, section);
   }
 }
