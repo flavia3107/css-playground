@@ -18,7 +18,7 @@ export class CssConfigService {
     });
   }
 
-  updateProperty(property: string, value: any) {
+  updateProperty(property: string, value: any, unit?: string) {
     const oldConfig = this.cssConfig();
     const newConfig = oldConfig.map(section => ({
       ...section,
@@ -29,7 +29,8 @@ export class CssConfigService {
 
     this.cssConfig.set(newConfig);
     this.config.update(current => ({ ...current, [property]: value }));
-    this.styleUpdates.set({ property, value });
+    this.styleUpdates.set({ property, value: `${value}${unit ?? ''}` });
+    console.log('here', this.styleUpdates())
   }
 
   reset() {

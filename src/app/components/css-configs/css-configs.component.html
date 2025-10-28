@@ -36,9 +36,9 @@
 				toggle input
 				}
 				@case ('number') {
-				<div class="number-control flex-row ">
+				<div class="number-control flex-row">
 					<button class="btn" (click)="decrease(property)">–</button>
-					<input type="number" [ngModel]="property.value"
+					<input type="number" [(ngModel)]="property.value"
 						(ngModelChange)="updateProperty(property.name, $event)" />
 					<button class="btn" (click)="increase(property)">+</button>
 				</div>

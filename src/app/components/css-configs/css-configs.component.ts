@@ -17,18 +17,20 @@ export class CssConfigsComponent {
   public cssConfigService = inject(CssConfigService);
 
   public increase(property: SimpleProperty) {
-    if (typeof property.value === 'number')
+    if (typeof property.value === 'number') {
       property.value++;
-    this.updateProperty(property.name, `${property.value}${property.unit}`)
+      this.updateProperty(property.name, property.value, property.unit);
+    }
   }
 
   public decrease(property: SimpleProperty) {
-    if (typeof property.value === 'number')
+    if (typeof property.value === 'number') {
       property.value--;
-    this.updateProperty(property.name, `${property.value}${property.unit}`)
+      this.updateProperty(property.name, property.value, property.unit);
+    }
   }
 
-  public updateProperty(property: string, value: string | number | boolean) {
-    this.cssConfigService.updateProperty(property, value);
+  public updateProperty(property: string, value: string | number | boolean, unit?: string) {
+    this.cssConfigService.updateProperty(property, value, unit);
   }
 }
