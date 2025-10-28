@@ -1,5 +1,5 @@
 import { KeyValuePipe } from '@angular/common';
-import { Component, ElementRef, inject, Renderer2, ViewChild } from '@angular/core';
+import { Component, effect, ElementRef, inject, Renderer2, ViewChild } from '@angular/core';
 import { ELEMENTS } from 'src/app/app.config';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,16 +15,23 @@ export class PreviewComponent {
   private _renderer = inject(Renderer2);
   private _cssConfigService = inject(CssConfigService);
   readonly elements = ELEMENTS;
+  private _currentElement?: HTMLElement;
   @ViewChild('previewContainer', { static: true }) previewContainer!: ElementRef<HTMLDivElement>;
+
+  constructor() {
+    effect(() => {
+      const update = this._cssConfigService.styleUpdates();
+      if (update && this._currentElement) {
+        this._renderer.setStyle(this._currentElement, update.property, update.value);
+      }
+    });
+  }
 
   insertElement(element: any) {
     const container = this.previewContainer.nativeElement;
 
-    if (container.children.length > 0) {
-      console.log('Clearing old preview...');
+    if (container.children.length > 0)
       this._renderer.removeChild(container, container.firstChild);
-    }
-
 
     const el = this._renderer.createElement(element.id);
     const text = this._renderer.createText(element.label || element.type);
@@ -36,5 +43,6 @@ export class PreviewComponent {
     }
 
     this._renderer.appendChild(container, el);
+    this._currentElement = el;
   }
 }

@@ -1,5 +1,5 @@
-import { Injectable, signal, computed, effect } from '@angular/core';
-import { CSSSection, CSS_CONFIG } from '../app.config';
+import { Injectable, signal, computed, effect, inject } from '@angular/core';
+import { CSS_CONFIG } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
@@ -10,6 +10,7 @@ export class CssConfigService {
     const cssLines = entries.map(([key, value]) => `${key}: ${value};`);
     return `.preview-box {\n  ${cssLines.join('\n  ')}\n}`;
   });
+  styleUpdates = signal<{ property: string; value: any } | null>(null);
 
   constructor() {
     effect(() => {
@@ -28,7 +29,7 @@ export class CssConfigService {
 
     this.cssConfig.set(newConfig);
     this.config.update(current => ({ ...current, [property]: value }));
-    console.log('Updated config:', this.cssConfig());
+    this.styleUpdates.set({ property, value });
   }
 
   reset() {
