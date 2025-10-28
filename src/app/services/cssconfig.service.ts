@@ -17,15 +17,17 @@ export class CssConfigService {
     });
   }
 
-  updateProperty(property: string, value: any, section?: string) {
+  updateProperty(property: string, value: any) {
     let newConfig = this.cssConfig();
-    if (section) {
-      const indx: number = newConfig.findIndex(config => config.section === section);
-      console.log('here', newConfig[indx])
-      // newConfig[indx][property].value = value;
+    const allProps = ([] as any[]).concat(...newConfig.map(section => section.properties));
+    const prop = allProps.find(p => p.name === property);
 
-    }
+    if (prop)
+      prop.value = value;
+
+    this.cssConfig.set(newConfig);
     this.config.update((current) => ({ ...current, [property]: value }));
+    console.log('config', this.cssConfig())
   }
 
   reset() {

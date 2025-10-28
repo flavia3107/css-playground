@@ -17,19 +17,19 @@ export class CssConfigsComponent {
   private _cssConfigService = inject(CssConfigService);
   readonly cssConfigs = this._cssConfigService.cssConfig();
 
-  public increase(property: SimpleProperty, section: string) {
+  public increase(property: SimpleProperty) {
     if (typeof property.value === 'number')
       property.value++;
-    this.updateProperty(property.name, `${property.value}${property.unit}`, section)
+    this.updateProperty(property.name, `${property.value}${property.unit}`)
   }
 
-  public decrease(property: SimpleProperty, section: string) {
+  public decrease(property: SimpleProperty) {
     if (typeof property.value === 'number')
       property.value--;
-    this.updateProperty(property.name, `${property.value}${property.unit}`, section)
+    this.updateProperty(property.name, `${property.value}${property.unit}`)
   }
 
-  public updateProperty(property: string, value: string | number | boolean, section: string) {
-    this._cssConfigService.updateProperty(property, value, section);
+  public updateProperty(property: string, value: string | number | boolean) {
+    this._cssConfigService.updateProperty(property, value);
   }
 }
