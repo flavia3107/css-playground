@@ -18,16 +18,17 @@ export class CssConfigService {
   }
 
   updateProperty(property: string, value: any) {
-    let newConfig = this.cssConfig();
-    const allProps = ([] as any[]).concat(...newConfig.map(section => section.properties));
-    const prop = allProps.find(p => p.name === property);
-
-    if (prop)
-      prop.value = value;
+    const oldConfig = this.cssConfig();
+    const newConfig = oldConfig.map(section => ({
+      ...section,
+      properties: section.properties.map(prop =>
+        prop.name === property ? { ...prop, value } : prop
+      )
+    }));
 
     this.cssConfig.set(newConfig);
-    this.config.update((current) => ({ ...current, [property]: value }));
-    console.log('config', this.cssConfig())
+    this.config.update(current => ({ ...current, [property]: value }));
+    console.log('Updated config:', this.cssConfig());
   }
 
   reset() {

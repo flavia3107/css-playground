@@ -231,9 +231,9 @@ export const CSS_CONFIG: CSSSection[] = [
 export const ELEMENTS = {
 	text: [
 		{ id: 'p', type: 'Paragraph', category: 'Text', defaultStyles: { 'color': '#555', 'font-size': '14', 'line-height': '1.5' } },
-		{ id: 'h1', type: 'Header 1', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '32', 'font-weight': 'bold' } },
-		{ id: 'h2', type: 'Header 2', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '28', 'font-weight': 'bold' } },
-		{ id: 'h3', type: 'Header 3', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '24', 'font-weight': 'bold' } },
+		{ id: 'h1', type: 'Header 1', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '32', 'font-weight': '900' } },
+		{ id: 'h2', type: 'Header 2', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '28', 'font-weight': '900' } },
+		{ id: 'h3', type: 'Header 3', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': '24', 'font-weight': '900' } },
 		{ id: 'span', type: 'Span', category: 'Text', defaultStyles: { 'color': '#000', 'font-size': '14' } },
 		{ id: 'blockquote', type: 'Blockquote', category: 'Text', defaultStyles: { 'color': '#666', 'font-size': '16', 'padding-left': '20', 'border-left': '4px solid #ccc' } },
 

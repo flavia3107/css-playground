@@ -14,8 +14,7 @@ import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CssConfigsComponent {
-  private _cssConfigService = inject(CssConfigService);
-  readonly cssConfigs = this._cssConfigService.cssConfig();
+  public cssConfigService = inject(CssConfigService);
 
   public increase(property: SimpleProperty) {
     if (typeof property.value === 'number')
@@ -30,6 +29,6 @@ export class CssConfigsComponent {
   }
 
   public updateProperty(property: string, value: string | number | boolean) {
-    this._cssConfigService.updateProperty(property, value);
+    this.cssConfigService.updateProperty(property, value);
   }
 }
