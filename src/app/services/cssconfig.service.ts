@@ -30,7 +30,6 @@ export class CssConfigService {
     this.cssConfig.set(newConfig);
     this.config.update(current => ({ ...current, [property]: value }));
     this.styleUpdates.set({ property, value: `${value}${unit ?? ''}` });
-    console.log('here', this.styleUpdates())
   }
 
   reset() {

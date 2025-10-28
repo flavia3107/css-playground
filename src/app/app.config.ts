@@ -1,11 +1,6 @@
 export const STATES = {
 	phase_1: [
-		'Preview Box — main element whose styles are edited',
-		'Real-time updates (Angular bindings update the preview instantly)',
-		'Background Color Picker',
-		'Border Controls: width, color, style, radius',
 		'Box Shadow Controls: X/Y offset, blur, spread, color',
-		'Font: color, size',
 		'Export CSS Button (copy to clipboard)',
 		'CSS code box showing generated CSS',
 	],
