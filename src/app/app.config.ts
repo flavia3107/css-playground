@@ -1,8 +1,6 @@
 export const STATES = {
 	phase_1: [
 		'Box Shadow Controls: X/Y offset, blur, spread, color',
-		'Export CSS Button (copy to clipboard)',
-		'CSS code box showing generated CSS',
 	],
 	phase_2: [
 		'Add persistence, interactivity, and extra styling categories.',

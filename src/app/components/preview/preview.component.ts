@@ -30,8 +30,10 @@ export class PreviewComponent {
   insertElement(element: any) {
     const container = this.previewContainer.nativeElement;
 
-    if (container.children.length > 0)
+    if (container.children.length > 0) {
       this._renderer.removeChild(container, container.firstChild);
+      this._cssConfigService.reset();
+    }
 
     const el = this._renderer.createElement(element.id);
     const text = this._renderer.createText(element.label || element.type);
