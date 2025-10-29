@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CssConfigService } from 'src/app/services/cssconfig.service';
 
 @Component({
   selector: 'app-css-code',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./css-code.component.scss']
 })
 export class CssCodeComponent {
-
+  private _cssConfigService = inject(CssConfigService);
+  cssCode = this._cssConfigService.cssCode;
 }

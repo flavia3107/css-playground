@@ -36,4 +36,18 @@ export class CssConfigService {
     this.config.set({});
     localStorage.removeItem('css-config');
   }
+
+  copyCode() {
+    navigator.clipboard.writeText(this.cssCode());
+  }
+
+  downloadCode() {
+    const blob = new Blob([this.cssCode()], { type: 'text/css' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'styles.css';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
 }
