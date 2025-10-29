@@ -21,9 +21,17 @@
     </div>
   </div>
   <div class="code-container flex-column card">
-    <h2>Code</h2>
-    <button (click)="copyCode()">Copy</button>
-    <button (click)="downloadCode()">Download</button>
+    <div class="flex-row space_between">
+      <h2>Code</h2>
+      <div class="flex-row middle">
+        <button mat-icon-button (click)="copyCode()">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+        <button mat-icon-button (click)="downloadCode()">
+          <mat-icon>download</mat-icon>
+        </button>
+      </div>
+    </div>
     <app-css-code />
   </div>
 </div>
