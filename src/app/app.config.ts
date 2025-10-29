@@ -84,18 +84,18 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'texture',
 		summary: 'Customize background colors, gradients, and opacity.',
 		properties: [
-			{ name: 'background-color', value: '#3498db', type: 'color', 'label': 'Color' },
+			{ name: 'background-color', value: '#ffffff', type: 'color', 'label': 'Color' },
 			{
 				name: 'background-gradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', props: [
-					{ name: 'type', value: 'linear', type: 'select', options: ['linear', 'radial'], label: 'Type' },
+					{ name: 'type', value: '', type: 'select', options: ['linear', 'radial'], label: 'Type' },
 					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle' },
-					{ name: 'color_1', type: 'color', value: '#3498db', label: 'First Color' },
-					{ name: 'color_1', type: 'color', value: '#3498db', label: 'Second Color' }
+					{ name: 'color_1', type: 'color', value: '#ffffff', label: 'First Color' },
+					{ name: 'color_1', type: 'color', value: '#ffffff', label: 'Second Color' }
 				]
 			},
 			{ name: 'background-image', value: '', type: 'text', label: 'Image' },
-			{ name: 'background-size', value: 'cover', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size' },
-			{ name: 'background-repeat', value: 'no-repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat' },
+			{ name: 'background-size', value: 'auto', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size' },
+			{ name: 'background-repeat', value: 'repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat' },
 			{ name: 'opacity', value: 1, type: 'number', unit: '', min: 0, max: 1, step: 0.1, label: 'Opacity' }
 		]
 	},
@@ -104,9 +104,9 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'rounded_corner',
 		summary: 'Adjust border size, color, and style for the element.',
 		properties: [
-			{ name: 'border-width', value: 1, type: 'number', unit: 'px', min: 0, max: 20, label: 'Width' },
-			{ name: 'border-style', value: 'solid', type: 'select', options: ['none', 'solid', 'dashed', 'dotted', 'double'], label: 'Style' },
-			{ name: 'border-color', value: '#2c3e50', type: 'color', label: 'Color' },
+			{ name: 'border-width', value: 0, type: 'number', unit: 'px', min: 0, max: 20, label: 'Width' },
+			{ name: 'border-style', value: 'none', type: 'select', options: ['none', 'solid', 'dashed', 'dotted', 'double'], label: 'Style' },
+			{ name: 'border-color', value: '#ffffff', type: 'color', label: 'Color' },
 			{ name: 'border-top-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Left' },
 			{ name: 'border-top-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Right' },
 			{ name: 'border-bottom-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Left' },
@@ -122,7 +122,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'box-shadow-y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Y' },
 			{ name: 'box-shadow-blur', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur' },
 			{ name: 'box-shadow-spread', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
-			{ name: 'box-shadow-color', value: 'rgba(0, 0, 0, 0.3)', type: 'color', label: 'Color' },
+			{ name: 'box-shadow-color', value: '#ffffff', type: 'color', label: 'Color' },
 			{ name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset' }
 		]
 	},
@@ -131,18 +131,18 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'text_fields',
 		summary: 'Modify font style, size, weight, and color for text elements.',
 		properties: [
-			{ name: 'font-family', value: 'Arial, sans-serif', type: 'select', options: ['Arial', 'Roboto', 'Georgia', 'Courier New', 'Times New Roman'], label: 'Font Family' },
+			{ name: 'font-family', value: '', type: 'select', options: ['Arial', 'Roboto', 'Georgia', 'Courier New', 'Times New Roman'], label: 'Font Family' },
 			{ name: 'font-size', value: 16, type: 'number', unit: 'px', min: 0, max: 1200, label: 'Size' },
 			{ name: 'font-weight', value: 400, type: 'select', options: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], label: 'Weight' },
 			{ name: 'color', value: '#333333', type: 'color', label: 'Color' },
 			{ name: 'letter-spacing', value: 0, type: 'number', unit: 'px', min: -5, max: 50, label: 'Letter Spacing' },
 			{ name: 'line-height', value: 1.5, type: 'number', min: -10, max: null, step: 0.1, label: 'Line Height' },
 			{
-				name: 'text-shadow', value: '0px 1px 3px rgba(0,0,0,0.3)', type: 'custom', label: 'Text Shadow', props: [
+				name: 'text-shadow', value: '', type: 'custom', label: 'Text Shadow', props: [
 					{ name: 'offset-x', label: 'X', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
 					{ name: 'offset-y', label: 'Y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
 					{ name: 'blur', label: 'Blur', value: 0, type: 'number', unit: 'px', min: 0, max: 100, step: 1 },
-					{ name: 'color', label: 'Color', value: 'rgba(0,0,0,0.3)', type: 'color' }
+					{ name: 'color', label: 'Color', value: '#ffffff', type: 'color' }
 				]
 			},
 			{ name: 'textAlign', value: 'center', type: 'select', options: ['left', 'center', 'right', 'justify'], label: 'Align' }
@@ -216,8 +216,8 @@ export const CSS_CONFIG: CSSSection[] = [
 		summary: 'Miscellaneous CSS options for customization.',
 		properties: [
 			{ name: 'cursor', value: 'pointer', type: 'select', options: ['default', 'pointer', 'text', 'move', 'wait', 'help', 'not-allowed'], label: 'Cursor' },
-			{ name: 'overflow', value: 'hidden', type: 'select', options: ['visible', 'hidden', 'scroll', 'auto'], label: 'Overflow' },
-			{ name: 'zIndex', value: 1, type: 'number', label: 'Z-Index' },
+			{ name: 'overflow', value: 'auto', type: 'select', options: ['visible', 'hidden', 'scroll', 'auto'], label: 'Overflow' },
+			{ name: 'zIndex', value: 0, type: 'number', label: 'Z-Index' },
 			{ name: 'mix-blend-mode', value: 'normal', type: 'select', options: ['normal', 'multiply', 'screen', 'overlay', 'darken', 'lighten'], label: 'Mix Blend Mode' }
 		]
 	}
