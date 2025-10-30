@@ -28,7 +28,7 @@ export class CssConfigService {
     }));
 
     this.cssConfig.set(newConfig);
-    this.config.update(current => ({ ...current, [property]: value }));
+    this.config.update(current => ({ ...current, [property]: `${value}${unit ?? ''}` }));
     this.styleUpdates.set({ property, value: `${value}${unit ?? ''}` });
   }
 
