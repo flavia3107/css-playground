@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, effect, inject } from '@angular/core';
+import { Injectable, signal, computed, effect } from '@angular/core';
 import { CSS_CONFIG } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
@@ -8,7 +8,7 @@ export class CssConfigService {
   readonly cssCode = computed(() => {
     const entries = Object.entries(this.config());
     const cssLines = entries.map(([key, value]) => `${key}: ${value};`);
-    return `.preview-box {\n  ${cssLines.join('\n  ')}\n}`;
+    return entries.length ? `.preview-box {\n  ${cssLines.join('\n  ')}\n}` : '';
   });
   styleUpdates = signal<{ property: string; value: any } | null>(null);
 
@@ -34,6 +34,7 @@ export class CssConfigService {
 
   reset() {
     this.config.set({});
+    this.cssConfig.set(CSS_CONFIG);
     localStorage.removeItem('css-config');
   }
 
