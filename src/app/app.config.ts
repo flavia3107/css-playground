@@ -155,6 +155,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'height', value: 0, type: 'number', unit: 'px', min: 50, max: null, label: 'Height' },
 			{
 				name: 'padding', value: 0, type: 'custom', label: 'Padding', unit: 'px', props: [
+					{ name: 'padding', label: 'Padding', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
 					{ name: 'padding-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
 					{ name: 'padding-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
 					{ name: 'padding-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
@@ -163,6 +164,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			},
 			{
 				name: 'margin', value: 0, type: 'custom', unit: 'px', label: 'Margin', props: [
+					{ name: 'margin', label: 'Margin', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
 					{ name: 'margin-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
 					{ name: 'margin-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
 					{ name: 'margin-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
@@ -223,57 +225,250 @@ export const CSS_CONFIG: CSSSection[] = [
 
 export const ELEMENTS = {
 	text: [
-		{ id: 'p', type: 'Paragraph', category: 'Text', defaultStyles: { 'color': '#555', 'font-size': 14, 'line-height': 1.5 } },
-		{ id: 'h1', type: 'Header 1', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': 32, 'font-weight': 900 } },
-		{ id: 'h2', type: 'Header 2', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': 28, 'font-weight': 900 } },
-		{ id: 'h3', type: 'Header 3', category: 'Text', defaultStyles: { 'color': '#222', 'font-size': 24, 'font-weight': 900 } },
-		{ id: 'span', type: 'Span', category: 'Text', defaultStyles: { 'color': '#000', 'font-size': 14 } },
-		{ id: 'blockquote', type: 'Blockquote', category: 'Text', defaultStyles: { 'color': '#666', 'font-size': 16, 'padding-left': 20, 'border-left': '4px solid #ccc' } },
-
+		{
+			id: 'p', type: 'Paragraph', category: 'Text', defaultStyles: {
+				'color': { value: '#555', unit: null },
+				'font-size': { value: 14, unit: 'px' },
+				'line-height': { value: 1.5, unit: null }
+			}
+		},
+		{
+			id: 'h1', type: 'Header 1', category: 'Text', defaultStyles: {
+				'color': { value: '#222', unit: null },
+				'font-size': { value: 32, unit: 'px' },
+				'font-weight': { value: 900, unit: null }
+			}
+		},
+		{
+			id: 'h2', type: 'Header 2', category: 'Text', defaultStyles: {
+				'color': { value: '#222', unit: null },
+				'font-size': { value: 28, unit: 'px' },
+				'font-weight': { value: 900, unit: null }
+			}
+		},
+		{
+			id: 'h3', type: 'Header 3', category: 'Text', defaultStyles: {
+				'color': { value: '#222', unit: null },
+				'font-size': { value: 24, unit: 'px' },
+				'font-weight': { value: 900, unit: null }
+			}
+		},
+		{
+			id: 'span', type: 'Span', category: 'Text', defaultStyles: {
+				'color': { value: '#000', unit: null },
+				'font-size': { value: 14, unit: 'px' }
+			}
+		},
+		{
+			id: 'blockquote', type: 'Blockquote', category: 'Text', defaultStyles: {
+				'color': { value: '#666', unit: null },
+				'font-size': { value: 16, unit: 'px' },
+				'padding-left': { value: 20, unit: 'px' },
+				'border-left': { value: '4px solid #ccc', unit: null }
+			}
+		},
 	],
 	form: [
-		{ id: 'button', type: 'Button', category: 'Form', defaultStyles: { 'background-color': '#007bff', 'color': '#fff', 'border-radius': 4, 'padding': 10, 'font-size': 16, 'border': 'none', 'cursor': 'pointer' } },
-		{ id: 'input', type: 'Input', category: 'Form', defaultStyles: { 'width': 200, 'padding': 8, 'border': '1px solid #ccc', 'border-radius': 4, 'font-size': 16 } },
-		{ id: 'textarea', type: 'Textarea', category: 'Form', defaultStyles: { 'width': 300, 'height': 100, 'padding': 10, 'border': '1px solid #ccc', 'border-radius': 4, 'font-size': 16, 'resize': 'vertical' } },
-		{ id: 'select', type: 'Select', category: 'Form', defaultStyles: { 'width': 220, 'padding': 8, 'border': '1px solid #ccc', 'border-radius': 4, 'font-size': 16 } },
-		{ id: 'label', type: 'Label', category: 'Form', defaultStyles: { 'font-size': 14, 'color': '#333' } },
+		{
+			id: 'button', type: 'Button', category: 'Form', defaultStyles: {
+				'background-color': { value: '#007bff', unit: null },
+				'color': { value: '#fff', unit: null },
+				'border-radius': { value: 4, unit: 'px' },
+				'padding': { value: 10, unit: 'px' },
+				'font-size': { value: 16, unit: 'px' },
+				'border': { value: 'none', unit: null },
+				'cursor': { value: 'pointer', unit: null }
+			}
+		},
+		{
+			id: 'input', type: 'Input', category: 'Form', defaultStyles: {
+				'width': { value: 200, unit: 'px' },
+				'padding': { value: 8, unit: 'px' },
+				'border': { value: '1px solid #ccc', unit: null },
+				'border-radius': { value: 4, unit: 'px' },
+				'font-size': { value: 16, unit: 'px' }
+			}
+		},
+		{
+			id: 'textarea', type: 'Textarea', category: 'Form', defaultStyles: {
+				'width': { value: 300, unit: 'px' },
+				'height': { value: 100, unit: 'px' },
+				'padding': { value: 10, unit: 'px' },
+				'border': { value: '1px solid #ccc', unit: null },
+				'border-radius': { value: 4, unit: 'px' },
+				'font-size': { value: 16, unit: 'px' },
+				'resize': { value: 'vertical', unit: null }
+			}
+		},
+		{
+			id: 'select', type: 'Select', category: 'Form', defaultStyles: {
+				'width': { value: 220, unit: 'px' },
+				'padding': { value: 8, unit: 'px' },
+				'border': { value: '1px solid #ccc', unit: null },
+				'border-radius': { value: 4, unit: 'px' },
+				'font-size': { value: 16, unit: 'px' }
+			}
+		},
+		{
+			id: 'label', type: 'Label', category: 'Form', defaultStyles: {
+				'font-size': { value: 14, unit: 'px' },
+				'color': { value: '#333', unit: null }
+			}
+		},
 	],
 	layout: [
-		{ id: 'div', type: 'Div', category: 'Layout', defaultStyles: { 'width': 150, 'height': 150, 'background-color': '#e0e0e0', 'border': '1px solid #ccc', 'border-radius': 4 } },
-		{ id: 'section', type: 'Section', category: 'Layout', defaultStyles: { 'padding': 20, 'background-color': '#f4f4f4' } },
-		{ id: 'article', type: 'Article', category: 'Layout', defaultStyles: { 'padding': 20, 'background-color': '#fff', 'border': '1px solid #ccc', 'border-radius': 4 } },
-		{ id: 'header', type: 'Header', category: 'Layout', defaultStyles: { 'padding': 20, 'background-color': '#222', 'color': '#fff' } },
-		{ id: 'footer', type: 'Footer', category: 'Layout', defaultStyles: { 'padding': 20, 'background-color': '#333', 'color': '#fff' } },
-		{ id: 'nav', type: 'Nav', category: 'Layout', defaultStyles: { 'padding': 10, 'background-color': '#007bff', 'color': '#fff' } },
+		{
+			id: 'div', type: 'Div', category: 'Layout', defaultStyles: {
+				'width': { value: 150, unit: 'px' },
+				'height': { value: 150, unit: 'px' },
+				'background-color': { value: '#e0e0e0', unit: null },
+				'border': { value: '1px solid #ccc', unit: null },
+				'border-radius': { value: 4, unit: 'px' }
+			}
+		},
+		{
+			id: 'section', type: 'Section', category: 'Layout', defaultStyles: {
+				'padding': { value: 20, unit: 'px' },
+				'background-color': { value: '#f4f4f4', unit: null }
+			}
+		},
+		{
+			id: 'article', type: 'Article', category: 'Layout', defaultStyles: {
+				'padding': { value: 20, unit: 'px' },
+				'background-color': { value: '#fff', unit: null },
+				'border': { value: '1px solid #ccc', unit: null },
+				'border-radius': { value: 4, unit: 'px' }
+			}
+		},
+		{
+			id: 'header', type: 'Header', category: 'Layout', defaultStyles: {
+				'padding': { value: 20, unit: 'px' },
+				'background-color': { value: '#222', unit: null },
+				'color': { value: '#fff', unit: null }
+			}
+		},
+		{
+			id: 'footer', type: 'Footer', category: 'Layout', defaultStyles: {
+				'padding': { value: 20, unit: 'px' },
+				'background-color': { value: '#333', unit: null },
+				'color': { value: '#fff', unit: null }
+			}
+		},
+		{
+			id: 'nav', type: 'Nav', category: 'Layout', defaultStyles: {
+				'padding': { value: 10, unit: 'px' },
+				'background-color': { value: '#007bff', unit: null },
+				'color': { value: '#fff', unit: null }
+			}
+		},
 	],
 	media: [
-		{ id: 'img', type: 'Image', category: 'Media', defaultStyles: { 'width': 150, 'height': 150, 'border-radius': 8, 'object-fit': 'cover' } },
-		{ id: 'video', type: 'Video', category: 'Media', defaultStyles: { 'width': 300, 'height': 200 } },
-		{ id: 'audio', type: 'Audio', category: 'Media', defaultStyles: { 'width': 300 } },
-
+		{
+			id: 'img', type: 'Image', category: 'Media', defaultStyles: {
+				'width': { value: 150, unit: 'px' },
+				'height': { value: 150, unit: 'px' },
+				'border-radius': { value: 8, unit: 'px' },
+				'object-fit': { value: 'cover', unit: null }
+			}
+		},
+		{
+			id: 'video', type: 'Video', category: 'Media', defaultStyles: {
+				'width': { value: 300, unit: 'px' },
+				'height': { value: 200, unit: 'px' }
+			}
+		},
+		{
+			id: 'audio', type: 'Audio', category: 'Media', defaultStyles: {
+				'width': { value: 300, unit: 'px' }
+			}
+		},
 	],
 	list: [
-		{ id: 'ul', type: 'Unordered List', category: 'List', defaultStyles: { 'padding-left': 20, 'color': '#333' } },
-		{ id: 'ol', type: 'Ordered List', category: 'List', defaultStyles: { 'padding-left': 20, 'color': '#333' } },
-		{ id: 'li', type: 'List Item', category: 'List', defaultStyles: { 'margin-bottom': 5 } },
+		{
+			id: 'ul', type: 'Unordered List', category: 'List', defaultStyles: {
+				'padding-left': { value: 20, unit: 'px' },
+				'color': { value: '#333', unit: null }
+			}
+		},
+		{
+			id: 'ol', type: 'Ordered List', category: 'List', defaultStyles: {
+				'padding-left': { value: 20, unit: 'px' },
+				'color': { value: '#333', unit: null }
+			}
+		},
+		{
+			id: 'li', type: 'List Item', category: 'List', defaultStyles: {
+				'margin-bottom': { value: 5, unit: 'px' }
+			}
+		},
 	],
 	table: [
-		{ id: 'table', type: 'Table', category: 'Table', defaultStyles: { 'border-collapse': 'collapse', 'width': '100%' } },
-		{ id: 'thead', type: 'Table Head', category: 'Table', defaultStyles: { 'background-color': '#f4f4f4' } },
+		{
+			id: 'table', type: 'Table', category: 'Table', defaultStyles: {
+				'border-collapse': { value: 'collapse', unit: null },
+				'width': { value: 100, unit: '%' }
+			}
+		},
+		{
+			id: 'thead', type: 'Table Head', category: 'Table', defaultStyles: {
+				'background-color': { value: '#f4f4f4', unit: null }
+			}
+		},
 		{ id: 'tbody', type: 'Table Body', category: 'Table', defaultStyles: {} },
 		{ id: 'tr', type: 'Table Row', category: 'Table', defaultStyles: {} },
-		{ id: 'td', type: 'Table Cell', category: 'Table', defaultStyles: { 'border': '1px solid #ccc', 'padding': 8 } },
-		{ id: 'th', type: 'Table Header', category: 'Table', defaultStyles: { 'border': '1px solid #ccc', 'padding': 8, 'background-color': '#f4f4f4' } },
+		{
+			id: 'td', type: 'Table Cell', category: 'Table', defaultStyles: {
+				'border': { value: '1px solid #ccc', unit: null },
+				'padding': { value: 8, unit: 'px' }
+			}
+		},
+		{
+			id: 'th', type: 'Table Header', category: 'Table', defaultStyles: {
+				'border': { value: '1px solid #ccc', unit: null },
+				'padding': { value: 8, unit: 'px' },
+				'background-color': { value: '#f4f4f4', unit: null }
+			}
+		},
 	],
 	inline: [
-		{ id: 'a', type: 'Anchor', category: 'Inline', defaultStyles: { 'color': '#007bff', 'text-decoration': 'underline' } },
-		{ id: 'strong', type: 'Strong', category: 'Inline', defaultStyles: { 'font-weight': 'bold' } },
-		{ id: 'em', type: 'Emphasis', category: 'Inline', defaultStyles: { 'font-style': 'italic' } },
-		{ id: 'code', type: 'Code', category: 'Inline', defaultStyles: { 'font-family': 'monospace', 'background-color': '#f4f4f4', 'padding': 4, 'border-radius': 4 } },
-
+		{
+			id: 'a', type: 'Anchor', category: 'Inline', defaultStyles: {
+				'color': { value: '#007bff', unit: null },
+				'text-decoration': { value: 'underline', unit: null }
+			}
+		},
+		{
+			id: 'strong', type: 'Strong', category: 'Inline', defaultStyles: {
+				'font-weight': { value: 'bold', unit: null }
+			}
+		},
+		{
+			id: 'em', type: 'Emphasis', category: 'Inline', defaultStyles: {
+				'font-style': { value: 'italic', unit: null }
+			}
+		},
+		{
+			id: 'code', type: 'Code', category: 'Inline', defaultStyles: {
+				'font-family': { value: 'monospace', unit: null },
+				'background-color': { value: '#f4f4f4', unit: null },
+				'padding': { value: 4, unit: 'px' },
+				'border-radius': { value: 4, unit: 'px' }
+			}
+		},
 	],
 	interactive: [
-		{ id: 'details', type: 'Details', category: 'Interactive', defaultStyles: { 'padding': 20, 'border': '1px solid #ccc', 'border-radius': 4 } },
-		{ id: 'summary', type: 'Summary', category: 'Interactive', defaultStyles: { 'font-weight': 'bold', 'cursor': 'pointer' } }
+		{
+			id: 'details', type: 'Details', category: 'Interactive', defaultStyles: {
+				'padding': { value: 20, unit: 'px' },
+				'border': { value: '1px solid #ccc', unit: null },
+				'border-radius': { value: 4, unit: 'px' }
+			}
+		},
+		{
+			id: 'summary', type: 'Summary', category: 'Interactive', defaultStyles: {
+				'font-weight': { value: 'bold', unit: null },
+				'cursor': { value: 'pointer', unit: null }
+			}
+		}
 	]
 };

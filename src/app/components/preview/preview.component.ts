@@ -40,7 +40,7 @@ export class PreviewComponent {
     this._renderer.appendChild(el, text);
 
     for (const [key, value] of Object.entries(element.defaultStyles)) {
-      this._renderer.setStyle(el, key, value as string);
+      this._renderer.setStyle(el, key, `${value}px`);
       this._cssConfigService.updateProperty(key, value);
     }
 
