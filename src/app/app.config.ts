@@ -105,6 +105,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'border-width', value: 0, type: 'number', unit: 'px', min: 0, max: 20, label: 'Width' },
 			{ name: 'border-style', value: 'none', type: 'select', options: ['none', 'solid', 'dashed', 'dotted', 'double'], label: 'Style' },
 			{ name: 'border-color', value: '#ffffff', type: 'color', label: 'Color' },
+			{ name: 'border-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius' },
 			{ name: 'border-top-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Left' },
 			{ name: 'border-top-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Right' },
 			{ name: 'border-bottom-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Left' },

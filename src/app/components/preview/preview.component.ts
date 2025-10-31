@@ -39,9 +39,9 @@ export class PreviewComponent {
     const text = this._renderer.createText(element.label || element.type);
     this._renderer.appendChild(el, text);
 
-    for (const [key, value] of Object.entries(element.defaultStyles)) {
-      this._renderer.setStyle(el, key, `${value}px`);
-      this._cssConfigService.updateProperty(key, value);
+    for (const [key, value] of Object.entries(element.defaultStyles as Record<string, { value: number | string, unit: string }>)) {
+      this._renderer.setStyle(el, key, `${value['value']}${value['unit'] ?? ''}`);
+      this._cssConfigService.updateProperty(key, value['value'], value['unit']);
     }
 
     this._renderer.appendChild(container, el);
