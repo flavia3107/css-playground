@@ -83,9 +83,9 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'texture',
 		summary: 'Customize background colors, gradients, and opacity.',
 		properties: [
-			{ name: 'background-color', value: '#ffffff', type: 'color', 'label': 'Color' },
+			{ name: 'background-color', value: '#ffffff', type: 'color', 'label': 'Color', divider: true },
 			{
-				name: 'background-gradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', props: [
+				name: 'background-gradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', divider: true, props: [
 					{ name: 'type', value: '', type: 'select', options: ['linear', 'radial'], label: 'Type' },
 					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle' },
 					{ name: 'color_1', type: 'color', value: '#ffffff', label: 'First Color' },
@@ -157,7 +157,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'height', value: 0, type: 'number', unit: 'px', min: 50, max: null, label: 'Height' },
 			{
 				name: 'padding', value: 0, type: 'custom', label: 'Padding', unit: 'px', props: [
-					{ name: 'padding', label: 'Padding', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'padding', label: 'Padding', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, divider: true },
 					{ name: 'padding-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
 					{ name: 'padding-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
 					{ name: 'padding-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
@@ -166,7 +166,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			},
 			{
 				name: 'margin', value: 0, type: 'custom', unit: 'px', label: 'Margin', props: [
-					{ name: 'margin', label: 'Margin', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
+					{ name: 'margin', label: 'Margin', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, divider: true },
 					{ name: 'margin-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
 					{ name: 'margin-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
 					{ name: 'margin-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
