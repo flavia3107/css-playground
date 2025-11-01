@@ -43,6 +43,17 @@ export const STATES = {
 	]
 }
 
+export const SHORT_HAND_MAP: Record<string, string[]> = {
+	'padding': ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'],
+	'margin': ['margin-top', 'margin-right', 'margin-bottom', 'margin-left'],
+	'border-radius': [
+		'border-top-left-radius',
+		'border-top-right-radius',
+		'border-bottom-right-radius',
+		'border-bottom-left-radius'
+	]
+};
+
 export interface BaseProperty {
 	name: string;
 	value: string | number | boolean;
