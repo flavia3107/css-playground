@@ -20,9 +20,11 @@ export class PreviewComponent {
 
   constructor() {
     effect(() => {
-      const update = this._cssConfigService.styleUpdates();
-      if (update && this._currentElement) {
-        this._renderer.setStyle(this._currentElement, update.property, update.value);
+      const styles = this._cssConfigService.styleUpdates();
+      if (!this._currentElement) return;
+
+      for (const [key, val] of Object.entries(styles)) {
+        this._renderer.setStyle(this._currentElement, key, val);
       }
     });
   }

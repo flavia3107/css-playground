@@ -1,5 +1,5 @@
 import { Injectable, signal, computed, effect } from '@angular/core';
-import { CSS_CONFIG } from '../app.config';
+import { CSS_CONFIG, SHORT_HAND_MAP } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
@@ -10,7 +10,7 @@ export class CssConfigService {
     const cssLines = entries.map(([key, value]) => `${key}: ${value};`);
     return entries.length ? `.preview-box {\n  ${cssLines.join('\n  ')}\n}` : '';
   });
-  styleUpdates = signal<{ property: string; value: any } | null>(null);
+  styleUpdates = signal<Record<string, any>>({});
 
   constructor() {
     effect(() => {
@@ -29,7 +29,16 @@ export class CssConfigService {
 
     this.cssConfig.set(newConfig);
     this.config.update(current => ({ ...current, [property]: `${value}${unit ?? ''}` }));
-    this.styleUpdates.set({ property, value: `${value}${unit ?? ''}` });
+    this.styleUpdates.update(current => ({
+      ...current,
+      [property]: unit && typeof value === 'number' ? `${value}${unit}` : value
+    }));
+
+    if (Object.keys(SHORT_HAND_MAP).includes(property)) {
+      SHORT_HAND_MAP[property].forEach(subProp => {
+        this.updateProperty(subProp, value, unit);
+      });
+    }
   }
 
   reset() {
