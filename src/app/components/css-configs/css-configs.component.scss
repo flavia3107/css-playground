@@ -82,3 +82,25 @@ p {
 	flex-direction: column;
 	align-items: stretch;
 }
+
+.divider {
+	display: flex;
+	align-items: center;
+	margin: 1rem 0;
+	color: #888;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 1px;
+
+	&::before,
+	&::after {
+		content: "";
+		flex: 1;
+		height: 1px;
+		background: #ccc;
+	}
+
+	span {
+		margin: 0 0.5rem;
+	}
+}
