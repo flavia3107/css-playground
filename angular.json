@@ -34,8 +34,6 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/light-theme.scss",
-              "src/styles/dark-theme.scss",
               "src/styles.scss",
               "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
