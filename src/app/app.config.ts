@@ -1,7 +1,4 @@
 export const STATES = {
-	phase_1: [
-		'Box Shadow Controls: X/Y offset, blur, spread, color',
-	],
 	phase_2: [
 		'Add persistence, interactivity, and extra styling categories.',
 		'Save preset to localStorage',
@@ -25,15 +22,13 @@ export const STATES = {
 		'Color harmony picker (complementary, analogous, triadic)',
 		'SCSS/LESS output toggle',
 		'Undo / Redo history',
-		'Import / export as JSON',
 		'Download CSS / HTML as a zip',
 		'Preview & Layout',
 		'Responsive preview (mobile/tablet/desktop toggle)',
 		'Resizable / draggable preview box',
 		'Option to switch to a full “card” preview with text and buttons',
-		'Sharing & Export',
+		'Sharing',
 		'Shareable URL (encode styles into query string)',
-		'“Copy HTML + CSS” snippet',
 		'Screenshot download (canvas or html2canvas)',
 		'UI / UX Polish',
 		'Dark / light theme switch',
