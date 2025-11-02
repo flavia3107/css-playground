@@ -1,3 +1,7 @@
+*:not(input, select, textarea, code) {
+	color: var(--main-text);
+}
+
 body {
 	background-color: var(--bg-color);
 	margin: 0;

@@ -40,8 +40,13 @@ mat-panel-description {
 .input-container {
 	font-size: 0.9rem;
 	color: var(--dark-gray);
-	background: var(--secondary-bg-color);
+	background: var(--input-container-bg);
 	padding: 0.7rem;
+}
+
+option {
+	background: var(--bg-color);
+	color: var(--main-text);
 }
 
 .btn {

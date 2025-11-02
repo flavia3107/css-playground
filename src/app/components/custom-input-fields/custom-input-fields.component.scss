@@ -5,10 +5,16 @@ select {
 	text-align: center;
 	border: 1px dotted var(--light-gray-border);
 	background: #fff;
+	color: #232323;
 
 	&:focus-visible {
 		outline: none;
 	}
+}
+
+option {
+	background: var(--bg-color);
+	color: var(--main-text);
 }
 
 input[type="number"] {
