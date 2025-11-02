@@ -22,9 +22,20 @@ export class CssConfigService {
     const oldConfig = this.cssConfig();
     const newConfig = oldConfig.map(section => ({
       ...section,
-      properties: section.properties.map(prop =>
-        prop.name === property ? { ...prop, value } : prop
-      )
+      properties: section.properties.map(prop => {
+        if (prop.name === property) {
+          return { ...prop, value };
+        }
+        if (prop.props) {
+          return {
+            ...prop,
+            props: prop.props.map((subProp: { [key: string]: any }) =>
+              subProp['name'] === property ? { ...subProp, value } : subProp
+            )
+          };
+        }
+        return prop;
+      })
     }));
 
     this.cssConfig.set(newConfig);
