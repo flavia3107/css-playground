@@ -55,6 +55,7 @@ export class CssConfigService {
   reset() {
     this.config.set({});
     this.cssConfig.set(CSS_CONFIG);
+    this.styleUpdates.set({});
     localStorage.removeItem('css-config');
   }
 

@@ -20,32 +20,45 @@ export class PreviewComponent {
 
   constructor() {
     effect(() => {
-      const styles = this._cssConfigService.styleUpdates();
-      if (!this._currentElement) return;
+      const update = this._cssConfigService.styleUpdates();
+      if (!update || !this._currentElement) return;
 
-      for (const [key, val] of Object.entries(styles)) {
-        this._renderer.setStyle(this._currentElement, key, val);
+      if ('property' in update) {
+        this._applyStyle(update['property'], update['value']);
+      } else {
+        for (const [prop, val] of Object.entries(update)) {
+          this._applyStyle(prop, val);
+        }
       }
     });
   }
 
+  private _applyStyle(prop: string, val: any) {
+    if (val === '' || val == null) {
+      this._renderer.removeStyle(this._currentElement, prop);
+    } else {
+      this._renderer.setStyle(this._currentElement, prop, val);
+    }
+  }
+
   insertElement(element: any) {
     const container = this.previewContainer.nativeElement;
-
     if (container.children.length > 0) {
-      this._renderer.removeChild(container, container.firstChild);
-      this._cssConfigService.reset();
+      const oldEl = container.firstChild as HTMLElement;
+      this._renderer.removeChild(container, oldEl);
     }
+    this._cssConfigService.reset();
 
     const el = this._renderer.createElement(element.id);
     const text = this._renderer.createText(element.label || element.type);
     this._renderer.appendChild(el, text);
+    el.removeAttribute('style');
 
-    for (const [key, value] of Object.entries(element.defaultStyles as Record<string, { value: number | string, unit: string }>)) {
-      this._renderer.setStyle(el, key, `${value['value']}${value['unit'] ?? ''}`);
+    for (const [key, value] of Object.entries(element.defaultStyles as Record<string, { value: number | string; unit?: string }>)) {
+      const val = `${value['value']}${value['unit'] ?? ''}`;
+      this._renderer.setStyle(el, key, val);
       this._cssConfigService.updateProperty(key, value['value'], value['unit']);
     }
-
     this._renderer.appendChild(container, el);
     this._currentElement = el;
   }
