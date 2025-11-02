@@ -6,8 +6,8 @@
       <span>Kosti</span>
     </div>
   </a>
-  <button mat-icon-button (click)="theme.toggleTheme()">
-    <mat-icon>{{ theme.theme() === 'dark' ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  <button mat-icon-button (click)="toggleTheme()">
+    <mat-icon>{{ isDark ? 'light_mode' : 'dark_mode' }}</mat-icon>
   </button>
 </header>
 <div class="main-container flex-row">

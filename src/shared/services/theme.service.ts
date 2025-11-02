@@ -1,28 +1,20 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { darkTheme, defaultTheme, Theme } from '../configs/theme.model';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+	providedIn: 'root'
+})
 export class ThemeService {
-	theme = signal<'light' | 'dark'>('light');
+	private _active: Theme = defaultTheme;
 
-	constructor() {
-		const stored = localStorage.getItem('theme');
-		if (stored === 'dark') this.setDarkTheme();
-	}
+	public setActiveTheme(theme: string): void {
+		this._active = theme === 'light-theme' ? darkTheme : defaultTheme;
 
-	setLightTheme() {
-		document.body.classList.remove('dark-theme');
-		this.theme.set('light');
-		localStorage.setItem('theme', 'light');
-	}
-
-	setDarkTheme() {
-		document.body.classList.add('dark-theme');
-		this.theme.set('dark');
-		localStorage.setItem('theme', 'dark');
-	}
-
-	toggleTheme() {
-		if (this.theme() === 'dark') this.setLightTheme();
-		else this.setDarkTheme();
+		Object.keys(this._active.properties).forEach(property => {
+			document.documentElement.style.setProperty(
+				property,
+				this._active.properties[property]
+			);
+		});
 	}
 }
