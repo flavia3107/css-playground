@@ -1,4 +1,4 @@
-<header class="card">
+<header class="card flex-row space_between">
   <a class="logo" href="https://all-projects-portfolio.web.app/" target="_blank">
     <img class="logo-img" src="../assets/logo.svg" />
     <div class="logo-txt">
@@ -6,6 +6,9 @@
       <span>Kosti</span>
     </div>
   </a>
+  <button mat-icon-button (click)="theme.toggleTheme()">
+    <mat-icon>{{ theme.theme() === 'dark' ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
 </header>
 <div class="main-container flex-row">
   <div class="config-container flex-column card">

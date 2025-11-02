@@ -1,0 +1,23 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$dark-theme: mat.define-theme(
+	(
+		color: (
+			theme-type: dark,
+			primary: mat.$blue-grey-palette,
+			accent: mat.$cyan-palette,
+		),
+		density: 0,
+	)
+);
+
+.dark-theme {
+	@include mat.all-component-themes($dark-theme);
+
+	--bg-color: #121212;
+	--text-color: #f5f5f5;
+	--border-color: #333;
+	--surface-color: #1e1e1e;
+}
