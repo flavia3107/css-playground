@@ -17,12 +17,17 @@ import { CssConfigService } from './services/cssconfig.service';
 export class AppComponent {
   private _cssConfigService = inject(CssConfigService);
   private _themeService = inject(ThemeService);
-  public isDark = false;
+  public activeTheme = 'light-theme';
+
+  constructor() {
+    this._themeService.setActiveTheme(this.activeTheme);
+  }
 
   public toggleTheme(): void {
-    this.isDark = !this.isDark;
-    this._themeService.setActiveTheme(this.isDark ? 'light-theme' : 'dark-theme');
+    this.activeTheme = this.activeTheme === 'light-theme' ? 'dark-theme' : 'light-theme';
+    this._themeService.setActiveTheme(this.activeTheme);
   }
+
   copyCode() {
     this._cssConfigService.copyCode();
   }

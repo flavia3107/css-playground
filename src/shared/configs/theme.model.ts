@@ -14,7 +14,8 @@ export const defaultTheme: Theme = {
 export const darkTheme: Theme = {
 	name: "darkTheme",
 	properties: {
-		"--bg-color": "red"
+		"--bg-color": "red",
+		"--gray": 'blue'
 
 	}
 };

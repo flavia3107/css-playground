@@ -7,7 +7,7 @@
     </div>
   </a>
   <button mat-icon-button (click)="toggleTheme()">
-    <mat-icon>{{ isDark ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    <mat-icon>{{ activeTheme !== 'light-theme' ? 'light_mode' : 'dark_mode' }}</mat-icon>
   </button>
 </header>
 <div class="main-container flex-row">

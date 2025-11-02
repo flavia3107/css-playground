@@ -8,7 +8,7 @@ export class ThemeService {
 	private _active: Theme = defaultTheme;
 
 	public setActiveTheme(theme: string): void {
-		this._active = theme === 'light-theme' ? darkTheme : defaultTheme;
+		this._active = theme === 'light-theme' ? defaultTheme : darkTheme;
 
 		Object.keys(this._active.properties).forEach(property => {
 			document.documentElement.style.setProperty(
