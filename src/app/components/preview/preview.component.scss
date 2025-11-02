@@ -1,6 +1,6 @@
 span {
 	text-transform: capitalize;
-	border: 1px dotted #dddddd;
+	border: 1px dotted var(--darker-gray-border);
 	display: inline-block;
 	border-radius: 5px;
 	padding: 0.25rem 0.5rem;

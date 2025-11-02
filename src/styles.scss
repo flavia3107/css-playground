@@ -71,7 +71,6 @@ input[type="number"] {
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	color: #252525;
 	padding: 0.5rem;
 	width: fit-content;
 }
@@ -84,7 +83,7 @@ input[type="number"] {
 	padding-left: 7px;
 	display: flex;
 	flex-direction: column;
-	color: #4e4e4e;
+	color: var(--logo-text);
 }
 
 .logo-txt h1,

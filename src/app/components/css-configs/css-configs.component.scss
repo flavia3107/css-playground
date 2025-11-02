@@ -17,20 +17,20 @@ mat-panel-title {
 	margin-bottom: 1rem;
 	font-size: 0.85rem;
 	font-weight: 600;
-	color: #5e5e5e;
+	color: var(--panel-title);
 	align-items: flex-end;
 }
 
 mat-panel-description {
 	font-size: 0.9rem;
-	color: #818181;
+	color: var(--description-text);
 }
 
 .panel-content {
 	background: transparent;
 	padding: 1rem;
 	border-radius: 5px;
-	border: 1px dashed #e8e8e8;
+	border: 1px dashed var(--darker-gray-border);
 	width: 100%;
 	box-sizing: border-box;
 	min-height: 5rem;
@@ -39,7 +39,7 @@ mat-panel-description {
 
 .input-container {
 	font-size: 0.9rem;
-	color: #5b5b5b;
+	color: var(--dark-gray);
 	background: var(--secondary-bg-color);
 	padding: 0.7rem;
 }
@@ -88,7 +88,7 @@ p {
 	display: flex;
 	align-items: center;
 	margin: 1rem 0;
-	color: #888;
+	color: var(--mid-gray);
 	text-transform: uppercase;
 	font-size: 12px;
 	letter-spacing: 1px;
@@ -98,7 +98,7 @@ p {
 		content: "";
 		flex: 1;
 		height: 1px;
-		background: #ccc;
+		background: var(--light-divider);
 	}
 
 	span {
