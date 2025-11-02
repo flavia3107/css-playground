@@ -1,8 +1,8 @@
 .code-preview {
 	height: 100%;
-	background: #f6f6f6;
+	background: var(--secondary-bg-color);
 	border-radius: 5px;
-	border: 1px dotted #d3d3d3;
+	border: 1px dotted var(--gray);
 	padding: 1rem;
 	box-sizing: border-box;
 }

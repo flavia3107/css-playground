@@ -4,7 +4,7 @@ span {
 	display: inline-block;
 	border-radius: 5px;
 	padding: 0.25rem 0.5rem;
-	background: #f2f2f2;
+	background: var(--gray-light-color);
 	cursor: pointer;
 }
 

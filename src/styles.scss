@@ -1,5 +1,5 @@
 body {
-	background-color: var(--main-background);
+	background-color: var(--bg-color);
 	margin: 0;
 }
 
@@ -54,7 +54,7 @@ input[type="number"] {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #d3d3d3;
+	background: var(--gray);
 	width: 9px;
 }
 
@@ -100,7 +100,6 @@ input[type="number"] {
 	font-weight: bolder;
 	font-size: 1rem;
 	margin-top: 2px;
-	color: #4e4e4e;
 }
 
 .logo-txt span {

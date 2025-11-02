@@ -3,7 +3,7 @@ select {
 	font-size: 1rem;
 	padding: 0.2rem;
 	text-align: center;
-	border: 1px dotted #c0c0c0;
+	border: 1px dotted var(--light-gray-border);
 	background: #fff;
 
 	&:focus-visible {

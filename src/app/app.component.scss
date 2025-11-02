@@ -5,10 +5,10 @@
 }
 
 .card {
-	background: #fefefe;
+	background: var(--card-bg-color);
 	height: 100%;
 	border-radius: 10px;
-	box-shadow: 0 0 5px 2px #f0f0f0;
+	box-shadow: 0 0 5px 2px var(--gray-light-color);
 	padding: 1rem;
 	box-sizing: border-box;
 }
@@ -32,7 +32,7 @@ header.card {
 .css-preview {
 	width: 100%;
 	height: calc(100% - 4rem);
-	border: 1px solid #d3d3d3;
+	border: 1px solid var(--gray);
 }
 
 app-preview,
