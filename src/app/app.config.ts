@@ -8,10 +8,7 @@ export const STATES = {
 		'Option to lock certain properties before randomizing',
 		'Gradient backgrounds (linear/radial)',
 		'Text shadow',
-		'Padding / margin sliders',
-		'Width & height controls',
 		'Preview Enhancements',
-		'Different element types (box, button, card, text)',
 		'Hover / active state toggle',
 		'Reset button',
 		'Code Display',
@@ -31,7 +28,6 @@ export const STATES = {
 		'Shareable URL (encode styles into query string)',
 		'Screenshot download (canvas or html2canvas)',
 		'UI / UX Polish',
-		'Dark / light theme switch',
 		'Smooth transitions on style changes',
 		'Micro animations (hover effects, color transitions)',
 		'Tooltips with property explanations'

@@ -2,8 +2,9 @@
 	color: var(--main-text);
 }
 
-body {
-	background-color: var(--bg-color);
+body,
+.mat-mdc-menu-panel {
+	background-color: var(--bg-color) !important;
 	margin: 0;
 }
 
