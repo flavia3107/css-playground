@@ -12,7 +12,11 @@
 </header>
 <div class="main-container flex-row">
   <div class="config-container flex-column card">
-    <h2>Config</h2>
+    <h2 class="flex-row space_between middle">Config
+      <button mat-icon-button (click)="reset()">
+        <mat-icon>history</mat-icon>
+      </button>
+    </h2>
     <div class="config-content">
       <app-css-configs />
     </div>

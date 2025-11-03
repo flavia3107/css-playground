@@ -35,4 +35,8 @@ export class AppComponent {
   downloadCode() {
     this._cssConfigService.downloadCode();
   }
+
+  reset() {
+    this._cssConfigService.reset();
+  }
 }

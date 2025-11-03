@@ -10,8 +10,6 @@ export const STATES = {
 		'Text shadow',
 		'Preview Enhancements',
 		'Hover / active state toggle',
-		'Reset button',
-		'Code Display',
 		'Syntax-highlighted CSS viewer',
 		'Copy to Clipboard animation or toast'
 	],
