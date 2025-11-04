@@ -30,7 +30,7 @@ export class PreviewComponent {
           this._applyStyle(prop, val);
         }
       }
-      this._cssConfigService.cssCode.set(this._cssConfigService.formatInlineCss(this._currentElement?.style?.cssText ?? ''))
+      this._cssConfigService.setCssCode(this._currentElement?.style?.cssText ?? '');
     });
   }
 
@@ -62,7 +62,6 @@ export class PreviewComponent {
     }
     this._renderer.appendChild(container, el);
     this._currentElement = el;
-    this._cssConfigService.updateElement(el);
-    this._cssConfigService.cssCode.set(this._cssConfigService.formatInlineCss(this._currentElement?.style?.cssText ?? ''))
+    this._cssConfigService.setCssCode(this._currentElement?.style?.cssText ?? '');
   }
 }
