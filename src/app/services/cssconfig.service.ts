@@ -1,11 +1,12 @@
-import { Injectable, signal, computed, effect, ElementRef, Renderer2 } from '@angular/core';
+import { Injectable, signal, computed, effect } from '@angular/core';
 import { CSS_CONFIG, SHORT_HAND_MAP } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
   public cssConfig = signal(CSS_CONFIG);
   readonly config = signal<Record<string, any>>({});
-  readonly cssCode = computed(() => this.currentElement?.style?.cssText ?? '');
+  readonly cssCode = signal('');
+
   styleUpdates = signal<Record<string, any>>({});
   public currentElement: any;
 
@@ -72,5 +73,15 @@ export class CssConfigService {
 
   updateElement(element: any) {
     this.currentElement = element
+  }
+
+  public formatInlineCss(cssText: string): string {
+    console.log('here', cssText)
+    if (!cssText) return '';
+    return cssText
+      .split(';')
+      .map(prop => prop.trim())
+      .filter(prop => prop)
+      .join(';\n') + ';';
   }
 }
