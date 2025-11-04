@@ -1,16 +1,13 @@
-import { Injectable, signal, computed, effect } from '@angular/core';
+import { Injectable, signal, computed, effect, ElementRef, Renderer2 } from '@angular/core';
 import { CSS_CONFIG, SHORT_HAND_MAP } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
-  public cssConfig = signal(CSS_CONFIG)
+  public cssConfig = signal(CSS_CONFIG);
   readonly config = signal<Record<string, any>>({});
-  readonly cssCode = computed(() => {
-    const entries = Object.entries(this.config());
-    const cssLines = entries.map(([key, value]) => `${key}: ${value};`);
-    return entries.length ? `.preview-box {\n  ${cssLines.join('\n  ')}\n}` : '';
-  });
+  readonly cssCode = computed(() => this.currentElement?.style?.cssText ?? '');
   styleUpdates = signal<Record<string, any>>({});
+  public currentElement: any;
 
   constructor() {
     effect(() => {
@@ -71,5 +68,9 @@ export class CssConfigService {
     a.download = 'styles.css';
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  updateElement(element: any) {
+    this.currentElement = element
   }
 }

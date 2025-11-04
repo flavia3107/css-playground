@@ -31,5 +31,6 @@ export class CustomInputFieldsComponent {
 
   public updateProperty(property: string, value: string | number | boolean, unit?: string) {
     this._cssConfigService.updateProperty(property, value, unit);
+    // this._cssConfigService.updateCssCode();
   }
 }

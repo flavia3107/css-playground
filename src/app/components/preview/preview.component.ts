@@ -61,5 +61,7 @@ export class PreviewComponent {
     }
     this._renderer.appendChild(container, el);
     this._currentElement = el;
+    // this._cssConfigService.updateCssCode();
+    this._cssConfigService.updateElement(el);
   }
 }

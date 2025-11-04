@@ -32,5 +32,6 @@ export class CssConfigsComponent {
 
   public updateProperty(property: string, value: string | number | boolean, unit?: string) {
     this.cssConfigService.updateProperty(property, value, unit);
+    // this.cssConfigService.updateCssCode();
   }
 }
