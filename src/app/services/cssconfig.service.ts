@@ -4,19 +4,13 @@ import { CSS_CONFIG, SHORT_HAND_MAP } from '../app.config';
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
   readonly cssConfig = signal(CSS_CONFIG);
-  readonly styleUpdates = signal<Record<string, any>>({});
   readonly config = signal<Record<string, any>>({});
   readonly cssCode = signal('');
 
   public updateProperty(property: string, value: any, unit?: string) {
     const newConfig = this._updatePropertyMapping(this.cssConfig(), property, value);
-
     this.cssConfig.set(newConfig);
     this.config.update(current => ({ ...current, [property]: `${value}${unit ?? ''}` }));
-    this.styleUpdates.update(current => ({
-      ...current,
-      [property]: unit && typeof value === 'number' ? `${value}${unit}` : value
-    }));
 
     if (Object.keys(SHORT_HAND_MAP).includes(property)) {
       SHORT_HAND_MAP[property].forEach(subProp => {
@@ -28,7 +22,6 @@ export class CssConfigService {
   public reset() {
     this.config.set({});
     this.cssConfig.set(CSS_CONFIG);
-    this.styleUpdates.set({});
   }
 
   public copyCode() {

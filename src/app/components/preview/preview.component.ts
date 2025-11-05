@@ -20,7 +20,7 @@ export class PreviewComponent {
 
   constructor() {
     effect(() => {
-      const update = this._cssConfigService.styleUpdates();
+      const update = this._cssConfigService.config();
       if (!update || !this._currentElement) return;
 
       if ('property' in update) {
