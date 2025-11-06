@@ -39,4 +39,8 @@ export class AppComponent {
   reset() {
     this._cssConfigService.reset();
   }
+
+  randomizeStyles() {
+    this._cssConfigService.generateRandomStyle();
+  }
 }

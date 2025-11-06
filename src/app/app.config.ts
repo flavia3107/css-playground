@@ -23,7 +23,6 @@ export const STATES = {
 		'Resizable / draggable preview box',
 		'Option to switch to a full “card” preview with text and buttons',
 		'Sharing',
-		'Shareable URL (encode styles into query string)',
 		'Screenshot download (canvas or html2canvas)',
 		'UI / UX Polish',
 		'Smooth transitions on style changes',

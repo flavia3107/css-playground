@@ -71,4 +71,39 @@ export class CssConfigService {
     }))
   }
 
+  public generateRandomStyle() {
+    const randomStyle: Record<string, string> = {
+      'background-color': this._getRandomColor(),
+      'border-width': `${this._getRandomNumber(0, 5)}px`,
+      'border-style': 'solid',
+      'border-color': this._getRandomColor(),
+      'border-radius': `${this._getRandomNumber(0, 30)}px`,
+      'box-shadow': this._getRandomShadow(),
+      'padding': `${this._getRandomNumber(0, 40)}px`,
+      'margin': `${this._getRandomNumber(0, 40)}px`
+    };
+
+    for (const [key, value] of Object.entries(randomStyle)) {
+      const numericValue = parseFloat(value);
+      const unit = value.replace(/[0-9.\-]/g, '') || 'px';
+      this.updateProperty(key, isNaN(numericValue) ? value : numericValue, unit);
+    }
+  }
+
+  private _getRandomColor(): string {
+    const random = Math.floor(Math.random() * 16777215).toString(16);
+    return `#${random.padStart(6, '0')}`;
+  }
+
+  private _getRandomNumber(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  private _getRandomShadow(): string {
+    const x = this._getRandomNumber(0, 10);
+    const y = this._getRandomNumber(0, 10);
+    const blur = this._getRandomNumber(5, 30);
+    const color = this._getRandomColor();
+    return `${x}px ${y}px ${blur}px ${color}`;
+  }
 }
