@@ -14,13 +14,10 @@ export const STATES = {
 	],
 	phase_3: [
 		'Color harmony picker (complementary, analogous, triadic)',
-		'SCSS/LESS output toggle',
-		'Undo / Redo history',
 		'Download CSS / HTML as a zip',
 		'Preview & Layout',
 		'Responsive preview (mobile/tablet/desktop toggle)',
 		'Resizable / draggable preview box',
-		'Option to switch to a full “card” preview with text and buttons',
 		'Sharing',
 		'Screenshot download (canvas or html2canvas)',
 		'UI / UX Polish',

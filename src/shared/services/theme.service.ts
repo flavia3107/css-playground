@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
-import { darkTheme, defaultTheme, Theme } from '../configs/theme.model';
+import { darkTheme, defaultTheme } from '../configs/theme.model';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ThemeService {
-	private _active: Theme = defaultTheme;
 
 	public setActiveTheme(theme: string): void {
-		this._active = theme === 'light-theme' ? defaultTheme : darkTheme;
+		const activeTheme = theme === 'light-theme' ? defaultTheme : darkTheme;
+		localStorage.setItem('theme', theme);
 
-		Object.keys(this._active.properties).forEach(property => {
+		Object.keys(activeTheme.properties).forEach(property => {
 			document.documentElement.style.setProperty(
 				property,
-				this._active.properties[property]
+				activeTheme.properties[property]
 			);
 		});
 	}

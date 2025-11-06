@@ -20,7 +20,7 @@ export class AppComponent {
   public activeTheme = 'light-theme';
 
   constructor() {
-    this._themeService.setActiveTheme(this.activeTheme);
+    this._themeService.setActiveTheme(localStorage.getItem('theme') ?? this.activeTheme);
   }
 
   public toggleTheme(): void {
