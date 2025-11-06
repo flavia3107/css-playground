@@ -88,6 +88,8 @@ export class CssConfigService {
       const unit = value.replace(/[0-9.\-]/g, '') || 'px';
       this.updateProperty(key, isNaN(numericValue) ? value : numericValue, unit);
     }
+
+    this.config.set(randomStyle);
   }
 
   private _getRandomColor(): string {

@@ -4,7 +4,6 @@ export const STATES = {
 		'Save preset to localStorage',
 		'Load / delete saved presets',
 		'Rename presets',
-		'Random Style button — generates random color, border, shadow, etc.',
 		'Option to lock certain properties before randomizing',
 		'Gradient backgrounds (linear/radial)',
 		'Text shadow',
