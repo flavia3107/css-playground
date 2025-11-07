@@ -469,3 +469,30 @@ export const ELEMENTS = {
 		}
 	]
 };
+
+export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (values: Record<string, any>) => string }> = {
+	'box-shadow': {
+		parts: ['offsetX', 'offsetY', 'blurRadius', 'spreadRadius', 'color'],
+		formatter: ({ offsetX, offsetY, blurRadius, spreadRadius, color }) =>
+			`${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${color}`,
+	},
+	'text-shadow': {
+		parts: ['offsetX', 'offsetY', 'blurRadius', 'color'],
+		formatter: ({ offsetX, offsetY, blurRadius, color }) =>
+			`${offsetX}px ${offsetY}px ${blurRadius}px ${color}`,
+	},
+	border: {
+		parts: ['width', 'style', 'color'],
+		formatter: ({ width, style, color }) => `${width}px ${style} ${color}`,
+	},
+	outline: {
+		parts: ['width', 'style', 'color'],
+		formatter: ({ width, style, color }) => `${width}px ${style} ${color}`,
+	},
+	transform: {
+		parts: ['rotate', 'scale', 'translateX', 'translateY'],
+		formatter: ({ rotate, scale, translateX, translateY }) =>
+			`rotate(${rotate}deg) scale(${scale}) translate(${translateX}px, ${translateY}px)`,
+	},
+};
+
