@@ -30,7 +30,9 @@ export class CssConfigsComponent {
     }
   }
 
-  public updateProperty(property: string, value: string | number | boolean, unit?: string) {
+  public updateProperty(property: string, value: string | number | boolean, unit?: string, section?: string) {
     this.cssConfigService.updateProperty(property, value, unit);
+    // if (section)
+    this.cssConfigService.mapCssProperties(section ?? 'box-shadow')
   }
 }

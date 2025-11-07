@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { CSS_CONFIG, SHORT_HAND_MAP } from '../app.config';
+import { CSS_CONFIG, MULTI_VALUE_MAP, SHORT_HAND_MAP } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
 export class CssConfigService {
@@ -107,5 +107,13 @@ export class CssConfigService {
     const blur = this._getRandomNumber(5, 30);
     const color = this._getRandomColor();
     return `${x}px ${y}px ${blur}px ${color}`;
+  }
+
+  public mapCssProperties(section: string) {
+    const config = this.cssConfig().find(config => config.section === section)?.properties.map(prop => ({ [prop.name]: prop.value }));
+    const result = (config || []).reduce((acc, obj) => Object.assign(acc, obj), {});
+    const property = MULTI_VALUE_MAP[section];
+    const value = property.formatter(result)
+    this.config.update(current => ({ ...current, [section]: `${value}` }));
   }
 }

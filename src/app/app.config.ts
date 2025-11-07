@@ -45,6 +45,7 @@ export interface BaseProperty {
 	unit?: string;
 	props?: any;
 	divider?: boolean;
+	mainProp?: string;
 }
 
 export interface SimpleProperty extends BaseProperty {
@@ -109,16 +110,16 @@ export const CSS_CONFIG: CSSSection[] = [
 		]
 	},
 	{
-		section: 'boxShadow',
+		section: 'box-shadow',
 		icon: 'tonality',
 		summary: 'Control shadow effects for depth and emphasis.',
 		properties: [
-			{ name: 'box-shadow-x', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'X' },
-			{ name: 'box-shadow-y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Y' },
-			{ name: 'box-shadow-blur', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur' },
-			{ name: 'box-shadow-spread', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
-			{ name: 'box-shadow-color', value: '#ffffff', type: 'color', label: 'Color' },
-			{ name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset' }
+			{ name: 'offsetX', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset X', mainProp: 'box-shadow' },
+			{ name: 'offsetY', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset Y', mainProp: 'box-shadow' },
+			{ name: 'blurRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur Radius', mainProp: 'box-shadow' },
+			{ name: 'spreadRadius', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
+			{ name: 'shadowColor', value: '#ffffff', type: 'color', label: 'Color', mainProp: 'box-shadow' },
+			{ name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset', mainProp: 'box-shadow' }
 		]
 	},
 	{
@@ -472,18 +473,14 @@ export const ELEMENTS = {
 
 export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (values: Record<string, any>) => string }> = {
 	'box-shadow': {
-		parts: ['offsetX', 'offsetY', 'blurRadius', 'spreadRadius', 'color'],
-		formatter: ({ offsetX, offsetY, blurRadius, spreadRadius, color }) =>
-			`${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${color}`,
+		parts: ['offsetX', 'offsetY', 'blurRadius', 'spreadRadius', 'shadowColor'],
+		formatter: ({ offsetX, offsetY, blurRadius, spreadRadius, shadowColor }) =>
+			`${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${shadowColor}`,
 	},
 	'text-shadow': {
 		parts: ['offsetX', 'offsetY', 'blurRadius', 'color'],
 		formatter: ({ offsetX, offsetY, blurRadius, color }) =>
 			`${offsetX}px ${offsetY}px ${blurRadius}px ${color}`,
-	},
-	border: {
-		parts: ['width', 'style', 'color'],
-		formatter: ({ width, style, color }) => `${width}px ${style} ${color}`,
 	},
 	outline: {
 		parts: ['width', 'style', 'color'],
