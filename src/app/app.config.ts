@@ -114,12 +114,12 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'tonality',
 		summary: 'Control shadow effects for depth and emphasis.',
 		properties: [
-			{ name: 'offsetX', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset X', mainProp: 'box-shadow' },
-			{ name: 'offsetY', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset Y', mainProp: 'box-shadow' },
-			{ name: 'blurRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur Radius', mainProp: 'box-shadow' },
+			{ name: 'offsetX', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset X' },
+			{ name: 'offsetY', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset Y' },
+			{ name: 'blurRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur Radius' },
 			{ name: 'spreadRadius', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
-			{ name: 'shadowColor', value: '#ffffff', type: 'color', label: 'Color', mainProp: 'box-shadow' },
-			{ name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset', mainProp: 'box-shadow' }
+			{ name: 'shadowColor', value: '#ffffff', type: 'color', label: 'Color' },
+			{ name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset' }
 		]
 	},
 	{
