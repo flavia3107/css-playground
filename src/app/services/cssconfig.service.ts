@@ -116,4 +116,12 @@ export class CssConfigService {
     const value = property.formatter(result)
     this.config.update(current => ({ ...current, [section]: `${value}` }));
   }
+  /**
+   *  to do: 
+   *  - reverse mapping - from insert apply to config
+   *  - gradient
+   *  - transform
+   */
+
+
 }
