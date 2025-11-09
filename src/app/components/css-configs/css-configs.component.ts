@@ -16,23 +16,22 @@ import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-
 export class CssConfigsComponent {
   public cssConfigService = inject(CssConfigService);
 
-  public increase(property: SimpleProperty) {
+  public increase(property: SimpleProperty, section: string) {
     if (typeof property.value === 'number') {
       property.value++;
-      this.updateProperty(property.name, property.value, property.unit);
+      this.updateProperty(property.name, property.value, property.unit, section);
     }
   }
 
-  public decrease(property: SimpleProperty) {
+  public decrease(property: SimpleProperty, section: string) {
     if (typeof property.value === 'number') {
       property.value--;
-      this.updateProperty(property.name, property.value, property.unit);
+      this.updateProperty(property.name, property.value, property.unit, section);
     }
   }
 
   public updateProperty(property: string, value: string | number | boolean, unit?: string, section?: string) {
     this.cssConfigService.updateProperty(property, value, unit);
-    // if (section)
-    this.cssConfigService.mapCssProperties(section ?? 'box-shadow')
+    this.cssConfigService.mapCssProperties(section ?? '')
   }
 }

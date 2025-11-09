@@ -110,11 +110,13 @@ export class CssConfigService {
   }
 
   public mapCssProperties(section: string) {
-    const config = this.cssConfig().find(config => config.section === section)?.properties.map(prop => ({ [prop.name]: prop.value }));
-    const result = (config || []).reduce((acc, obj) => Object.assign(acc, obj), {});
     const property = MULTI_VALUE_MAP[section];
-    const value = property.formatter(result)
-    this.config.update(current => ({ ...current, [section]: `${value}` }));
+    if (property) {
+      const config = this.cssConfig().find(config => config.section === section)?.properties.map(prop => ({ [prop.name]: prop.value }));
+      const result = (config || []).reduce((acc, obj) => Object.assign(acc, obj), {});
+      const value = property.formatter(result)
+      this.config.update(current => ({ ...current, [section]: `${value}` }));
+    }
   }
   /**
    *  to do: 
