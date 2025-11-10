@@ -41,6 +41,6 @@ export class AppComponent {
   }
 
   randomizeStyles() {
-    this._cssConfigService.generateRandomStyle();
+    // this._cssConfigService.generateRandomStyle();
   }
 }
