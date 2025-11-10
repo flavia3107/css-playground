@@ -116,6 +116,8 @@ export class CssConfigService {
     const property = MULTI_VALUE_MAP[section];
     if (property) {
       const config = this.cssConfig().find(config => config.section === section)?.properties.map(prop => ({ [prop.name]: prop.value }));
+      console.log('here', property, config)
+
       const result = (config || []).reduce((acc, obj) => Object.assign(acc, obj), {});
       const value = property.formatter(result);
       this.config.update(current => ({ ...current, [section]: `${value}` }));

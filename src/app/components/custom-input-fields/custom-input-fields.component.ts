@@ -12,10 +12,8 @@ import { CssConfigService } from 'src/app/services/cssconfig.service';
 export class CustomInputFieldsComponent {
   private _cssConfigService = inject(CssConfigService);
   properties = input<any[]>();
-  label = input<string>();
   section = input<string>('');
   valueChange = output<any[]>();
-
 
   public increase(property: SimpleProperty) {
     if (typeof property.value === 'number') {

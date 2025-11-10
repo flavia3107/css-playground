@@ -1,7 +1,4 @@
 <div class="multi-input">
-	@if (label()) {
-	<label class="main-label">{{ label() }}</label>
-	}
 	@for (property of properties(); track property.name) {
 	<div class="inputs-row flex-row space_between middle">
 		<p> {{property.label}} </p>
