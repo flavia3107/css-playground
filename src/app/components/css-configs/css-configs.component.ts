@@ -32,6 +32,6 @@ export class CssConfigsComponent {
 
   public updateProperty(property: string, value: string | number | boolean, unit?: string, section?: string) {
     this.cssConfigService.updateProperty(property, value, unit);
-    // this.cssConfigService.mapCssProperties(section ?? '')
+    this.cssConfigService.mapCssProperties(section ?? '')
   }
 }
