@@ -15,18 +15,18 @@
 				<p> {{property.label}} </p>
 				@switch (property.type) {
 				@case ('color') {
-				<input type="color" class="input-color" [ngModel]="property.value"
-					(ngModelChange)="updateProperty(property.name, $event, config.section)" />
+				<input type="color" class="input-color" [(ngModel)]="property.value"
+					(ngModelChange)="updateProperty(property.name, $event, '', config.section)" />
 				}
 				@case ('custom') {
 				<app-custom-input-fields [properties]="property.props" [section]="config.section" />
 				}
 				@case ('text') {
-				<input type="text" [ngModel]="property.value"
+				<input type="text" [(ngModel)]="property.value"
 					(ngModelChange)="updateProperty(property.name, $event, config.section)" />
 				}
 				@case ('select') {
-				<select class="input-select" [ngModel]="property.value"
+				<select class="input-select" [(ngModel)]="property.value"
 					(ngModelChange)="updateProperty(property.name, $event)">
 					@for (option of property?.options; track option) {
 					<option [value]="option">{{ option }}</option>

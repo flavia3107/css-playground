@@ -118,7 +118,7 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'offsetY', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset Y' },
 			{ name: 'blurRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur Radius' },
 			{ name: 'spreadRadius', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
-			{ name: 'shadowColor', value: '#ffffff', type: 'color', label: 'Color' },
+			{ name: 'shadowColor', value: '#ffffff', type: 'color', label: 'Shadow Color' },
 			{ name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset' }
 		]
 	},

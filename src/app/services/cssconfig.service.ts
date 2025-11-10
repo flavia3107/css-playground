@@ -117,8 +117,9 @@ export class CssConfigService {
     if (property) {
       const config = this.cssConfig().find(config => config.section === section)?.properties.map(prop => ({ [prop.name]: prop.value }));
       const result = (config || []).reduce((acc, obj) => Object.assign(acc, obj), {});
-      const value = property.formatter(result)
+      const value = property.formatter(result);
       this.config.update(current => ({ ...current, [section]: `${value}` }));
+      this.styleUpdates.update(current => ({ ...current, [section]: `${value}` }));
     }
   }
   /**
