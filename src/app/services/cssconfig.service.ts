@@ -112,11 +112,13 @@ export class CssConfigService {
     return `${x}px ${y}px ${blur}px ${color}`;
   }
 
-  public mapCssProperties(section: string) {
+  public mapCssProperties(section: string, proerty?: string) {
     const property = MULTI_VALUE_MAP[section];
+    console.log('here', section, proerty)
+
     if (property) {
       const config = this.cssConfig().find(config => config.section === section)?.properties.map(prop => ({ [prop.name]: prop.value }));
-      console.log('here', property, config)
+      // handle nested properties - sections
 
       const result = (config || []).reduce((acc, obj) => Object.assign(acc, obj), {});
       const value = property.formatter(result);
@@ -129,6 +131,7 @@ export class CssConfigService {
    *  - reverse mapping - from insert apply to config
    *  - gradient
    *  - transform
+   * 
    */
 
 
