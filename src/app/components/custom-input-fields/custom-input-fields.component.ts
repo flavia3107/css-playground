@@ -13,7 +13,6 @@ export class CustomInputFieldsComponent {
   private _cssConfigService = inject(CssConfigService);
   properties = input<any[]>();
   section = input<string>('');
-  property = input<string>('');
   valueChange = output<any[]>();
 
   public increase(property: SimpleProperty) {
@@ -32,6 +31,6 @@ export class CustomInputFieldsComponent {
 
   public updateProperty(property: string, value: string | number | boolean, unit?: string) {
     this._cssConfigService.updateProperty(property, value, unit);
-    this._cssConfigService.mapCssProperties(this.section(), this.property())
+    this._cssConfigService.mapCssProperties(this.section())
   }
 }

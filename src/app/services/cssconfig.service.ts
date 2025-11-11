@@ -112,9 +112,9 @@ export class CssConfigService {
     return `${x}px ${y}px ${blur}px ${color}`;
   }
 
-  public mapCssProperties(section: string, proerty?: string) {
+  public mapCssProperties(section: string, propName?: string) {
     const property = MULTI_VALUE_MAP[section];
-    console.log('here', section, proerty)
+    console.log('here', section, propName, property)
 
     if (property) {
       const config = this.cssConfig().find(config => config.section === section)?.properties.map(prop => ({ [prop.name]: prop.value }));
