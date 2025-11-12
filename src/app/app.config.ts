@@ -84,9 +84,9 @@ export const CSS_CONFIG: CSSSection[] = [
 				name: 'background-gradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', divider: true, props: [
 					{ name: 'type', value: '', type: 'select', options: ['linear', 'radial', 'conic'], label: 'Type' },
 					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle' },
-					{ name: 'color_1', type: 'color', value: '#ffffff', label: 'First Color' },
-					{ name: 'color_2', type: 'color', value: '#ffffff', label: 'Second Color' },
-					{ name: 'color_3', type: 'color', value: '#ffffff', label: 'Third Color' }
+					{ name: 'startColor', type: 'color', value: '#ffffff', label: 'First Color' },
+					{ name: 'midColor', type: 'color', value: '#ffffff', label: 'Second Color' },
+					{ name: 'endColor', type: 'color', value: '#ffffff', label: 'Third Color' }
 
 				]
 			},

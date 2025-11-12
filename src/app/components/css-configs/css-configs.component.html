@@ -19,7 +19,8 @@
 					(ngModelChange)="updateProperty(property.name, $event, '', config.section)" />
 				}
 				@case ('custom') {
-				<app-custom-input-fields [properties]="property.props" [section]="property.name" />
+				<app-custom-input-fields [properties]="property.props" [section]="config.section"
+					[nestedProperty]="property.name" />
 				}
 				@case ('text') {
 				<input type="text" [(ngModel)]="property.value"
