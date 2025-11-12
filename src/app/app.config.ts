@@ -5,12 +5,12 @@ export const STATES = {
 		'Load / delete saved presets',
 		'Rename presets',
 		'Option to lock certain properties before randomizing',
-		'Gradient backgrounds (linear/radial)',
 		'Text shadow',
 		'Preview Enhancements',
 		'Hover / active state toggle',
 		'Syntax-highlighted CSS viewer',
-		'Copy to Clipboard animation or toast'
+		'Copy to Clipboard animation or toast',
+		'Reset css line style (like remove gradient to apply background'
 	],
 	phase_3: [
 		'Color harmony picker (complementary, analogous, triadic)',
