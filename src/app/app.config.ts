@@ -5,7 +5,6 @@ export const STATES = {
 		'Load / delete saved presets',
 		'Rename presets',
 		'Option to lock certain properties before randomizing',
-		'Text shadow',
 		'Preview Enhancements',
 		'Hover / active state toggle',
 		'Syntax-highlighted CSS viewer',
@@ -179,11 +178,11 @@ export const CSS_CONFIG: CSSSection[] = [
 		summary: 'Apply rotation, scaling, and skew transformations.',
 		properties: [
 			{ name: 'rotate', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, label: 'Rotate' },
-			{ name: 'scale', value: 0, type: 'number', min: 0.1, max: 3, step: 0.1, label: 'Scale' },
-			{ name: 'skew-x', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew X' },
-			{ name: 'skew-y', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew Y' },
-			{ name: 'translate-x', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate X' },
-			{ name: 'translate-y', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate Y' }
+			{ name: 'scale', value: 1, type: 'number', min: 0.1, max: 3, step: 0.1, label: 'Scale' },
+			// { name: 'skew-x', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew X' },
+			// { name: 'skew-y', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew Y' },
+			{ name: 'translateX', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate X' },
+			{ name: 'translateY', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate Y' }
 		]
 	},
 	{
@@ -493,7 +492,7 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 		formatter: ({ rotate, scale, translateX, translateY }) =>
 			`rotate(${rotate}deg) scale(${scale}) translate(${translateX}px, ${translateY}px)`,
 	},
-	'background': {
+	background: {
 		parts: ['type', 'angle', 'startColor', 'midColor', 'endColor'],
 		formatter: ({ type = 'linear', angle = 90, startColor, midColor, endColor }) => {
 			const colors = [startColor, midColor, endColor].filter(Boolean).join(', ');
