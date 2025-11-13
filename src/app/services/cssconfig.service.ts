@@ -121,10 +121,6 @@ export class CssConfigService {
       const config = props.map((prop: any) => ({ [prop.name]: prop.value }));
       const result = (config || []).reduce((acc: any, obj: any) => Object.assign(acc, obj), {});
       const value = property.formatter(result);
-
-      this.config.update(current => ({ ...current, [section]: `${value}` }));
-      console.log('section', value)
-
       this.styleUpdates.update(current => ({ ...current, [nestedProperty ?? section]: `${value}` }));
     }
   }

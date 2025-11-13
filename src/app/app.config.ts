@@ -81,7 +81,7 @@ export const CSS_CONFIG: CSSSection[] = [
 		properties: [
 			{ name: 'background-color', value: '#ffffff', type: 'color', 'label': 'Color', divider: true },
 			{
-				name: 'background-gradient', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', divider: true, props: [
+				name: 'background', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', divider: true, props: [
 					{ name: 'type', value: '', type: 'select', options: ['linear', 'radial', 'conic'], label: 'Type' },
 					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle' },
 					{ name: 'startColor', type: 'color', value: '#ffffff', label: 'First Color' },
@@ -493,7 +493,7 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 		formatter: ({ rotate, scale, translateX, translateY }) =>
 			`rotate(${rotate}deg) scale(${scale}) translate(${translateX}px, ${translateY}px)`,
 	},
-	'background-gradient': {
+	'background': {
 		parts: ['type', 'angle', 'startColor', 'midColor', 'endColor'],
 		formatter: ({ type = 'linear', angle = 90, startColor, midColor, endColor }) => {
 			const colors = [startColor, midColor, endColor].filter(Boolean).join(', ');
