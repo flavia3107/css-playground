@@ -123,7 +123,9 @@ export class CssConfigService {
       const value = property.formatter(result);
 
       this.config.update(current => ({ ...current, [section]: `${value}` }));
-      this.styleUpdates.update(current => ({ ...current, [section]: `${value}` }));
+      console.log('section', value)
+
+      this.styleUpdates.update(current => ({ ...current, [nestedProperty ?? section]: `${value}` }));
     }
   }
   /**

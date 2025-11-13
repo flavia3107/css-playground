@@ -137,10 +137,10 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'line-height', value: 1.5, type: 'number', min: -10, max: null, step: 0.1, label: 'Line Height' },
 			{
 				name: 'text-shadow', value: '', type: 'custom', label: 'Text Shadow', props: [
-					{ name: 'offset-x', label: 'X', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
-					{ name: 'offset-y', label: 'Y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
-					{ name: 'blur', label: 'Blur', value: 0, type: 'number', unit: 'px', min: 0, max: 100, step: 1 },
-					{ name: 'color', label: 'Color', value: '#ffffff', type: 'color' }
+					{ name: 'offsetX', label: 'Offset X', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
+					{ name: 'offsetY', label: 'Offset Y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
+					{ name: 'blurRadius', label: 'Blur Radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, step: 1 },
+					{ name: 'textShadowColor', label: 'Shadow Color', value: '#ffffff', type: 'color' }
 				]
 			},
 			{ name: 'textAlign', value: 'center', type: 'select', options: ['left', 'center', 'right', 'justify'], label: 'Align' }
@@ -480,9 +480,9 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 			`${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px ${shadowColor}`,
 	},
 	'text-shadow': {
-		parts: ['offsetX', 'offsetY', 'blurRadius', 'color'],
-		formatter: ({ offsetX, offsetY, blurRadius, color }) =>
-			`${offsetX}px ${offsetY}px ${blurRadius}px ${color}`,
+		parts: ['offsetX', 'offsetY', 'blurRadius', 'textShadowColor'],
+		formatter: ({ offsetX, offsetY, blurRadius, textShadowColor }) =>
+			`${offsetX}px ${offsetY}px ${blurRadius}px ${textShadowColor}`,
 	},
 	outline: {
 		parts: ['width', 'style', 'color'],
