@@ -127,8 +127,7 @@ export class CssConfigService {
   /**
    *  to do: 
    *  - reverse mapping - from insert apply to config
-   *  - transform
-   * 
+   *  - reset config to original on reset - or to active item style
    */
 
 
