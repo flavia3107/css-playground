@@ -124,11 +124,11 @@ export class CssConfigService {
       this.styleUpdates.update(current => ({ ...current, [nestedProperty ?? section]: `${value}` }));
     }
   }
-  /**
-   *  to do: 
-   *  - reverse mapping - from insert apply to config
-   *  - reset config to original on reset - or to active item style
-   */
 
-
+  public transformValue(property: string, value: string | number | boolean) {
+    const propObj: any = {
+      'background-image': `url('${value}')`
+    }
+    return propObj[property] ?? value;
+  }
 }

@@ -509,3 +509,12 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 	},
 };
 
+/**
+ *  to do:
+ *  - reverse mapping - from insert apply to config
+ *  - reset config to original on reset - or to active item style
+ *  - filter section
+ *  - style for hover + transition
+ *  - input from keyboard
+ * 	- pseudo-classes
+ */

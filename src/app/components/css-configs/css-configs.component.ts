@@ -31,14 +31,7 @@ export class CssConfigsComponent {
   }
 
   public updateProperty(property: string, value: string | number | boolean, unit?: string, section?: string) {
-    this.cssConfigService.updateProperty(property, this._transformValue(property, value), unit);
+    this.cssConfigService.updateProperty(property, this.cssConfigService.transformValue(property, value), unit);
     this.cssConfigService.mapCssProperties(section ?? '')
-  }
-
-  private _transformValue(property: string, value: string | number | boolean) {
-    const propObj: any = {
-      'background-image': `url('${value}')`
-    }
-    return propObj[property] ?? value;
   }
 }
