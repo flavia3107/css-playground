@@ -203,10 +203,13 @@ export const CSS_CONFIG: CSSSection[] = [
 		icon: 'animation',
 		summary: 'Control animation transitions for smooth style changes.',
 		properties: [
-			{ name: 'transition-property', value: 'all', type: 'text', label: 'Property' },
-			{ name: 'transition-duration', value: 0.0, type: 'number', unit: 's', min: 0, max: null, label: 'Duration' },
-			{ name: 'transition-timing-function', value: 'ease-in-out', type: 'select', options: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'], label: 'Timing Function' },
-			{ name: 'transition-delay', value: 0, type: 'number', unit: 's', min: 0, max: null, label: 'Delay' }
+			{
+				name: 'property', value: 'all', type: 'select', label: 'Property',
+				options: ['opacity', 'transform', 'height', 'width', 'background-color', 'all']
+			},
+			{ name: 'duration', value: 0.0, type: 'number', unit: 's', min: 0, max: null, label: 'Duration' },
+			{ name: 'timingFunction', value: 'ease-in-out', type: 'select', options: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'], label: 'Timing Function' },
+			{ name: 'delay', value: 0, type: 'number', unit: 's', min: 0, max: null, label: 'Delay' }
 		]
 	},
 	{
@@ -507,6 +510,11 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 			}
 		},
 	},
+	transition: {
+		parts: ['property', 'duration', 'timingFunction', 'delay'],
+		formatter: ({ property, duration, timingFunction, delay }) =>
+			`${property} ${duration}s ${timingFunction} ${delay}s)`,
+	}
 };
 
 /**
