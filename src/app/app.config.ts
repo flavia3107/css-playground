@@ -198,20 +198,20 @@ export const CSS_CONFIG: CSSSection[] = [
 			{ name: 'sepia', value: 0, type: 'number', unit: '%', min: 0, max: 100, label: 'Sepia' }
 		]
 	},
-	{
-		section: 'transition',
-		icon: 'animation',
-		summary: 'Control animation transitions for smooth style changes.',
-		properties: [
-			{
-				name: 'property', value: 'all', type: 'select', label: 'Property',
-				options: ['opacity', 'transform', 'height', 'width', 'background-color', 'all']
-			},
-			{ name: 'duration', value: 0.0, type: 'number', unit: 's', min: 0, max: null, label: 'Duration' },
-			{ name: 'timingFunction', value: 'ease-in-out', type: 'select', options: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'], label: 'Timing Function' },
-			{ name: 'delay', value: 0, type: 'number', unit: 's', min: 0, max: null, label: 'Delay' }
-		]
-	},
+	// {
+	// 	section: 'transition',
+	// 	icon: 'animation',
+	// 	summary: 'Control animation transitions for smooth style changes.',
+	// 	properties: [
+	// 		{
+	// 			name: 'property', value: 'all', type: 'select', label: 'Property',
+	// 			options: ['opacity', 'transform', 'height', 'width', 'background-color', 'all']
+	// 		},
+	// 		{ name: 'duration', value: 0.0, type: 'number', unit: 's', min: 0, max: null, label: 'Duration' },
+	// 		{ name: 'timingFunction', value: 'ease-in-out', type: 'select', options: ['linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out'], label: 'Timing Function' },
+	// 		{ name: 'delay', value: 0, type: 'number', unit: 's', min: 0, max: null, label: 'Delay' }
+	// 	]
+	// },
 	{
 		section: 'advanced',
 		icon: 'display_settings',
@@ -513,7 +513,7 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 	transition: {
 		parts: ['property', 'duration', 'timingFunction', 'delay'],
 		formatter: ({ property, duration, timingFunction, delay }) =>
-			`${property} ${duration}s ${timingFunction} ${delay}s)`,
+			`${property} ${duration}s ${timingFunction} ${delay}s`,
 	}
 };
 
