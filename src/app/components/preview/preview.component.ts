@@ -25,13 +25,7 @@ export class PreviewComponent {
       if (!this._currentElement) return;
 
       if (!update || (typeof update === 'object' && Object.keys(update).length === 0)) {
-        for (const [key, value] of Object.entries(
-          this._currentType.defaultStyles as Record<string, { value: number | string; unit?: string }>
-        )) {
-          const val = `${value.value}${value.unit ?? ''}`;
-          this._renderer.setStyle(this._currentElement, key, val);
-          this._cssConfigService.updateProperty(key, value.value, value.unit);
-        }
+        this.insertElement(this._currentType);
       } else if ('property' in update) {
         this._applyStyle(update['property'], update['value']);
       } else {
