@@ -16,14 +16,23 @@ export class PreviewComponent {
   private _cssConfigService = inject(CssConfigService);
   readonly elements = ELEMENTS;
   private _currentElement?: HTMLElement;
+  private _currentType: any;
   @ViewChild('previewContainer', { static: true }) previewContainer!: ElementRef<HTMLDivElement>;
 
   constructor() {
     effect(() => {
       const update = this._cssConfigService.styleUpdates();
-      if (!update || !this._currentElement) return;
+      if (!this._currentElement) return;
 
-      if ('property' in update) {
+      if (!update || (typeof update === 'object' && Object.keys(update).length === 0)) {
+        for (const [key, value] of Object.entries(
+          this._currentType.defaultStyles as Record<string, { value: number | string; unit?: string }>
+        )) {
+          const val = `${value.value}${value.unit ?? ''}`;
+          this._renderer.setStyle(this._currentElement, key, val);
+          this._cssConfigService.updateProperty(key, value.value, value.unit);
+        }
+      } else if ('property' in update) {
         this._applyStyle(update['property'], update['value']);
       } else {
         for (const [prop, val] of Object.entries(update)) {
@@ -62,6 +71,7 @@ export class PreviewComponent {
     }
     this._renderer.appendChild(container, el);
     this._currentElement = el;
+    this._currentType = element;
     this._cssConfigService.setCssCode(this._currentElement?.style?.cssText ?? '');
   }
 }
