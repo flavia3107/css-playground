@@ -373,65 +373,65 @@ export const ELEMENTS = {
 				'object-fit': { value: 'cover', unit: null }
 			}
 		},
-		{
-			id: 'video', type: 'Video', category: 'Media', defaultStyles: {
-				'width': { value: 300, unit: 'px' },
-				'height': { value: 200, unit: 'px' }
-			}
-		},
-		{
-			id: 'audio', type: 'Audio', category: 'Media', defaultStyles: {
-				'width': { value: 300, unit: 'px' }
-			}
-		},
+		// {
+		// 	id: 'video', type: 'Video', category: 'Media', defaultStyles: {
+		// 		'width': { value: 300, unit: 'px' },
+		// 		'height': { value: 200, unit: 'px' }
+		// 	}
+		// },
+		// {
+		// 	id: 'audio', type: 'Audio', category: 'Media', defaultStyles: {
+		// 		'width': { value: 300, unit: 'px' }
+		// 	}
+		// },
 	],
-	list: [
-		{
-			id: 'ul', type: 'Unordered List', category: 'List', defaultStyles: {
-				'padding-left': { value: 20, unit: 'px' },
-				'color': { value: '#333', unit: null }
-			}
-		},
-		{
-			id: 'ol', type: 'Ordered List', category: 'List', defaultStyles: {
-				'padding-left': { value: 20, unit: 'px' },
-				'color': { value: '#333', unit: null }
-			}
-		},
-		{
-			id: 'li', type: 'List Item', category: 'List', defaultStyles: {
-				'margin-bottom': { value: 5, unit: 'px' }
-			}
-		},
-	],
-	table: [
-		{
-			id: 'table', type: 'Table', category: 'Table', defaultStyles: {
-				'border-collapse': { value: 'collapse', unit: null },
-				'width': { value: 100, unit: '%' }
-			}
-		},
-		{
-			id: 'thead', type: 'Table Head', category: 'Table', defaultStyles: {
-				'background-color': { value: '#f4f4f4', unit: null }
-			}
-		},
-		{ id: 'tbody', type: 'Table Body', category: 'Table', defaultStyles: {} },
-		{ id: 'tr', type: 'Table Row', category: 'Table', defaultStyles: {} },
-		{
-			id: 'td', type: 'Table Cell', category: 'Table', defaultStyles: {
-				'border': { value: '1px solid #ccc', unit: null },
-				'padding': { value: 8, unit: 'px' }
-			}
-		},
-		{
-			id: 'th', type: 'Table Header', category: 'Table', defaultStyles: {
-				'border': { value: '1px solid #ccc', unit: null },
-				'padding': { value: 8, unit: 'px' },
-				'background-color': { value: '#f4f4f4', unit: null }
-			}
-		},
-	],
+	// list: [
+	// 	{
+	// 		id: 'ul', type: 'Unordered List', category: 'List', defaultStyles: {
+	// 			'padding-left': { value: 20, unit: 'px' },
+	// 			'color': { value: '#333', unit: null }
+	// 		}
+	// 	},
+	// 	{
+	// 		id: 'ol', type: 'Ordered List', category: 'List', defaultStyles: {
+	// 			'padding-left': { value: 20, unit: 'px' },
+	// 			'color': { value: '#333', unit: null }
+	// 		}
+	// 	},
+	// 	{
+	// 		id: 'li', type: 'List Item', category: 'List', defaultStyles: {
+	// 			'margin-bottom': { value: 5, unit: 'px' }
+	// 		}
+	// 	},
+	// ],
+	// table: [
+	// 	{
+	// 		id: 'table', type: 'Table', category: 'Table', defaultStyles: {
+	// 			'border-collapse': { value: 'collapse', unit: null },
+	// 			'width': { value: 100, unit: '%' }
+	// 		}
+	// 	},
+	// 	{
+	// 		id: 'thead', type: 'Table Head', category: 'Table', defaultStyles: {
+	// 			'background-color': { value: '#f4f4f4', unit: null }
+	// 		}
+	// 	},
+	// 	{ id: 'tbody', type: 'Table Body', category: 'Table', defaultStyles: {} },
+	// 	{ id: 'tr', type: 'Table Row', category: 'Table', defaultStyles: {} },
+	// 	{
+	// 		id: 'td', type: 'Table Cell', category: 'Table', defaultStyles: {
+	// 			'border': { value: '1px solid #ccc', unit: null },
+	// 			'padding': { value: 8, unit: 'px' }
+	// 		}
+	// 	},
+	// 	{
+	// 		id: 'th', type: 'Table Header', category: 'Table', defaultStyles: {
+	// 			'border': { value: '1px solid #ccc', unit: null },
+	// 			'padding': { value: 8, unit: 'px' },
+	// 			'background-color': { value: '#f4f4f4', unit: null }
+	// 		}
+	// 	},
+	// ],
 	inline: [
 		{
 			id: 'a', type: 'Anchor', category: 'Inline', defaultStyles: {
