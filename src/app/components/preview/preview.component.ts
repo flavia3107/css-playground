@@ -20,21 +20,7 @@ export class PreviewComponent {
   @ViewChild('previewContainer', { static: true }) previewContainer!: ElementRef<HTMLDivElement>;
 
   constructor() {
-    effect(() => {
-      const update = this._cssConfigService.styleUpdates();
-      if (!this._currentElement) return;
-
-      if (!update || (typeof update === 'object' && Object.keys(update).length === 0)) {
-        this.insertElement(this._currentType);
-      } else if ('property' in update) {
-        this._applyStyle(update['property'], update['value']);
-      } else {
-        for (const [prop, val] of Object.entries(update)) {
-          this._applyStyle(prop, val);
-        }
-      }
-      this._cssConfigService.setCssCode(this._currentElement?.style?.cssText ?? '');
-    });
+    effect(() => this._styleUpdateRefresh());
   }
 
   private _applyStyle(prop: string, val: any) {
@@ -67,5 +53,23 @@ export class PreviewComponent {
     this._currentElement = el;
     this._currentType = element;
     this._cssConfigService.setCssCode(this._currentElement?.style?.cssText ?? '');
+  }
+
+  private _styleUpdateRefresh() {
+
+    const update = this._cssConfigService.styleUpdates();
+    if (!this._currentElement) return;
+
+    if (!update || (typeof update === 'object' && Object.keys(update).length === 0)) {
+      this.insertElement(this._currentType);
+    } else if ('property' in update) {
+      this._applyStyle(update['property'], update['value']);
+    } else {
+      for (const [prop, val] of Object.entries(update)) {
+        this._applyStyle(prop, val);
+      }
+    }
+    this._cssConfigService.setCssCode(this._currentElement?.style?.cssText ?? '');
+
   }
 }
