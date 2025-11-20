@@ -516,6 +516,22 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 		parts: ['property', 'duration', 'timingFunction', 'delay'],
 		formatter: ({ property, duration, timingFunction, delay }) =>
 			`${property} ${duration}s ${timingFunction} ${delay}s`,
+	},
+	filter: {
+		parts: ['blur', 'brightness', 'contrast', 'grayscale', 'hueRotate', 'invert', 'opacity', 'saturate', 'sepia', 'dropShadow'],
+		formatter: ({ blur, brightness, contrast, grayscale, hueRotate, invert, opacity, saturate, sepia, dropShadow }) =>
+			[
+				blur ? `blur(${blur}px)` : '',
+				brightness ? `brightness(${brightness})` : '',
+				contrast ? `contrast(${contrast}%)` : '',
+				grayscale ? `grayscale(${grayscale}%)` : '',
+				hueRotate ? `hue-rotate(${hueRotate}deg)` : '',
+				invert ? `invert(${invert}%)` : '',
+				opacity ? `opacity(${opacity})` : '',
+				saturate ? `saturate(${saturate}%)` : '',
+				sepia ? `sepia(${sepia}%)` : '',
+				dropShadow ? `drop-shadow(${dropShadow.x}px ${dropShadow.y}px ${dropShadow.blur}px ${dropShadow.color})` : ''
+			].filter(Boolean).join(' ')
 	}
 };
 
