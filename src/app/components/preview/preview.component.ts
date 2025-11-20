@@ -40,6 +40,9 @@ export class PreviewComponent {
     this._cssConfigService.reset();
 
     const el = this._renderer.createElement(element.id);
+    if (element.id === 'img') {
+      this._renderer.setAttribute(el, 'src', element.src);
+    }
     const text = this._renderer.createText(element.label || element.type);
     this._renderer.appendChild(el, text);
     el.removeAttribute('style');
@@ -49,6 +52,7 @@ export class PreviewComponent {
       this._renderer.setStyle(el, key, val);
       this._cssConfigService.updateProperty(key, value['value'], value['unit']);
     }
+
     this._renderer.appendChild(container, el);
     this._currentElement = el;
     this._currentType = element;

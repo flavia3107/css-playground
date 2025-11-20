@@ -45,6 +45,7 @@ export interface BaseProperty {
 	props?: any;
 	divider?: boolean;
 	mainProp?: string;
+	src?: string
 }
 
 export interface SimpleProperty extends BaseProperty {
@@ -366,11 +367,12 @@ export const ELEMENTS = {
 	],
 	media: [
 		{
-			id: 'img', type: 'Image', category: 'Media', defaultStyles: {
+			id: 'img', type: 'Image', category: 'Media', src: './assets/images/img.jpg', defaultStyles: {
 				'width': { value: 150, unit: 'px' },
 				'height': { value: 150, unit: 'px' },
 				'border-radius': { value: 8, unit: 'px' },
-				'object-fit': { value: 'cover', unit: null }
+				'object-fit': { value: 'cover', unit: null },
+
 			}
 		},
 		// {
