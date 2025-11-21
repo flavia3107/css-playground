@@ -16,7 +16,7 @@
 				@switch (property.type) {
 				@case ('color') {
 				<input type="color" class="input-color" [(ngModel)]="property.value"
-					(ngModelChange)="updateProperty(property.name, $event, '', config.section)" />
+					(ngModelChange)="updateProperty(property, config.section)" />
 				}
 				@case ('custom') {
 				<app-custom-input-fields [properties]="property.props" [section]="config.section"
@@ -24,11 +24,11 @@
 				}
 				@case ('text') {
 				<input type="text" [(ngModel)]="property.value"
-					(ngModelChange)="updateProperty(property.name, $event, config.section)" />
+					(ngModelChange)="updateProperty(property, config.section)" />
 				}
 				@case ('select') {
 				<select class="input-select" [(ngModel)]="property.value"
-					(ngModelChange)="updateProperty(property.name, $event)">
+					(ngModelChange)="updateProperty(property, config.section)">
 					@for (option of property?.options; track option) {
 					<option [value]="option">{{ option }}</option>
 					}
@@ -41,7 +41,7 @@
 				<div class="number-control flex-row">
 					<button class="btn" (click)="decrease(property, config.section )">–</button>
 					<input type="number" [(ngModel)]="property.value"
-						(ngModelChange)="updateProperty(property.name, $event, config.section)" />
+						(ngModelChange)="updateProperty(property, config.section)" />
 					<button class="btn" (click)="increase(property, config.section)">+</button>
 				</div>
 				}
