@@ -1,6 +1,6 @@
 import { Component, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SimpleProperty } from 'src/app/app.config';
+import { CSSProperty } from 'src/app/app.config';
 import { CssConfigService } from 'src/app/services/cssconfig.service';
 
 @Component({
@@ -16,22 +16,22 @@ export class CustomInputFieldsComponent {
   nestedProperty = input<string>('');
   valueChange = output<any[]>();
 
-  public increase(property: SimpleProperty) {
+  public increase(property: CSSProperty) {
     if (typeof property.value === 'number') {
       property.value++;
-      this.updateProperty(property.name, property.value, property.unit);
+      this.updateProperty(property);
     }
   }
 
-  public decrease(property: SimpleProperty) {
+  public decrease(property: CSSProperty) {
     if (typeof property.value === 'number') {
       property.value--;
-      this.updateProperty(property.name, property.value, property.unit);
+      this.updateProperty(property);
     }
   }
 
-  public updateProperty(property: string, value: string | number | boolean, unit?: string) {
-    this._cssConfigService.updateProperty(property, value, unit);
+  public updateProperty(property: CSSProperty) {
+    this._cssConfigService.updateProperty(property.name, property.value, property.unit);
     this._cssConfigService.mapCssProperties(this.section(), this.nestedProperty())
   }
 }

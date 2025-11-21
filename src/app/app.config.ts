@@ -538,6 +538,6 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
 /**
  *  to do:
  *  - style for hover + transition
- *  - input from keyboard
  * 	- pseudo-classes
+ * 	- display
  */
