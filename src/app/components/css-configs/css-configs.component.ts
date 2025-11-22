@@ -5,12 +5,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { CSSProperty } from 'src/app/app.config';
 import { CssConfigService } from '../../services/cssconfig.service';
 import { CustomInputFieldsComponent } from '../custom-input-fields/custom-input-fields.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-css-configs',
   templateUrl: './css-configs.component.html',
   styleUrls: ['./css-configs.component.scss'],
-  imports: [MatExpansionModule, MatIconModule, CustomInputFieldsComponent, FormsModule],
+  imports: [MatExpansionModule, MatIconModule, CustomInputFieldsComponent, FormsModule, MatTooltipModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CssConfigsComponent {

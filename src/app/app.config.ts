@@ -14,7 +14,6 @@ export const STATES = {
 	phase_3: [
 		'Color harmony picker (complementary, analogous, triadic)',
 		'Download CSS / HTML as a zip',
-		'Preview & Layout',
 		'Responsive preview (mobile/tablet/desktop toggle)',
 		'Resizable / draggable preview box',
 		'Sharing',

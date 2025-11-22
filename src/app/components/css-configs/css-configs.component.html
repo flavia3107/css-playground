@@ -1,7 +1,7 @@
 <mat-accordion>
 	@for(config of cssConfigService.cssConfig(); track config.section){
 	<mat-expansion-panel>
-		<mat-expansion-panel-header>
+		<mat-expansion-panel-header [matTooltip]="'Expand '+config.section+' section'">
 			<mat-panel-title>
 				<mat-icon>{{config.icon}}</mat-icon> {{config.section}}
 			</mat-panel-title>
@@ -39,10 +39,12 @@
 				}
 				@case ('number') {
 				<div class="number-control flex-row">
-					<button class="btn" (click)="decrease(property, config.section )">–</button>
+					<button class="btn" (click)="decrease(property, config.section )"
+						[matTooltip]="'Decrease '+property.name+' value'">–</button>
 					<input type="number" [(ngModel)]="property.value"
 						(ngModelChange)="updateProperty(property, config.section)" />
-					<button class="btn" (click)="increase(property, config.section)">+</button>
+					<button class="btn" (click)="increase(property, config.section)"
+						[matTooltip]="'Increase '+property.name+' value'">+</button>
 				</div>
 				}
 				}
