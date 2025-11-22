@@ -82,7 +82,7 @@ export const CSS_CONFIG: CSSSection[] = [
 		properties: [
 			{ name: 'background-color', value: '#ffffff', type: 'color', label: 'Color', divider: true, tooltip: 'Set the background color.' },
 			{
-				name: 'background', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', divider: true,
+				name: 'background', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient',
 				tooltip: 'Create and customize a gradient background.', props: [
 					{ name: 'type', value: '', type: 'select', options: ['linear', 'radial', 'conic'], label: 'Type', tooltip: 'Choose the gradient type.' },
 					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle', tooltip: 'Adjust gradient rotation angle.' },
@@ -91,10 +91,10 @@ export const CSS_CONFIG: CSSSection[] = [
 					{ name: 'endColor', value: '#ffffff', type: 'color', label: 'Third Color', tooltip: 'Set the final gradient color.' }
 				]
 			},
-			{ name: 'background-image', value: '', type: 'text', label: 'Image', tooltip: 'Set a background image URL.' },
-			{ name: 'background-size', value: 'auto', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size', tooltip: 'Define how the background image scales.' },
-			{ name: 'background-repeat', value: 'repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat', tooltip: 'Choose how the background image repeats.' },
-			{ name: 'opacity', value: 1, type: 'number', unit: '', min: 0, max: 1, step: 0.1, label: 'Opacity', tooltip: 'Adjust element transparency.' }
+			// { name: 'background-image', value: '', type: 'text', label: 'Image', tooltip: 'Set a background image URL.' },
+			// { name: 'background-size', value: 'auto', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size', tooltip: 'Define how the background image scales.' },
+			// { name: 'background-repeat', value: 'repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat', tooltip: 'Choose how the background image repeats.' },
+			// { name: 'opacity', value: 1, type: 'number', unit: '', min: 0, max: 1, step: 0.1, label: 'Opacity', tooltip: 'Adjust element transparency.' }
 		]
 	},
 	{
@@ -381,18 +381,7 @@ export const ELEMENTS = {
 				'object-fit': { value: 'cover', unit: null },
 
 			}
-		},
-		// {
-		// 	id: 'video', type: 'Video', category: 'Media', defaultStyles: {
-		// 		'width': { value: 300, unit: 'px' },
-		// 		'height': { value: 200, unit: 'px' }
-		// 	}
-		// },
-		// {
-		// 	id: 'audio', type: 'Audio', category: 'Media', defaultStyles: {
-		// 		'width': { value: 300, unit: 'px' }
-		// 	}
-		// },
+		}
 	],
 	// list: [
 	// 	{
@@ -547,5 +536,4 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
  *  - style for hover + transition
  * 	- pseudo-classes
  * 	- display,
- *  - add tooltip property to the config
  */

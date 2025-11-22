@@ -126,6 +126,8 @@ export class CssConfigService {
   }
 
   public transformValue(property: string, value: string | number | boolean) {
+    if (!value) return value;
+
     const propObj: any = {
       'background-image': `url('${value}')`
     }
