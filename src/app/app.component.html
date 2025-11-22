@@ -1,19 +1,19 @@
 <header class="card flex-row space_between">
-  <a class="logo" href="https://all-projects-portfolio.web.app/" target="_blank">
+  <a class="logo" href="https://all-projects-portfolio.web.app/" matTooltip="See Portfolio" target="_blank">
     <img class="logo-img" src="../assets/logo.svg" />
     <div class="logo-txt">
       <h1>FLAVIA</h1>
       <span>Kosti</span>
     </div>
   </a>
-  <button mat-icon-button (click)="toggleTheme()">
+  <button matTooltip="Select theme" mat-icon-button (click)="toggleTheme()">
     <mat-icon>{{ activeTheme !== 'light-theme' ? 'light_mode' : 'dark_mode' }}</mat-icon>
   </button>
 </header>
 <div class="main-container flex-row">
   <div class="config-container flex-column card">
     <h2 class="flex-row space_between middle">Config
-      <button mat-icon-button (click)="reset()">
+      <button mat-icon-button (click)="reset()" matTooltip="Reset style to original value">
         <mat-icon>history</mat-icon>
       </button>
     </h2>
@@ -23,7 +23,7 @@
   </div>
   <div class="preview-container flex-column card">
     <h2 class="flex-row space_between middle">Preview
-      <button mat-icon-button (click)="randomizeStyles()">
+      <button mat-icon-button (click)="randomizeStyles()" matTooltip="Generate random style">
         <mat-icon>shuffle</mat-icon>
       </button>
     </h2>
@@ -35,10 +35,10 @@
     <div class="flex-row space_between">
       <h2>Code</h2>
       <div class="flex-row middle">
-        <button mat-icon-button (click)="copyCode()">
+        <button mat-icon-button (click)="copyCode()" matTooltip="Copy CSS code">
           <mat-icon>content_copy</mat-icon>
         </button>
-        <button mat-icon-button (click)="downloadCode()">
+        <button mat-icon-button (click)="downloadCode()" matTooltip="Download Css Code">
           <mat-icon>download</mat-icon>
         </button>
       </div>

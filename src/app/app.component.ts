@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from 'src/shared/services/theme.service';
 import { CssCodeComponent } from './components/css-code/css-code.component';
@@ -12,7 +13,7 @@ import { CssConfigService } from './services/cssconfig.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [RouterModule, CssConfigsComponent, PreviewComponent, CssCodeComponent, MatButtonModule, MatIconModule]
+  imports: [RouterModule, CssConfigsComponent, PreviewComponent, CssCodeComponent, MatButtonModule, MatIconModule, MatTooltipModule]
 })
 export class AppComponent {
   private _cssConfigService = inject(CssConfigService);
