@@ -15,7 +15,7 @@
 				<p> {{property.label}} </p>
 				@switch (property.type) {
 				@case ('color') {
-				<input type="color" class="input-color" [(ngModel)]="property.value"
+				<input type="color" class="input-color" [(ngModel)]="property.value" [matTooltip]="property.tooltip"
 					(ngModelChange)="updateProperty(property, config.section)" />
 				}
 				@case ('custom') {
@@ -23,11 +23,11 @@
 					[nestedProperty]="property.name" />
 				}
 				@case ('text') {
-				<input type="text" [(ngModel)]="property.value"
+				<input type="text" [(ngModel)]="property.value" [matTooltip]="property.tooltip"
 					(ngModelChange)="updateProperty(property, config.section)" />
 				}
 				@case ('select') {
-				<select class="input-select" [(ngModel)]="property.value"
+				<select class="input-select" [(ngModel)]="property.value" [matTooltip]="property.tooltip"
 					(ngModelChange)="updateProperty(property, config.section)">
 					@for (option of property?.options; track option) {
 					<option [value]="option">{{ option }}</option>
@@ -39,12 +39,10 @@
 				}
 				@case ('number') {
 				<div class="number-control flex-row">
-					<button class="btn" (click)="decrease(property, config.section )"
-						[matTooltip]="'Decrease '+property.name+' value'">–</button>
-					<input type="number" [(ngModel)]="property.value"
+					<button class="btn" (click)="decrease(property, config.section )" matTooltip="Decrease">–</button>
+					<input type="number" [(ngModel)]="property.value" [matTooltip]="property.tooltip"
 						(ngModelChange)="updateProperty(property, config.section)" />
-					<button class="btn" (click)="increase(property, config.section)"
-						[matTooltip]="'Increase '+property.name+' value'">+</button>
+					<button class="btn" (click)="increase(property, config.section)" matTooltip="Increase">+</button>
 				</div>
 				}
 				}
