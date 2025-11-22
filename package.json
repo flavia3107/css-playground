@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "ng build --configuration production",
-    "deploy": "npx angular-cli-ghpages --dir=dist/css-playground"
+    "deploy": "npx angular-cli-ghpages --dir=dist/css-playground/browser"
   },
   "private": true,
   "dependencies": {
