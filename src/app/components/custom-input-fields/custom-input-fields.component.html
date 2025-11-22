@@ -5,13 +5,14 @@
 		@switch (property.type) {
 		@case ('color') {
 		<input type="color" [(ngModel)]="property.value" class="input-color"
-			(ngModelChange)="updateProperty(property)" />
+			[matTooltip]="'Choose '+property.name+' color'" (ngModelChange)="updateProperty(property)" />
 		}
 		@case ('text') {
 		<input type="text" [(ngModel)]="property.value" (ngModelChange)="updateProperty(property)" />
 		}
 		@case ('select') {
-		<select class="input-select" [(ngModel)]="property.value" (ngModelChange)="updateProperty(property)">
+		<select class="input-select" [(ngModel)]="property.value" (ngModelChange)="updateProperty(property)"
+			[matTooltip]="'Select '+property.name+' value'">
 			@for (option of property?.options; track option) {
 			<option [value]="option">{{ option }}</option>
 			}
@@ -19,9 +20,11 @@
 		}
 		@case ('number') {
 		<div class="number-control flex-row">
-			<button class="btn" (click)="decrease(property)">–</button>
+			<button class="btn" (click)="decrease(property)"
+				[matTooltip]="'Decrease '+property.name+' value'">–</button>
 			<input type="number" [(ngModel)]="property.value" (ngModelChange)="updateProperty(property)" />
-			<button class="btn" (click)="increase(property)">+</button>
+			<button class="btn" (click)="increase(property)"
+				[matTooltip]="'Increase '+property.name+' value'">+</button>
 		</div>
 		}
 		}

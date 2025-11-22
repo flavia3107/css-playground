@@ -1,5 +1,6 @@
 import { Component, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { CSSProperty } from 'src/app/app.config';
 import { CssConfigService } from 'src/app/services/cssconfig.service';
 
@@ -7,7 +8,7 @@ import { CssConfigService } from 'src/app/services/cssconfig.service';
   selector: 'app-custom-input-fields',
   templateUrl: './custom-input-fields.component.html',
   styleUrls: ['./custom-input-fields.component.scss'],
-  imports: [FormsModule]
+  imports: [FormsModule, MatTooltipModule]
 })
 export class CustomInputFieldsComponent {
   private _cssConfigService = inject(CssConfigService);
