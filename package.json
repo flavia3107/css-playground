@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "predeploy": "ng build --configuration production",
+    "deploy": "npx angular-cli-ghpages --dir=dist/css-playground"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +31,7 @@
     "@angular/compiler-cli": "^20.3.4",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~4.0.0",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "~3.1.0",
@@ -36,5 +39,6 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~5.8.3"
-  }
+  },
+  "homepage": "https://flavia3107.github.io/css-playground"
 }
