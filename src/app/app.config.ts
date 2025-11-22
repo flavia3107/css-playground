@@ -43,7 +43,8 @@ export interface BaseProperty {
 	props?: any;
 	divider?: boolean;
 	mainProp?: string;
-	src?: string
+	src?: string;
+	tooltip: string;
 }
 
 export interface SimpleProperty extends BaseProperty {
@@ -68,6 +69,7 @@ export interface CSSSection {
 	section: string;
 	icon: string;
 	summary: string;
+	tooltip: string;
 	properties: CSSProperty[];
 }
 
@@ -76,97 +78,101 @@ export const CSS_CONFIG: CSSSection[] = [
 		section: 'background',
 		icon: 'texture',
 		summary: 'Customize background colors, gradients, and opacity.',
+		tooltip: 'Controls background-related styles.',
 		properties: [
-			{ name: 'background-color', value: '#ffffff', type: 'color', 'label': 'Color', divider: true },
+			{ name: 'background-color', value: '#ffffff', type: 'color', label: 'Color', divider: true, tooltip: 'Set the background color.' },
 			{
-				name: 'background', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', divider: true, props: [
-					{ name: 'type', value: '', type: 'select', options: ['linear', 'radial', 'conic'], label: 'Type' },
-					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle' },
-					{ name: 'startColor', type: 'color', value: '#ffffff', label: 'First Color' },
-					{ name: 'midColor', type: 'color', value: '#ffffff', label: 'Second Color' },
-					{ name: 'endColor', type: 'color', value: '#ffffff', label: 'Third Color' }
-
+				name: 'background', value: 'linear-gradient(90deg, #3498db, #9b59b6)', type: 'custom', label: 'Gradient', divider: true,
+				tooltip: 'Create and customize a gradient background.', props: [
+					{ name: 'type', value: '', type: 'select', options: ['linear', 'radial', 'conic'], label: 'Type', tooltip: 'Choose the gradient type.' },
+					{ name: 'angle', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, step: 1, label: 'Angle', tooltip: 'Adjust gradient rotation angle.' },
+					{ name: 'startColor', value: '#ffffff', type: 'color', label: 'First Color', tooltip: 'Set the first gradient color.' },
+					{ name: 'midColor', value: '#ffffff', type: 'color', label: 'Second Color', tooltip: 'Set the middle gradient color.' },
+					{ name: 'endColor', value: '#ffffff', type: 'color', label: 'Third Color', tooltip: 'Set the final gradient color.' }
 				]
 			},
-			{ name: 'background-image', value: '', type: 'text', label: 'Image' },
-			{ name: 'background-size', value: 'auto', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size' },
-			{ name: 'background-repeat', value: 'repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat' },
-			{ name: 'opacity', value: 1, type: 'number', unit: '', min: 0, max: 1, step: 0.1, label: 'Opacity' }
+			{ name: 'background-image', value: '', type: 'text', label: 'Image', tooltip: 'Set a background image URL.' },
+			{ name: 'background-size', value: 'auto', type: 'select', options: ['auto', 'cover', 'contain'], label: 'Size', tooltip: 'Define how the background image scales.' },
+			{ name: 'background-repeat', value: 'repeat', type: 'select', options: ['repeat', 'no-repeat', 'repeat-x', 'repeat-y'], label: 'Repeat', tooltip: 'Choose how the background image repeats.' },
+			{ name: 'opacity', value: 1, type: 'number', unit: '', min: 0, max: 1, step: 0.1, label: 'Opacity', tooltip: 'Adjust element transparency.' }
 		]
 	},
 	{
 		section: 'border',
 		icon: 'rounded_corner',
 		summary: 'Adjust border size, color, and style for the element.',
+		tooltip: 'Controls border appearance and rounding.',
 		properties: [
-			{ name: 'border-width', value: 0, type: 'number', unit: 'px', min: 0, max: 20, label: 'Width' },
-			{ name: 'border-style', value: 'none', type: 'select', options: ['none', 'solid', 'dashed', 'dotted', 'double'], label: 'Style' },
-			{ name: 'border-color', value: '#ffffff', type: 'color', label: 'Color' },
-			{ name: 'border-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius', divider: true },
-			{ name: 'border-top-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Left' },
-			{ name: 'border-top-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Right' },
-			{ name: 'border-bottom-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Left' },
-			{ name: 'border-bottom-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Right' }
+			{ name: 'border-width', value: 0, type: 'number', unit: 'px', min: 0, max: 20, label: 'Width', tooltip: 'Set the border thickness.' },
+			{ name: 'border-style', value: 'none', type: 'select', options: ['none', 'solid', 'dashed', 'dotted', 'double'], label: 'Style', tooltip: 'Choose the border line style.' },
+			{ name: 'border-color', value: '#ffffff', type: 'color', label: 'Color', tooltip: 'Set the border color.' },
+			{ name: 'border-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius', divider: true, tooltip: 'Round all corners evenly.' },
+			{ name: 'border-top-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Left', tooltip: 'Round the top-left corner.' },
+			{ name: 'border-top-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Top Right', tooltip: 'Round the top-right corner.' },
+			{ name: 'border-bottom-left-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Left', tooltip: 'Round the bottom-left corner.' },
+			{ name: 'border-bottom-right-radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Radius Bottom Right', tooltip: 'Round the bottom-right corner.' }
 		]
 	},
 	{
 		section: 'box-shadow',
 		icon: 'tonality',
 		summary: 'Control shadow effects for depth and emphasis.',
+		tooltip: 'Controls box shadow appearance.',
 		properties: [
-			{ name: 'offsetX', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset X' },
-			{ name: 'offsetY', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset Y' },
-			{ name: 'blurRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur Radius' },
-			{ name: 'spreadRadius', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread' },
-			{ name: 'shadowColor', value: '#ffffff', type: 'color', label: 'Shadow Color' },
-			// { name: 'box-shadow-inset', value: false, type: 'toggle', label: 'Inset' }
+			{ name: 'offsetX', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset X', tooltip: 'Move the shadow horizontally.' },
+			{ name: 'offsetY', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Offset Y', tooltip: 'Move the shadow vertically.' },
+			{ name: 'blurRadius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, label: 'Blur Radius', tooltip: 'Control how soft the shadow appears.' },
+			{ name: 'spreadRadius', value: 0, type: 'number', unit: 'px', min: -50, max: 50, label: 'Spread', tooltip: 'Expand or contract the shadow.' },
+			{ name: 'shadowColor', value: '#ffffff', type: 'color', label: 'Shadow Color', tooltip: 'Set the shadow color.' }
 		]
 	},
 	{
 		section: 'text',
 		icon: 'text_fields',
 		summary: 'Modify font style, size, weight, and color for text elements.',
+		tooltip: 'Controls text styling and formatting.',
 		properties: [
-			{ name: 'font-family', value: '', type: 'select', options: ['Arial', 'Roboto', 'Georgia', 'Courier New', 'Times New Roman'], label: 'Font Family' },
-			{ name: 'font-size', value: 16, type: 'number', unit: 'px', min: 0, max: 1200, label: 'Size' },
-			{ name: 'font-weight', value: 400, type: 'select', options: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], label: 'Weight' },
-			{ name: 'color', value: '#333333', type: 'color', label: 'Color' },
-			{ name: 'letter-spacing', value: 0, type: 'number', unit: 'px', min: -5, max: 50, label: 'Letter Spacing' },
-			{ name: 'line-height', value: 1.5, type: 'number', min: -10, max: null, step: 0.1, label: 'Line Height' },
+			{ name: 'font-family', value: '', type: 'select', options: ['Arial', 'Roboto', 'Georgia', 'Courier New', 'Times New Roman'], label: 'Font Family', tooltip: 'Choose the text font.' },
+			{ name: 'font-size', value: 16, type: 'number', unit: 'px', min: 0, max: 1200, label: 'Size', tooltip: 'Set the text size.' },
+			{ name: 'font-weight', value: 400, type: 'select', options: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], label: 'Weight', tooltip: 'Set the text boldness.' },
+			{ name: 'color', value: '#333333', type: 'color', label: 'Color', tooltip: 'Set the text color.' },
+			{ name: 'letter-spacing', value: 0, type: 'number', unit: 'px', min: -5, max: 50, label: 'Letter Spacing', tooltip: 'Adjust spacing between letters.' },
+			{ name: 'line-height', value: 1.5, type: 'number', min: -10, max: null, step: 0.1, label: 'Line Height', tooltip: 'Set vertical spacing between text lines.' },
 			{
-				name: 'text-shadow', value: '', type: 'custom', label: 'Text Shadow', props: [
-					{ name: 'offsetX', label: 'Offset X', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
-					{ name: 'offsetY', label: 'Offset Y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1 },
-					{ name: 'blurRadius', label: 'Blur Radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, step: 1 },
-					{ name: 'textShadowColor', label: 'Shadow Color', value: '#ffffff', type: 'color' }
+				name: 'text-shadow', value: '', type: 'custom', label: 'Text Shadow', tooltip: 'Add and customize a text shadow.', props: [
+					{ name: 'offsetX', label: 'Offset X', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1, tooltip: 'Move the shadow horizontally.' },
+					{ name: 'offsetY', label: 'Offset Y', value: 0, type: 'number', unit: 'px', min: -50, max: 50, step: 1, tooltip: 'Move the shadow vertically.' },
+					{ name: 'blurRadius', label: 'Blur Radius', value: 0, type: 'number', unit: 'px', min: 0, max: 100, step: 1, tooltip: 'Control shadow softness.' },
+					{ name: 'textShadowColor', label: 'Shadow Color', value: '#ffffff', type: 'color', tooltip: 'Set the shadow color.' }
 				]
 			},
-			{ name: 'textAlign', value: 'center', type: 'select', options: ['left', 'center', 'right', 'justify'], label: 'Align' }
+			{ name: 'textAlign', value: 'center', type: 'select', options: ['left', 'center', 'right', 'justify'], label: 'Align', tooltip: 'Align the text horizontally.' }
 		]
 	},
 	{
 		section: 'dimensions',
 		icon: 'border_outer',
 		summary: 'Set element dimensions and internal/external spacing.',
+		tooltip: 'Controls size, padding, and margins.',
 		properties: [
-			{ name: 'width', value: 0, type: 'number', unit: 'px', min: 0, max: null, label: 'Width' },
-			{ name: 'height', value: 0, type: 'number', unit: 'px', min: 50, max: null, label: 'Height' },
+			{ name: 'width', value: 0, type: 'number', unit: 'px', min: 0, max: null, label: 'Width', tooltip: 'Set the element width.' },
+			{ name: 'height', value: 0, type: 'number', unit: 'px', min: 50, max: null, label: 'Height', tooltip: 'Set the element height.' },
 			{
-				name: 'padding', value: 0, type: 'custom', label: 'Padding', unit: 'px', props: [
-					{ name: 'padding', label: 'Padding', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, divider: true },
-					{ name: 'padding-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
-					{ name: 'padding-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
-					{ name: 'padding-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 },
-					{ name: 'padding-left', label: 'Left', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1 }
+				name: 'padding', value: 0, type: 'custom', label: 'Padding', unit: 'px', tooltip: 'Adjust internal spacing.', props: [
+					{ name: 'padding', label: 'Padding', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, divider: true, tooltip: 'Set padding for all sides.' },
+					{ name: 'padding-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, tooltip: 'Set top padding.' },
+					{ name: 'padding-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, tooltip: 'Set right padding.' },
+					{ name: 'padding-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, tooltip: 'Set bottom padding.' },
+					{ name: 'padding-left', label: 'Left', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, tooltip: 'Set left padding.' }
 				]
 			},
 			{
-				name: 'margin', value: 0, type: 'custom', unit: 'px', label: 'Margin', props: [
-					{ name: 'margin', label: 'Margin', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, divider: true },
-					{ name: 'margin-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
-					{ name: 'margin-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
-					{ name: 'margin-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 },
-					{ name: 'margin-left', label: 'Left', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1 }
+				name: 'margin', value: 0, type: 'custom', unit: 'px', label: 'Margin', tooltip: 'Adjust external spacing.', props: [
+					{ name: 'margin', label: 'Margin', value: 0, type: 'number', unit: 'px', min: 0, max: 200, step: 1, divider: true, tooltip: 'Set margin for all sides.' },
+					{ name: 'margin-top', label: 'Top', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1, tooltip: 'Set top margin.' },
+					{ name: 'margin-right', label: 'Right', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1, tooltip: 'Set right margin.' },
+					{ name: 'margin-bottom', label: 'Bottom', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1, tooltip: 'Set bottom margin.' },
+					{ name: 'margin-left', label: 'Left', value: 0, type: 'number', unit: 'px', min: -200, max: 200, step: 1, tooltip: 'Set left margin.' }
 				]
 			}
 		]
@@ -175,26 +181,28 @@ export const CSS_CONFIG: CSSSection[] = [
 		section: 'transform',
 		icon: 'transform',
 		summary: 'Apply rotation, scaling, and skew transformations.',
+		tooltip: 'Modify element transformations.',
 		properties: [
-			{ name: 'rotate', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, label: 'Rotate' },
-			{ name: 'scale', value: 1, type: 'number', min: 0.1, max: 3, step: 0.1, label: 'Scale' },
+			{ name: 'rotate', value: 0, type: 'number', unit: 'deg', min: 0, max: 360, label: 'Rotate', tooltip: 'Rotate the element.' },
+			{ name: 'scale', value: 1, type: 'number', min: 0.1, max: 3, step: 0.1, label: 'Scale', tooltip: 'Scale the element size.' },
+			{ name: 'translateX', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate X', tooltip: 'Move the element horizontally.' },
+			{ name: 'translateY', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate Y', tooltip: 'Move the element vertically.' },
 			// { name: 'skew-x', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew X' },
 			// { name: 'skew-y', value: 0, type: 'number', unit: 'deg', min: -45, max: 45, label: 'Skew Y' },
-			{ name: 'translateX', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate X' },
-			{ name: 'translateY', value: 0, type: 'number', unit: 'px', min: -200, max: 200, label: 'Translate Y' }
 		]
 	},
 	{
 		section: 'filter',
 		icon: 'photo_filter',
 		summary: 'Add filter effects such as blur, brightness, or contrast.',
+		tooltip: 'Apply visual filter effects.',
 		properties: [
-			{ name: 'blur', value: 0, type: 'number', unit: 'px', min: 0, max: 20, label: 'Blur' },
-			{ name: 'brightness', value: 0, type: 'number', unit: '%', min: 0, max: 200, label: 'Brightness' },
-			{ name: 'contrast', value: 0, type: 'number', unit: '%', min: 0, max: 200, label: 'Contrast' },
-			{ name: 'grayscale', value: 0, type: 'number', unit: '%', min: 0, max: 100, label: 'Grayscale' },
-			{ name: 'saturate', value: 0, type: 'number', unit: '%', min: 0, max: 200, label: 'Saturate' },
-			{ name: 'sepia', value: 0, type: 'number', unit: '%', min: 0, max: 100, label: 'Sepia' }
+			{ name: 'blur', value: 0, type: 'number', unit: 'px', min: 0, max: 20, label: 'Blur', tooltip: 'Apply a blur effect.' },
+			{ name: 'brightness', value: 0, type: 'number', unit: '%', min: 0, max: 200, label: 'Brightness', tooltip: 'Adjust element brightness.' },
+			{ name: 'contrast', value: 0, type: 'number', unit: '%', min: 0, max: 200, label: 'Contrast', tooltip: 'Adjust contrast levels.' },
+			{ name: 'grayscale', value: 0, type: 'number', unit: '%', min: 0, max: 100, label: 'Grayscale', tooltip: 'Convert colors to grayscale.' },
+			{ name: 'saturate', value: 0, type: 'number', unit: '%', min: 0, max: 200, label: 'Saturate', tooltip: 'Adjust color saturation.' },
+			{ name: 'sepia', value: 0, type: 'number', unit: '%', min: 0, max: 100, label: 'Sepia', tooltip: 'Apply a sepia tone.' }
 		]
 	},
 	// {
@@ -215,11 +223,12 @@ export const CSS_CONFIG: CSSSection[] = [
 		section: 'advanced',
 		icon: 'display_settings',
 		summary: 'Miscellaneous CSS options for customization.',
+		tooltip: 'Additional advanced CSS options.',
 		properties: [
-			{ name: 'cursor', value: 'pointer', type: 'select', options: ['default', 'pointer', 'text', 'move', 'wait', 'help', 'not-allowed'], label: 'Cursor' },
-			{ name: 'overflow', value: 'auto', type: 'select', options: ['visible', 'hidden', 'scroll', 'auto'], label: 'Overflow' },
-			{ name: 'zIndex', value: 0, type: 'number', label: 'Z-Index' },
-			{ name: 'mix-blend-mode', value: 'normal', type: 'select', options: ['normal', 'multiply', 'screen', 'overlay', 'darken', 'lighten'], label: 'Mix Blend Mode' }
+			{ name: 'cursor', value: 'pointer', type: 'select', options: ['default', 'pointer', 'text', 'move', 'wait', 'help', 'not-allowed'], label: 'Cursor', tooltip: 'Set the cursor style on hover.' },
+			{ name: 'overflow', value: 'auto', type: 'select', options: ['visible', 'hidden', 'scroll', 'auto'], label: 'Overflow', tooltip: 'Control how overflow content is displayed.' },
+			{ name: 'zIndex', value: 0, type: 'number', label: 'Z-Index', tooltip: 'Set the stacking order of the element.' },
+			{ name: 'mix-blend-mode', value: 'normal', type: 'select', options: ['normal', 'multiply', 'screen', 'overlay', 'darken', 'lighten'], label: 'Mix Blend Mode', tooltip: 'Change how colors blend with background elements.' }
 		]
 	}
 ];
