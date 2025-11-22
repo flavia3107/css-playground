@@ -1,9 +1,10 @@
 <div class="flex-row end elements-list">
 	@for (element of elements | keyvalue : null; track element.key) {
-	<span [matMenuTriggerFor]="menu">{{element.key}}</span>
+	<span [matMenuTriggerFor]="menu" matTooltip="Open Element Options">{{element.key}}</span>
 	<mat-menu #menu="matMenu">
 		@for(option of element.value; track option.type){
-		<button mat-menu-item (click)="insertElement(option)">{{option.type}}</button>
+		<button [matTooltip]="'Create new '+option.type+' element'" mat-menu-item
+			(click)="insertElement(option)">{{option.type}}</button>
 		}
 	</mat-menu>
 	}

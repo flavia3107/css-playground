@@ -21,7 +21,6 @@ export const STATES = {
 		'UI / UX Polish',
 		'Smooth transitions on style changes',
 		'Micro animations (hover effects, color transitions)',
-		'Tooltips with property explanations'
 	]
 }
 
@@ -538,5 +537,6 @@ export const MULTI_VALUE_MAP: Record<string, { parts: string[]; formatter: (valu
  *  to do:
  *  - style for hover + transition
  * 	- pseudo-classes
- * 	- display
+ * 	- display,
+ *  - add tooltip property to the config
  */

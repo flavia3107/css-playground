@@ -4,12 +4,13 @@ import { ELEMENTS } from 'src/app/app.config';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { CssConfigService } from 'src/app/services/cssconfig.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-preview',
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.scss'],
-  imports: [KeyValuePipe, MatButtonModule, MatMenuModule]
+  imports: [KeyValuePipe, MatButtonModule, MatMenuModule, MatTooltipModule]
 })
 export class PreviewComponent {
   private _renderer = inject(Renderer2);
