@@ -6,9 +6,17 @@
       <span>Kosti</span>
     </div>
   </a>
-  <button matTooltip="Select theme" mat-icon-button (click)="toggleTheme()">
-    <mat-icon>{{ activeTheme !== 'light-theme' ? 'light_mode' : 'dark_mode' }}</mat-icon>
-  </button>
+  <div class="flex-row">
+    <button matTooltip="Existing Issues" mat-icon-button [matMenuTriggerFor]="menuIssues">
+      <mat-icon>bug_report</mat-icon>
+    </button>
+    <button matTooltip="Upcoming features and enhancements" mat-icon-button [matMenuTriggerFor]="menuFeatures">
+      <mat-icon>auto_awesome</mat-icon>
+    </button>
+    <button matTooltip="Select theme" mat-icon-button (click)="toggleTheme()">
+      <mat-icon>{{ activeTheme !== 'light-theme' ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+  </div>
 </header>
 <div class="main-container flex-row">
   <div class="config-container flex-column card">
@@ -46,3 +54,15 @@
     <app-css-code />
   </div>
 </div>
+
+
+<mat-menu #menuIssues="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<mat-menu #menuFeatures="matMenu">
+  @for(feature of features; track feature){
+  <p>{{feature}}</p>
+  }
+</mat-menu>

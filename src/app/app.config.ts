@@ -1,28 +1,24 @@
-export const STATES = {
-	phase_2: [
-		'Add persistence, interactivity, and extra styling categories.',
-		'Save preset to localStorage',
-		'Load / delete saved presets',
-		'Rename presets',
-		'Option to lock certain properties before randomizing',
-		'Preview Enhancements',
-		'Hover / active state toggle',
-		'Syntax-highlighted CSS viewer',
-		'Copy to Clipboard animation or toast',
-		'Reset css line style (like remove gradient to apply background'
-	],
-	phase_3: [
-		'Color harmony picker (complementary, analogous, triadic)',
-		'Download CSS / HTML as a zip',
-		'Responsive preview (mobile/tablet/desktop toggle)',
-		'Resizable / draggable preview box',
-		'Sharing',
-		'Screenshot download (canvas or html2canvas)',
-		'UI / UX Polish',
-		'Smooth transitions on style changes',
-		'Micro animations (hover effects, color transitions)',
-	]
-}
+export const FEATURES = [
+	'Add persistence, interactivity, and extra styling categories.',
+	'Save preset to localStorage',
+	'Load / delete saved presets',
+	'Rename presets',
+	'Option to lock certain properties before randomizing',
+	'Preview Enhancements',
+	'Hover / active state toggle',
+	'Syntax-highlighted CSS viewer',
+	'Copy to Clipboard animation or toast',
+	'Reset css line style (like remove gradient to apply background',
+	'Color harmony picker (complementary, analogous, triadic)',
+	'Download CSS / HTML as a zip',
+	'Responsive preview (mobile/tablet/desktop toggle)',
+	'Resizable / draggable preview box',
+	'Sharing',
+	'Screenshot download (canvas or html2canvas)',
+	'UI / UX Polish',
+	'Smooth transitions on style changes',
+	'Micro animations (hover effects, color transitions)',
+]
 
 export const SHORT_HAND_MAP: Record<string, string[]> = {
 	'padding': ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'],
