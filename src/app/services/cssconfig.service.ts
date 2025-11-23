@@ -5,13 +5,11 @@ import { CSS_CONFIG, MULTI_VALUE_MAP, SHORT_HAND_MAP } from '../app.config';
 export class CssConfigService {
   readonly cssConfig = signal(CSS_CONFIG);
   readonly styleUpdates = signal<Record<string, any>>({});
-  readonly config = signal<Record<string, any>>({});
   readonly cssCode = signal('');
 
   public updateProperty(property: string, value: any, unit?: string) {
     const newConfig = this._updatePropertyMapping(this.cssConfig(), property, value);
     this.cssConfig.set(newConfig);
-    this.config.update(current => ({ ...current, [property]: `${value}${unit ?? ''}` }));
     this.styleUpdates.update(current => ({ ...current, [property]: unit && typeof value === 'number' ? `${value}${unit}` : value }));
 
     if (Object.keys(SHORT_HAND_MAP).includes(property)) {
@@ -22,7 +20,6 @@ export class CssConfigService {
   }
 
   public reset() {
-    this.config.set({});
     this.cssConfig.set(CSS_CONFIG);
     this.styleUpdates.set({});
   }
@@ -91,8 +88,6 @@ export class CssConfigService {
       const unit = value.replace(/[0-9.\-]/g, '') || 'px';
       this.updateProperty(key, isNaN(numericValue) ? value : numericValue, unit);
     }
-
-    this.config.set(randomStyle);
   }
 
   private _getRandomColor(): string {
