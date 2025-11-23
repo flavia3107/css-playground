@@ -20,6 +20,11 @@ export const FEATURES = [
 	'Micro animations (hover effects, color transitions)',
 ]
 
+export const ISSUES = [
+	'Reset configuration values',
+	'Styling on theme change for new elements'
+]
+
 export const SHORT_HAND_MAP: Record<string, string[]> = {
 	'padding': ['padding-top', 'padding-right', 'padding-bottom', 'padding-left'],
 	'margin': ['margin-top', 'margin-right', 'margin-bottom', 'margin-left'],

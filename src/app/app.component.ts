@@ -5,7 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { ThemeService } from 'src/shared/services/theme.service';
-import { FEATURES } from './app.config';
+import { FEATURES, ISSUES } from './app.config';
 import { CssCodeComponent } from './components/css-code/css-code.component';
 import { CssConfigsComponent } from './components/css-configs/css-configs.component';
 import { PreviewComponent } from './components/preview/preview.component';
@@ -22,6 +22,7 @@ export class AppComponent {
   private _themeService = inject(ThemeService);
   public activeTheme = 'light-theme';
   public features = FEATURES;
+  public issues = ISSUES;
 
   constructor() {
     this._themeService.setActiveTheme(localStorage.getItem('theme') ?? this.activeTheme);

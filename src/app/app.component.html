@@ -57,8 +57,9 @@
 
 
 <mat-menu #menuIssues="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
+  @for(issue of issues; track issue){
+  <p>{{issue}}</p>
+  }
 </mat-menu>
 
 <mat-menu #menuFeatures="matMenu">
