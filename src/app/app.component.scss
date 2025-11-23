@@ -39,6 +39,12 @@ header.card {
 	border: 1px solid var(--gray);
 }
 
+.list-item {
+	padding: 0.1rem 1rem;
+	margin: 0;
+	font-size: 0.8rem;
+}
+
 app-preview,
 app-css-code {
 	height: 100%;
