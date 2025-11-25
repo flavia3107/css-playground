@@ -6,7 +6,6 @@ export const FEATURES = [
 	'Enhance preview section.',
 	'Add hover/active preview toggle.',
 	'Add syntax-highlighted CSS viewer.',
-	'Add copy-to-clipboard animation.',
 	'Add color harmony picker.',
 	'Complementary, analogous, triadic options.',
 	'Download CSS/HTML as ZIP.',
