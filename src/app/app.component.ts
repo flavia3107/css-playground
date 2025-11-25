@@ -23,6 +23,8 @@ export class AppComponent {
   public activeTheme = 'light-theme';
   public features = FEATURES;
   public issues = ISSUES;
+  public copied: boolean = false;
+  public downloaded: boolean = false;
 
   constructor() {
     this._themeService.setActiveTheme(localStorage.getItem('theme') ?? this.activeTheme);
@@ -35,10 +37,14 @@ export class AppComponent {
 
   copyCode() {
     this._cssConfigService.copyCode();
+    this.copied = true;
+    setTimeout(() => (this.copied = false), 1200);
   }
 
   downloadCode() {
     this._cssConfigService.downloadCode();
+    this.downloaded = true;
+    setTimeout(() => (this.downloaded = false), 1200);
   }
 
   reset() {

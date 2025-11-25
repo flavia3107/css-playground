@@ -43,11 +43,11 @@
     <div class="flex-row space_between">
       <h2>Code</h2>
       <div class="flex-row middle">
-        <button mat-icon-button (click)="copyCode()" matTooltip="Copy CSS code">
-          <mat-icon>content_copy</mat-icon>
+        <button class="actionBtn" mat-icon-button (click)="copyCode()" matTooltip="Copy CSS code">
+          <mat-icon [class.checked]="copied">{{copied ? 'done': 'content_copy'}}</mat-icon>
         </button>
-        <button mat-icon-button (click)="downloadCode()" matTooltip="Download Css Code">
-          <mat-icon>download</mat-icon>
+        <button class="actionBtn" mat-icon-button (click)="downloadCode()" matTooltip="Download Css Code">
+          <mat-icon [class.checked]="downloaded">{{downloaded ? 'done': 'download'}}</mat-icon>
         </button>
       </div>
     </div>
