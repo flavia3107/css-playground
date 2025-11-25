@@ -1,6 +1,7 @@
+@let src = activeTheme === 'light-theme' ? 'assets/logo.svg' : 'assets/logo-white.svg' ;
 <header class="card flex-row space_between">
   <a class="logo" href="https://all-projects-portfolio.web.app/" matTooltip="See Portfolio" target="_blank">
-    <img class="logo-img" src="assets/logo.svg" />
+    <img class="logo-img" [src]="src" />
     <div class="logo-txt">
       <h1>FLAVIA</h1>
       <span>Kosti</span>

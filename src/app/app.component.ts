@@ -20,7 +20,7 @@ import { CssConfigService } from './services/cssconfig.service';
 export class AppComponent {
   private _cssConfigService = inject(CssConfigService);
   private _themeService = inject(ThemeService);
-  public activeTheme = 'light-theme';
+  public activeTheme = localStorage.getItem('theme') ?? 'light-theme';
   public features = FEATURES;
   public issues = ISSUES;
   public copied: boolean = false;
