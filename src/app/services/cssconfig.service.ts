@@ -6,6 +6,7 @@ export class CssConfigService {
   readonly cssConfig = signal(CSS_CONFIG);
   readonly styleUpdates = signal<Record<string, any>>({});
   readonly cssCode = signal('');
+  public elementExists = signal<boolean>(false);
 
   public updateProperty(property: string, value: any, unit?: string) {
     const newConfig = this._updatePropertyMapping(this.cssConfig(), property, value);

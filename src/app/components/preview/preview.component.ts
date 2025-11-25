@@ -57,6 +57,7 @@ export class PreviewComponent {
     this._renderer.appendChild(container, el);
     this._currentElement = el;
     this._currentType = element;
+    this._cssConfigService.elementExists.set(true);
     this._cssConfigService.setCssCode(this._currentElement?.style?.cssText ?? '');
   }
 

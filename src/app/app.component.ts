@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -26,8 +26,10 @@ export class AppComponent {
   public copied: boolean = false;
   public downloaded: boolean = false;
   public shuffled: boolean = false;
+  public elementExists = true;
 
   constructor() {
+    effect(() => this.elementExists = this._cssConfigService.elementExists());
     this._themeService.setActiveTheme(localStorage.getItem('theme') ?? this.activeTheme);
   }
 
