@@ -21,24 +21,30 @@
 <div class="main-container flex-row">
   <div class="config-container flex-column card">
     <h2 class="flex-row space_between middle">Config
-      @if(elementExists){
-      <button mat-icon-button (click)="reset()" matTooltip="Reset style to original value">
-        <mat-icon>history</mat-icon>
-      </button>
-      }
+      <!-- @if(elementExists){
+        <button mat-icon-button (click)="reset()" matTooltip="Reset style to original value">
+          <mat-icon>history</mat-icon>
+        </button>
+      } -->
     </h2>
     <div class="config-content">
       <app-css-configs />
     </div>
   </div>
   <div class="preview-container flex-column card">
-    <h2 class="flex-row space_between middle">Preview
+    <div class="flex-row space_between middle">
+      <h2>Preview </h2>
       @if(elementExists){
-      <button mat-icon-button class="actionBtn" (click)="randomizeStyles()" matTooltip="Generate random style">
-        <mat-icon [class.checked]="shuffled">{{shuffled ? 'done': 'shuffle'}}</mat-icon>
-      </button>
+      <div class="flex-row">
+        <button mat-icon-button class="actionBtn" (click)="randomizeStyles()" matTooltip="Generate random style">
+          <mat-icon [class.checked]="shuffled">{{shuffled ? 'done': 'shuffle'}}</mat-icon>
+        </button>
+        <button mat-icon-button (click)="reset()" matTooltip="Reset style to original value">
+          <mat-icon>history</mat-icon>
+        </button>
+      </div>
       }
-    </h2>
+    </div>
     <div class="css-preview flex-column">
       <app-preview />
     </div>
