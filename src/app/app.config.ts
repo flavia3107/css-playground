@@ -1,7 +1,6 @@
 export const FEATURES = [
 	'Add a Display section.',
 	'Add more styling categories.',
-	'Add persistence and interactivity.',
 	'Add option to lock properties.',
 	'Enhance preview section.',
 	'Add hover/active preview toggle.',
@@ -22,7 +21,6 @@ export const FEATURES = [
 
 export const ISSUES = [
 	'Reset configuration values',
-	'Update styles on theme change.'
 ]
 
 export const SHORT_HAND_MAP: Record<string, string[]> = {
@@ -453,7 +451,8 @@ export const ELEMENTS = {
 				'font-family': { value: 'monospace', unit: null },
 				'background-color': { value: '#f4f4f4', unit: null },
 				'padding': { value: 4, unit: 'px' },
-				'border-radius': { value: 4, unit: 'px' }
+				'border-radius': { value: 4, unit: 'px' },
+				'color': { value: '#232323', unit: null }
 			}
 		},
 	],
