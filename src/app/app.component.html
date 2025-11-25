@@ -31,8 +31,8 @@
   </div>
   <div class="preview-container flex-column card">
     <h2 class="flex-row space_between middle">Preview
-      <button mat-icon-button (click)="randomizeStyles()" matTooltip="Generate random style">
-        <mat-icon>shuffle</mat-icon>
+      <button mat-icon-button class="actionBtn" (click)="randomizeStyles()" matTooltip="Generate random style">
+        <mat-icon [class.checked]="shuffled">{{shuffled ? 'done': 'shuffle'}}</mat-icon>
       </button>
     </h2>
     <div class="css-preview flex-column">

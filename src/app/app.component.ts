@@ -25,6 +25,7 @@ export class AppComponent {
   public issues = ISSUES;
   public copied: boolean = false;
   public downloaded: boolean = false;
+  public shuffled: boolean = false;
 
   constructor() {
     this._themeService.setActiveTheme(localStorage.getItem('theme') ?? this.activeTheme);
@@ -53,5 +54,7 @@ export class AppComponent {
 
   randomizeStyles() {
     this._cssConfigService.generateRandomStyle();
+    this.shuffled = true;
+    setTimeout(() => (this.shuffled = false), 1200);
   }
 }
