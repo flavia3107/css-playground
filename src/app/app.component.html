@@ -38,7 +38,7 @@
       @if(elementExists){
       <div class="flex-row">
         <button mat-icon-button class="actionBtn" (click)="randomizeStyles()" matTooltip="Generate random style">
-          <mat-icon [class.checked]="shuffled">{{shuffled ? 'done': 'shuffle'}}</mat-icon>
+          <mat-icon>shuffle</mat-icon>
         </button>
         <button mat-icon-button (click)="reset()" matTooltip="Reset style to original value">
           <mat-icon>history</mat-icon>
@@ -62,7 +62,7 @@
           <mat-icon [class.checked]="copied">{{copied ? 'done': 'content_copy'}}</mat-icon>
         </button>
         <button class="actionBtn" mat-icon-button (click)="downloadCode()" matTooltip="Download Css Code">
-          <mat-icon [class.checked]="downloaded">{{downloaded ? 'done': 'download'}}</mat-icon>
+          <mat-icon>download</mat-icon>
         </button>
       </div>
       }

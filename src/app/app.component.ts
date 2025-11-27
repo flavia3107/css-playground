@@ -24,8 +24,6 @@ export class AppComponent {
   public features = FEATURES;
   public issues = ISSUES;
   public copied: boolean = false;
-  public downloaded: boolean = false;
-  public shuffled: boolean = false;
   public elementExists = true;
   @ViewChild('captureArea') captureArea!: ElementRef;
 
@@ -47,8 +45,6 @@ export class AppComponent {
 
   downloadCode() {
     this._cssConfigService.downloadCode();
-    this.downloaded = true;
-    setTimeout(() => (this.downloaded = false), 1200);
   }
 
   reset() {
@@ -57,8 +53,6 @@ export class AppComponent {
 
   randomizeStyles() {
     this._cssConfigService.generateRandomStyle();
-    this.shuffled = true;
-    setTimeout(() => (this.shuffled = false), 1200);
   }
 
   downloadScreenshot() {
