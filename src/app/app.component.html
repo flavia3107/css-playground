@@ -43,10 +43,13 @@
         <button mat-icon-button (click)="reset()" matTooltip="Reset style to original value">
           <mat-icon>history</mat-icon>
         </button>
+        <button mat-icon-button (click)="downloadScreenshot()">
+          <mat-icon>center_focus_strong</mat-icon>
+        </button>
       </div>
       }
     </div>
-    <div class="css-preview flex-column">
+    <div #captureArea class="css-preview flex-column">
       <app-preview />
     </div>
   </div>

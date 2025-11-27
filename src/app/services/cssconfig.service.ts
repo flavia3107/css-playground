@@ -1,4 +1,5 @@
-import { Injectable, signal } from '@angular/core';
+import { ElementRef, Injectable, signal } from '@angular/core';
+import html2canvas from 'html2canvas';
 import { CSS_CONFIG, MULTI_VALUE_MAP, SHORT_HAND_MAP } from '../app.config';
 
 @Injectable({ providedIn: 'root' })
@@ -128,5 +129,22 @@ export class CssConfigService {
       'background-image': `url('${value}')`
     }
     return propObj[property] ?? value;
+  }
+
+  downloadScreenshot(captureArea: ElementRef) {
+    const element = captureArea.nativeElement;
+
+    html2canvas(element, { useCORS: true }).then(canvas => {
+      canvas.toBlob(blob => {
+        if (blob) {
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = 'playground-screenshot.png';
+          link.click();
+          URL.revokeObjectURL(url);
+        }
+      });
+    });
   }
 }

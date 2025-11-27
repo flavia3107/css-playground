@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, effect, ElementRef, inject, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -27,6 +27,7 @@ export class AppComponent {
   public downloaded: boolean = false;
   public shuffled: boolean = false;
   public elementExists = true;
+  @ViewChild('captureArea') captureArea!: ElementRef;
 
   constructor() {
     effect(() => this.elementExists = this._cssConfigService.elementExists());
@@ -58,5 +59,9 @@ export class AppComponent {
     this._cssConfigService.generateRandomStyle();
     this.shuffled = true;
     setTimeout(() => (this.shuffled = false), 1200);
+  }
+
+  downloadScreenshot() {
+    this._cssConfigService.downloadScreenshot(this.captureArea);
   }
 }
