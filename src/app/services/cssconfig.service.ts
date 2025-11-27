@@ -133,7 +133,15 @@ export class CssConfigService {
 
   downloadScreenshot(captureArea: ElementRef) {
     const element = captureArea.nativeElement;
-    htmlToImage.toPng(element)
+    htmlToImage.toPng(element, {
+      backgroundColor: localStorage.getItem('theme') === 'dark-theme' ? '#292929' : '#fff',
+      filter: (node) => {
+        if ((node as HTMLElement).classList?.contains('mat-mdc-menu-trigger')) {
+          return false;
+        }
+        return true;
+      }
+    })
       .then(dataUrl => {
         const link = document.createElement('a');
         link.href = dataUrl;

@@ -13,14 +13,13 @@ export const FEATURES = [
 	'Make preview box resizable.',
 	'Make preview box draggable.',
 	'Add sharing options.',
-	'Add screenshot download.',
-	'Canvas or html2canvas support.',
 	'Improve UI/UX transitions.',
 	'Add micro animations.'
 ]
 
 export const ISSUES = [
 	'Reset configuration values',
+	'Fix screenshot console errors'
 ]
 
 export const SHORT_HAND_MAP: Record<string, string[]> = {
