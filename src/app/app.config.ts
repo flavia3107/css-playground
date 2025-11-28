@@ -13,8 +13,6 @@ export const FEATURES = [
 	'Make preview box resizable.',
 	'Make preview box draggable.',
 	'Add sharing options.',
-	'Improve UI/UX transitions.',
-	'Add micro animations.'
 ]
 
 export const ISSUES = [
