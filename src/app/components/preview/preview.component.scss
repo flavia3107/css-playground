@@ -18,3 +18,11 @@
 	overflow: auto;
 	box-sizing: border-box;
 }
+
+.elements-list span {
+	transition: transform 0.2s ease;
+}
+
+.elements-list span:hover {
+	transform: scale(1.02);
+}

@@ -21,7 +21,8 @@ export const defaultTheme: Theme = {
 		'--description-text': '#818181',
 		'--light-divider': '#ccc',
 		'--secondary-text': '#7c7c7c',
-		'--input-container-bg': '#f8f8f8'
+		'--input-container-bg': '#f8f8f8',
+		'--shadow': '#f0f0f0'
 	}
 };
 
@@ -32,18 +33,19 @@ export const darkTheme: Theme = {
 		'--bg-color': '#222222',
 		'--gray': '#474747',
 		'--card-bg-color': '#292929',
-		'--gray-light-color': '#161616',
+		'--gray-light-color': '#222222',
 		'--secondary-bg-color': '#f3f3f3',
 		'--light-gray-border': '#dfdfdf',
 		'--mid-gray': 'brown',
 		'--dark-gray': 'coral',
-		'--darker-gray-border': '#000',
+		'--darker-gray-border': '#3f3f3f',
 		'--logo-text': '#fff',
 		'--panel-title': '#dce4ef',
 		'--description-text': 'lightgray',
 		'--light-divider': '#585858',
 		'--secondary-text': 'turquise',
-		'--input-container-bg': '#2d2d2d'
+		'--input-container-bg': '#2d2d2d',
+		'--shadow': '#1d1d1d'
 	}
 };
 
