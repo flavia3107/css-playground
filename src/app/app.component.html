@@ -1,11 +1,7 @@
 @let src = activeTheme === 'light-theme' ? 'assets/logo.svg' : 'assets/logo-white.svg' ;
-<header class="card flex-row space_between">
-  <a class="logo" href="https://all-projects-portfolio.web.app/" matTooltip="See Portfolio" target="_blank">
-    <img class="logo-img" [src]="src" />
-    <div class="logo-txt">
-      <h1>FLAVIA</h1>
-      <span>Kosti</span>
-    </div>
+<header class="card flex-row space_between middle">
+  <a href="https://all-projects-portfolio.web.app/" matTooltip="See Portfolio" target="_blank">
+    <img [src]="src" />
   </a>
   <div class="flex-row">
     <button class="wiggle" mat-icon-button [matMenuTriggerFor]="menuIssues">
